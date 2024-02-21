@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 15 resources" deleteContents="true" description="Delete 15 resources" element1="/org.xtext.ejemplo.prueba8" element10="/org.xtext.example.mydsl.ui.tests" element11="/prueba8" element12="/prueba8.edit" element13="/prueba8.editor" element14="/prueba8.tests" element15="/xtend-examples" element2="/org.xtext.ejemplo.prueba8.ide" element3="/org.xtext.ejemplo.prueba8.tests" element4="/org.xtext.ejemplo.prueba8.ui" element5="/org.xtext.ejemplo.prueba8.ui.tests" element6="/org.xtext.example.mydsl" element7="/org.xtext.example.mydsl.ide" element8="/org.xtext.example.mydsl.tests" element9="/org.xtext.example.mydsl.ui" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="15" stamp="1700036162077"/>
+</session>

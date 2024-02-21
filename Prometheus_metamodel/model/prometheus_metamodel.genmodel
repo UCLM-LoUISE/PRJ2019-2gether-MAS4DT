@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Prometheus_metamodel/src-gen" creationIcons="false"
+    editDirectory="/Prometheus_metamodel.edit/src-gen" editorDirectory="/Prometheus_metamodel.editor/src-gen"
+    modelPluginID="Prometheus_metamodel" modelName="Prometheus_metamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="18.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>prometheus_metamodel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Prometheus_metamodel" disposableProviderFactory="true" ecorePackage="prometheus_metamodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prometheus_metamodel.ecore#//Enum_Type_of_Relationship">
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Type_of_Relationship/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Type_of_Relationship/OR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prometheus_metamodel.ecore#//Enum_Types_Attribute">
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Types_Attribute/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Types_Attribute/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Types_Attribute/LONG"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Types_Attribute/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Types_Attribute/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Types_Attribute/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Types_Attribute/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Types_Attribute/BOOLEAN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prometheus_metamodel.ecore#//Enum_Visibility_Attribute">
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Visibility_Attribute/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Visibility_Attribute/PRIVATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prometheus_metamodel.ecore#//Enum_Type_Step">
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Type_Step/ACTION"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Type_Step/SCENARIO"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Type_Step/GOAL"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Type_Step/PERCEPT"/>
+      <genEnumLiterals ecoreEnumLiteral="prometheus_metamodel.ecore#//Enum_Type_Step/OTHER"/>
+    </genEnums>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Model"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Percept"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Action"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Goal"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Context"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Goal_Relationship"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Scenario"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Step"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Entity"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prometheus_metamodel.ecore#//Attribute/name"/>
+    </genClasses>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Physical_Object"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Logical_Object"/>
+    <genClasses ecoreClass="prometheus_metamodel.ecore#//Functionality"/>
+  </genPackages>
+</genmodel:GenModel>

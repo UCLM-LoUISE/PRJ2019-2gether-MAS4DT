@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete 2 resources" deleteContents="true" description="Delete 2 resources" element1="/Prometheus_metamodel_system_specification.edit" element2="/Prometheus_metamodel_system_specification.editor" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1707210027352"/>&#x0A;<refactoring comment="Delete 2 resources" deleteContents="true" description="Delete 2 resources" element1="/Prometheus_metamodel_system_specification.edit" element2="/Prometheus_metamodel_system_specification.editor" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1707306620986"/>
+</session>

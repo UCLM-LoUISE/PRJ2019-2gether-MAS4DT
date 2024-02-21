@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="prometheus_metamodel_system_specification" nsURI="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification"
+    nsPrefix="prometheus_metamodel_system_specification">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="percept" lowerBound="1"
+        upperBound="-1" eType="#//Percept" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+        upperBound="-1" eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
+        upperBound="-1" eType="#//Context" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" lowerBound="1" upperBound="-1"
+        eType="#//Goal" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship" lowerBound="1"
+        upperBound="-1" eType="#//Goal_Relationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
+        upperBound="-1" eType="#//Scenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" lowerBound="1"
+        upperBound="-1" eType="#//Physical_Object" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logical_object" lowerBound="1"
+        upperBound="-1" eType="#//Logical_Object" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
+        upperBound="-1" eType="#//Functionality" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
+        upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/context"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Goal" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship" eType="#//Goal_Relationship"
+        eOpposite="#//Goal_Relationship/goal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
+        upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/goal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
+        upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
+        upperBound="-1" eType="#//Functionality" eOpposite="#//Functionality/action"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="failure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="partial_change" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="side_effects" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Percept" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
+        upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/percept"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
+        upperBound="-1" eType="#//Functionality" eOpposite="#//Functionality/percept"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="information_carried" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="knowledge_updated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="processing" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expected_frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="external_to_system" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="external_path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Goal_Relationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" lowerBound="1" eType="#//Goal"
+        eOpposite="#//Goal/goal_relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subgoals" lowerBound="1"
+        upperBound="-1" eType="#//Goal" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type_of_relationship" eType="#//Enum_Type_of_Relationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Physical_Object" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
+        upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/physical_object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" upperBound="-1"
+        eType="#//Physical_Object" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Logical_Object" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" lowerBound="1"
+        upperBound="-1" eType="#//Physical_Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
+        upperBound="-1" eType="#//Functionality" eOpposite="#//Functionality/logical_object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" lowerBound="1" upperBound="-1"
+        eType="#//Goal" eOpposite="#//Goal/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" lowerBound="1"
+        upperBound="-1" eType="#//Physical_Object" eOpposite="#//Physical_Object/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
+        eType="#//Context" eOpposite="#//Context/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+        upperBound="-1" eType="#//Action" eOpposite="#//Action/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="percept" lowerBound="1"
+        upperBound="-1" eType="#//Percept" eOpposite="#//Percept/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
+        upperBound="-1" eType="#//Functionality" eOpposite="#//Functionality/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
+        eType="#//Step" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trigger" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" lowerBound="1"
+        upperBound="5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Functionality" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logical_object" lowerBound="1"
+        upperBound="-1" eType="#//Logical_Object" eOpposite="#//Logical_Object/functionality"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+        upperBound="-1" eType="#//Action" eOpposite="#//Action/functionality"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="percept" lowerBound="1"
+        upperBound="-1" eType="#//Percept" eOpposite="#//Percept/functionality"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
+        upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/functionality"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//Enum_Types"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" lowerBound="1"
+        eType="#//Enum_Visibility"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Enum_Type_of_Relationship" instanceClassName="">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Enum_Types">
+    <eLiterals name="NONE"/>
+    <eLiterals name="INT" value="1"/>
+    <eLiterals name="LONG" value="2"/>
+    <eLiterals name="CHAR" value="3"/>
+    <eLiterals name="STRING" value="4"/>
+    <eLiterals name="FLOAT" value="5"/>
+    <eLiterals name="DOUBLE" value="6"/>
+    <eLiterals name="BOOLEAN" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Enum_Visibility">
+    <eLiterals name="PUBLIC"/>
+    <eLiterals name="PRIVATE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Enum_Type_Step">
+    <eLiterals name="ACTION"/>
+    <eLiterals name="SCENARIO" value="1"/>
+    <eLiterals name="GOAL" value="2"/>
+    <eLiterals name="PERCEPT" value="3"/>
+    <eLiterals name="OTHER" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type_step" lowerBound="1"
+        eType="#//Enum_Type_Step"/>
+  </eClassifiers>
+</ecore:EPackage>

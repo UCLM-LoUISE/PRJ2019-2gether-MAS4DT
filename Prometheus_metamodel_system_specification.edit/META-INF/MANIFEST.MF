@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: Prometheus_metamodel_system_specification.edit;singleton:=true
+Automatic-Module-Name: Prometheus_metamodel_system_specification.edit
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: prometheus_metamodel_system_specification.provider.Prometheus_metamodel_system_specificationEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-18
+Export-Package: prometheus_metamodel_system_specification.provider
+Require-Bundle: org.eclipse.core.runtime,
+ Prometheus_metamodel_system_specification;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy
