@@ -269,7 +269,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Goal() {
+	public EReference getModel_Scenario() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -279,7 +279,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Goal_relationship() {
+	public EReference getModel_Physical_object() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -289,7 +289,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Scenario() {
+	public EReference getModel_Logical_object() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -299,7 +299,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Physical_object() {
+	public EReference getModel_Functionality() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -309,7 +309,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Logical_object() {
+	public EReference getModel_Goals() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -319,7 +319,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Functionality() {
+	public EReference getModel_Goal_relationships() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -359,7 +359,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getGoal_Goal_relationship() {
+	public EReference getGoal_Scenario() {
 		return (EReference) goalEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -369,8 +369,28 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getGoal_Scenario() {
+	public EReference getGoal_Goal_relationship_from() {
 		return (EReference) goalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getGoal_Goal_relationship_to() {
+		return (EReference) goalEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getGoal_Model() {
+		return (EReference) goalEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -569,8 +589,8 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getGoal_Relationship_Goal() {
-		return (EReference) goal_RelationshipEClass.getEStructuralFeatures().get(0);
+	public EAttribute getGoal_Relationship_Type_of_relationship() {
+		return (EAttribute) goal_RelationshipEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -579,7 +599,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getGoal_Relationship_Subgoals() {
+	public EReference getGoal_Relationship_Goal_from() {
 		return (EReference) goal_RelationshipEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -589,8 +609,8 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGoal_Relationship_Type_of_relationship() {
-		return (EAttribute) goal_RelationshipEClass.getEStructuralFeatures().get(2);
+	public EReference getGoal_Relationship_Goal_to() {
+		return (EReference) goal_RelationshipEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1007,19 +1027,21 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(modelEClass, MODEL__PERCEPT);
 		createEReference(modelEClass, MODEL__ACTION);
 		createEReference(modelEClass, MODEL__CONTEXT);
-		createEReference(modelEClass, MODEL__GOAL);
-		createEReference(modelEClass, MODEL__GOAL_RELATIONSHIP);
 		createEReference(modelEClass, MODEL__SCENARIO);
 		createEReference(modelEClass, MODEL__PHYSICAL_OBJECT);
 		createEReference(modelEClass, MODEL__LOGICAL_OBJECT);
 		createEReference(modelEClass, MODEL__FUNCTIONALITY);
+		createEReference(modelEClass, MODEL__GOALS);
+		createEReference(modelEClass, MODEL__GOAL_RELATIONSHIPS);
 
 		contextEClass = createEClass(CONTEXT);
 		createEReference(contextEClass, CONTEXT__SCENARIO);
 
 		goalEClass = createEClass(GOAL);
-		createEReference(goalEClass, GOAL__GOAL_RELATIONSHIP);
 		createEReference(goalEClass, GOAL__SCENARIO);
+		createEReference(goalEClass, GOAL__GOAL_RELATIONSHIP_FROM);
+		createEReference(goalEClass, GOAL__GOAL_RELATIONSHIP_TO);
+		createEReference(goalEClass, GOAL__MODEL);
 
 		actionEClass = createEClass(ACTION);
 		createEReference(actionEClass, ACTION__SCENARIO);
@@ -1042,9 +1064,9 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEAttribute(perceptEClass, PERCEPT__EXTERNAL_PATH);
 
 		goal_RelationshipEClass = createEClass(GOAL_RELATIONSHIP);
-		createEReference(goal_RelationshipEClass, GOAL_RELATIONSHIP__GOAL);
-		createEReference(goal_RelationshipEClass, GOAL_RELATIONSHIP__SUBGOALS);
 		createEAttribute(goal_RelationshipEClass, GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP);
+		createEReference(goal_RelationshipEClass, GOAL_RELATIONSHIP__GOAL_FROM);
+		createEReference(goal_RelationshipEClass, GOAL_RELATIONSHIP__GOAL_TO);
 
 		physical_ObjectEClass = createEClass(PHYSICAL_OBJECT);
 		createEReference(physical_ObjectEClass, PHYSICAL_OBJECT__SCENARIO);
@@ -1144,12 +1166,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getModel_Context(), this.getContext(), null, "context", null, 1, -1, Model.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getModel_Goal(), this.getGoal(), null, "goal", null, 1, -1, Model.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getModel_Goal_relationship(), this.getGoal_Relationship(), null, "goal_relationship", null, 1,
-				-1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Scenario(), this.getScenario(), null, "scenario", null, 1, -1, Model.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1162,6 +1178,12 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getModel_Functionality(), this.getFunctionality(), null, "functionality", null, 1, -1,
 				Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Goals(), this.getGoal(), this.getGoal_Model(), "goals", null, 0, -1, Model.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Goal_relationships(), this.getGoal_Relationship(), null, "goal_relationships", null, 0,
+				-1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContext_Scenario(), this.getScenario(), this.getScenario_Context(), "scenario", null, 1, -1,
@@ -1169,12 +1191,19 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGoal_Goal_relationship(), this.getGoal_Relationship(), this.getGoal_Relationship_Goal(),
-				"goal_relationship", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGoal_Scenario(), this.getScenario(), this.getScenario_Goal(), "scenario", null, 1, -1,
 				Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoal_Goal_relationship_from(), this.getGoal_Relationship(),
+				this.getGoal_Relationship_Goal_from(), "goal_relationship_from", null, 0, 1, Goal.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getGoal_Goal_relationship_to(), this.getGoal_Relationship(), this.getGoal_Relationship_Goal_to(),
+				"goal_relationship_to", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoal_Model(), this.getModel(), this.getModel_Goals(), "model", null, 1, 1, Goal.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAction_Scenario(), this.getScenario(), this.getScenario_Action(), "scenario", null, 1, -1,
@@ -1224,15 +1253,15 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 
 		initEClass(goal_RelationshipEClass, Goal_Relationship.class, "Goal_Relationship", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGoal_Relationship_Goal(), this.getGoal(), this.getGoal_Goal_relationship(), "goal", null, 1,
-				1, Goal_Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGoal_Relationship_Subgoals(), this.getGoal(), null, "subgoals", null, 1, -1,
-				Goal_Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoal_Relationship_Type_of_relationship(), this.getEnum_Type_of_Relationship(),
 				"type_of_relationship", null, 0, 1, Goal_Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoal_Relationship_Goal_from(), this.getGoal(), this.getGoal_Goal_relationship_from(),
+				"goal_from", null, 0, 1, Goal_Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoal_Relationship_Goal_to(), this.getGoal(), this.getGoal_Goal_relationship_to(), "goal_to",
+				null, 0, 1, Goal_Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(physical_ObjectEClass, Physical_Object.class, "Physical_Object", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

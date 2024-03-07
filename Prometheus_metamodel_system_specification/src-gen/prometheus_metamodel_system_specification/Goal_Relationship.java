@@ -2,8 +2,6 @@
  */
 package prometheus_metamodel_system_specification;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal <em>Goal</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getSubgoals <em>Subgoals</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getType_of_relationship <em>Type of relationship</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from <em>Goal from</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to <em>Goal to</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship()
@@ -25,42 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Goal_Relationship extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Goal</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship <em>Goal relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Goal</em>' reference.
-	 * @see #setGoal(Goal)
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Goal()
-	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship
-	 * @model opposite="goal_relationship" required="true"
-	 * @generated
-	 */
-	Goal getGoal();
-
-	/**
-	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal <em>Goal</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Goal</em>' reference.
-	 * @see #getGoal()
-	 * @generated
-	 */
-	void setGoal(Goal value);
-
-	/**
-	 * Returns the value of the '<em><b>Subgoals</b></em>' containment reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Goal}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subgoals</em>' containment reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Subgoals()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Goal> getSubgoals();
-
 	/**
 	 * Returns the value of the '<em><b>Type of relationship</b></em>' attribute.
 	 * The literals are from the enumeration {@link prometheus_metamodel_system_specification.Enum_Type_of_Relationship}.
@@ -85,5 +47,53 @@ public interface Goal_Relationship extends EObject {
 	 * @generated
 	 */
 	void setType_of_relationship(Enum_Type_of_Relationship value);
+
+	/**
+	 * Returns the value of the '<em><b>Goal from</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from <em>Goal relationship from</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal from</em>' reference.
+	 * @see #setGoal_from(Goal)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Goal_from()
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_from
+	 * @model opposite="goal_relationship_from"
+	 * @generated
+	 */
+	Goal getGoal_from();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from <em>Goal from</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Goal from</em>' reference.
+	 * @see #getGoal_from()
+	 * @generated
+	 */
+	void setGoal_from(Goal value);
+
+	/**
+	 * Returns the value of the '<em><b>Goal to</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to <em>Goal relationship to</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal to</em>' reference.
+	 * @see #setGoal_to(Goal)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Goal_to()
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_to
+	 * @model opposite="goal_relationship_to"
+	 * @generated
+	 */
+	Goal getGoal_to();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to <em>Goal to</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Goal to</em>' reference.
+	 * @see #getGoal_to()
+	 * @generated
+	 */
+	void setGoal_to(Goal value);
 
 } // Goal_Relationship

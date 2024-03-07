@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Action;
@@ -39,12 +40,12 @@ import prometheus_metamodel_system_specification.Scenario;
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getPercept <em>Percept</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getAction <em>Action</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getContext <em>Context</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getGoal <em>Goal</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getGoal_relationship <em>Goal relationship</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getLogical_object <em>Logical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getFunctionality <em>Functionality</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getGoals <em>Goals</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getGoal_relationships <em>Goal relationships</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,26 +80,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @ordered
 	 */
 	protected EList<Context> context;
-
-	/**
-	 * The cached value of the '{@link #getGoal() <em>Goal</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGoal()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Goal> goal;
-
-	/**
-	 * The cached value of the '{@link #getGoal_relationship() <em>Goal relationship</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGoal_relationship()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Goal_Relationship> goal_relationship;
 
 	/**
 	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' containment reference list.
@@ -139,6 +120,26 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @ordered
 	 */
 	protected EList<Functionality> functionality;
+
+	/**
+	 * The cached value of the '{@link #getGoals() <em>Goals</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGoals()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Goal> goals;
+
+	/**
+	 * The cached value of the '{@link #getGoal_relationships() <em>Goal relationships</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGoal_relationships()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Goal_Relationship> goal_relationships;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,34 +208,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @generated
 	 */
 	@Override
-	public EList<Goal> getGoal() {
-		if (goal == null) {
-			goal = new EObjectContainmentEList<Goal>(Goal.class, this,
-					Prometheus_metamodel_system_specificationPackage.MODEL__GOAL);
-		}
-		return goal;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Goal_Relationship> getGoal_relationship() {
-		if (goal_relationship == null) {
-			goal_relationship = new EObjectContainmentEList<Goal_Relationship>(Goal_Relationship.class, this,
-					Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIP);
-		}
-		return goal_relationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Scenario> getScenario() {
 		if (scenario == null) {
 			scenario = new EObjectContainmentEList<Scenario>(Scenario.class, this,
@@ -291,6 +264,50 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @generated
 	 */
 	@Override
+	public EList<Goal> getGoals() {
+		if (goals == null) {
+			goals = new EObjectContainmentWithInverseEList<Goal>(Goal.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__GOALS,
+					Prometheus_metamodel_system_specificationPackage.GOAL__MODEL);
+		}
+		return goals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Goal_Relationship> getGoal_relationships() {
+		if (goal_relationships == null) {
+			goal_relationships = new EObjectContainmentEList<Goal_Relationship>(Goal_Relationship.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS);
+		}
+		return goal_relationships;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getGoals()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PERCEPT:
@@ -299,10 +316,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return ((InternalEList<?>) getAction()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXT:
 			return ((InternalEList<?>) getContext()).basicRemove(otherEnd, msgs);
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL:
-			return ((InternalEList<?>) getGoal()).basicRemove(otherEnd, msgs);
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIP:
-			return ((InternalEList<?>) getGoal_relationship()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIO:
 			return ((InternalEList<?>) getScenario()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECT:
@@ -311,6 +324,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return ((InternalEList<?>) getLogical_object()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITY:
 			return ((InternalEList<?>) getFunctionality()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
+			return ((InternalEList<?>) getGoals()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
+			return ((InternalEList<?>) getGoal_relationships()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -329,10 +346,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return getAction();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXT:
 			return getContext();
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL:
-			return getGoal();
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIP:
-			return getGoal_relationship();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIO:
 			return getScenario();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECT:
@@ -341,6 +354,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return getLogical_object();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITY:
 			return getFunctionality();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
+			return getGoals();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
+			return getGoal_relationships();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -366,14 +383,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			getContext().clear();
 			getContext().addAll((Collection<? extends Context>) newValue);
 			return;
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL:
-			getGoal().clear();
-			getGoal().addAll((Collection<? extends Goal>) newValue);
-			return;
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIP:
-			getGoal_relationship().clear();
-			getGoal_relationship().addAll((Collection<? extends Goal_Relationship>) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIO:
 			getScenario().clear();
 			getScenario().addAll((Collection<? extends Scenario>) newValue);
@@ -389,6 +398,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITY:
 			getFunctionality().clear();
 			getFunctionality().addAll((Collection<? extends Functionality>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
+			getGoals().clear();
+			getGoals().addAll((Collection<? extends Goal>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
+			getGoal_relationships().clear();
+			getGoal_relationships().addAll((Collection<? extends Goal_Relationship>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -411,12 +428,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXT:
 			getContext().clear();
 			return;
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL:
-			getGoal().clear();
-			return;
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIP:
-			getGoal_relationship().clear();
-			return;
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIO:
 			getScenario().clear();
 			return;
@@ -428,6 +439,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return;
 		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITY:
 			getFunctionality().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
+			getGoals().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
+			getGoal_relationships().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -447,10 +464,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return action != null && !action.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXT:
 			return context != null && !context.isEmpty();
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL:
-			return goal != null && !goal.isEmpty();
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIP:
-			return goal_relationship != null && !goal_relationship.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIO:
 			return scenario != null && !scenario.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECT:
@@ -459,6 +472,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return logical_object != null && !logical_object.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITY:
 			return functionality != null && !functionality.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
+			return goals != null && !goals.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
+			return goal_relationships != null && !goal_relationships.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

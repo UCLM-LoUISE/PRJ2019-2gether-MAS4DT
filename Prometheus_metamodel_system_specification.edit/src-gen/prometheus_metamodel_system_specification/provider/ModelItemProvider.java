@@ -73,12 +73,12 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PERCEPT);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ACTION);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CONTEXT);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL_RELATIONSHIP);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIO);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PHYSICAL_OBJECT);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__LOGICAL_OBJECT);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__FUNCTIONALITY);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOALS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL_RELATIONSHIPS);
 		}
 		return childrenFeatures;
 	}
@@ -143,12 +143,12 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PERCEPT:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTION:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXT:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIP:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIO:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECT:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__LOGICAL_OBJECT:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITY:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -179,14 +179,6 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createContext()));
 
 		newChildDescriptors
-				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL,
-						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createGoal()));
-
-		newChildDescriptors.add(
-				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL_RELATIONSHIP,
-						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createGoal_Relationship()));
-
-		newChildDescriptors
 				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIO,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createScenario()));
 
@@ -201,6 +193,14 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		newChildDescriptors.add(
 				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__FUNCTIONALITY,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createFunctionality()));
+
+		newChildDescriptors
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOALS,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createGoal()));
+
+		newChildDescriptors.add(createChildParameter(
+				Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL_RELATIONSHIPS,
+				Prometheus_metamodel_system_specificationFactory.eINSTANCE.createGoal_Relationship()));
 	}
 
 	/**

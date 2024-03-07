@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link prometheus_metamodel_system_specification.Model#getPercept <em>Percept</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getAction <em>Action</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getContext <em>Context</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Model#getGoal <em>Goal</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Model#getGoal_relationship <em>Goal relationship</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getLogical_object <em>Logical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getFunctionality <em>Functionality</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getGoals <em>Goals</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getGoal_relationships <em>Goal relationships</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel()
@@ -66,30 +66,6 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<Context> getContext();
-
-	/**
-	 * Returns the value of the '<em><b>Goal</b></em>' containment reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Goal}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Goal</em>' containment reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Goal()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Goal> getGoal();
-
-	/**
-	 * Returns the value of the '<em><b>Goal relationship</b></em>' containment reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Goal_Relationship}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Goal relationship</em>' containment reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Goal_relationship()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Goal_Relationship> getGoal_relationship();
 
 	/**
 	 * Returns the value of the '<em><b>Scenario</b></em>' containment reference list.
@@ -138,5 +114,31 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<Functionality> getFunctionality();
+
+	/**
+	 * Returns the value of the '<em><b>Goals</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Goal}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getModel <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goals</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Goals()
+	 * @see prometheus_metamodel_system_specification.Goal#getModel
+	 * @model opposite="model" containment="true"
+	 * @generated
+	 */
+	EList<Goal> getGoals();
+
+	/**
+	 * Returns the value of the '<em><b>Goal relationships</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Goal_Relationship}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal relationships</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Goal_relationships()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Goal_Relationship> getGoal_relationships();
 
 } // Model

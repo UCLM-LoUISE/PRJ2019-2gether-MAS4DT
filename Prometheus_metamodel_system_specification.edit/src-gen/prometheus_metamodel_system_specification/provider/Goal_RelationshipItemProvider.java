@@ -10,8 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,7 +23,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import prometheus_metamodel_system_specification.Enum_Type_of_Relationship;
 import prometheus_metamodel_system_specification.Goal_Relationship;
-import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationFactory;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 
 /**
@@ -57,26 +54,11 @@ public class Goal_RelationshipItemProvider extends ItemProviderAdapter implement
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGoalPropertyDescriptor(object);
 			addType_of_relationshipPropertyDescriptor(object);
+			addGoal_fromPropertyDescriptor(object);
+			addGoal_toPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Goal feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGoalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Goal_Relationship_goal_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_goal_feature",
-								"_UI_Goal_Relationship_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__GOAL, true, false,
-						true, null, null, null));
 	}
 
 	/**
@@ -96,33 +78,35 @@ public class Goal_RelationshipItemProvider extends ItemProviderAdapter implement
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Goal from feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__SUBGOALS);
-		}
-		return childrenFeatures;
+	protected void addGoal_fromPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Goal_Relationship_goal_from_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_goal_from_feature",
+								"_UI_Goal_Relationship_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__GOAL_FROM, true,
+						false, true, null, null, null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Goal to feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addGoal_toPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Goal_Relationship_goal_to_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_goal_to_feature",
+								"_UI_Goal_Relationship_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__GOAL_TO, true,
+						false, true, null, null, null));
 	}
 
 	/**
@@ -175,9 +159,6 @@ public class Goal_RelationshipItemProvider extends ItemProviderAdapter implement
 		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__SUBGOALS:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -192,10 +173,6 @@ public class Goal_RelationshipItemProvider extends ItemProviderAdapter implement
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(
-				Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__SUBGOALS,
-				Prometheus_metamodel_system_specificationFactory.eINSTANCE.createGoal()));
 	}
 
 	/**

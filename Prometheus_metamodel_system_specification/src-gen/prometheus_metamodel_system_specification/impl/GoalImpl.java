@@ -3,7 +3,6 @@
 package prometheus_metamodel_system_specification.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -11,14 +10,14 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Goal;
 import prometheus_metamodel_system_specification.Goal_Relationship;
+import prometheus_metamodel_system_specification.Model;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 import prometheus_metamodel_system_specification.Scenario;
 
@@ -30,23 +29,15 @@ import prometheus_metamodel_system_specification.Scenario;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.impl.GoalImpl#getGoal_relationship <em>Goal relationship</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.GoalImpl#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.GoalImpl#getGoal_relationship_from <em>Goal relationship from</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.GoalImpl#getGoal_relationship_to <em>Goal relationship to</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.GoalImpl#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class GoalImpl extends EntityImpl implements Goal {
-	/**
-	 * The cached value of the '{@link #getGoal_relationship() <em>Goal relationship</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGoal_relationship()
-	 * @generated
-	 * @ordered
-	 */
-	protected Goal_Relationship goal_relationship;
-
 	/**
 	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -56,6 +47,25 @@ public class GoalImpl extends EntityImpl implements Goal {
 	 * @ordered
 	 */
 	protected EList<Scenario> scenario;
+
+	/**
+	 * The cached value of the '{@link #getGoal_relationship_from() <em>Goal relationship from</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGoal_relationship_from()
+	 * @generated
+	 * @ordered
+	 */
+	protected Goal_Relationship goal_relationship_from;
+	/**
+	 * The cached value of the '{@link #getGoal_relationship_to() <em>Goal relationship to</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGoal_relationship_to()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Goal_Relationship> goal_relationship_to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,81 +92,6 @@ public class GoalImpl extends EntityImpl implements Goal {
 	 * @generated
 	 */
 	@Override
-	public Goal_Relationship getGoal_relationship() {
-		if (goal_relationship != null && goal_relationship.eIsProxy()) {
-			InternalEObject oldGoal_relationship = (InternalEObject) goal_relationship;
-			goal_relationship = (Goal_Relationship) eResolveProxy(oldGoal_relationship);
-			if (goal_relationship != oldGoal_relationship) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP,
-							oldGoal_relationship, goal_relationship));
-			}
-		}
-		return goal_relationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Goal_Relationship basicGetGoal_relationship() {
-		return goal_relationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetGoal_relationship(Goal_Relationship newGoal_relationship, NotificationChain msgs) {
-		Goal_Relationship oldGoal_relationship = goal_relationship;
-		goal_relationship = newGoal_relationship;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP, oldGoal_relationship,
-					newGoal_relationship);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setGoal_relationship(Goal_Relationship newGoal_relationship) {
-		if (newGoal_relationship != goal_relationship) {
-			NotificationChain msgs = null;
-			if (goal_relationship != null)
-				msgs = ((InternalEObject) goal_relationship).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL,
-						Goal_Relationship.class, msgs);
-			if (newGoal_relationship != null)
-				msgs = ((InternalEObject) newGoal_relationship).eInverseAdd(this,
-						Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL,
-						Goal_Relationship.class, msgs);
-			msgs = basicSetGoal_relationship(newGoal_relationship, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP, newGoal_relationship,
-					newGoal_relationship));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Scenario> getScenario() {
 		if (scenario == null) {
 			scenario = new EObjectWithInverseResolvingEList.ManyInverse<Scenario>(Scenario.class, this,
@@ -171,18 +106,165 @@ public class GoalImpl extends EntityImpl implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Goal_Relationship getGoal_relationship_from() {
+		if (goal_relationship_from != null && goal_relationship_from.eIsProxy()) {
+			InternalEObject oldGoal_relationship_from = (InternalEObject) goal_relationship_from;
+			goal_relationship_from = (Goal_Relationship) eResolveProxy(oldGoal_relationship_from);
+			if (goal_relationship_from != oldGoal_relationship_from) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_FROM,
+							oldGoal_relationship_from, goal_relationship_from));
+			}
+		}
+		return goal_relationship_from;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Goal_Relationship basicGetGoal_relationship_from() {
+		return goal_relationship_from;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGoal_relationship_from(Goal_Relationship newGoal_relationship_from,
+			NotificationChain msgs) {
+		Goal_Relationship oldGoal_relationship_from = goal_relationship_from;
+		goal_relationship_from = newGoal_relationship_from;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_FROM,
+					oldGoal_relationship_from, newGoal_relationship_from);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGoal_relationship_from(Goal_Relationship newGoal_relationship_from) {
+		if (newGoal_relationship_from != goal_relationship_from) {
+			NotificationChain msgs = null;
+			if (goal_relationship_from != null)
+				msgs = ((InternalEObject) goal_relationship_from).eInverseRemove(this,
+						Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL_FROM,
+						Goal_Relationship.class, msgs);
+			if (newGoal_relationship_from != null)
+				msgs = ((InternalEObject) newGoal_relationship_from).eInverseAdd(this,
+						Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL_FROM,
+						Goal_Relationship.class, msgs);
+			msgs = basicSetGoal_relationship_from(newGoal_relationship_from, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_FROM,
+					newGoal_relationship_from, newGoal_relationship_from));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Goal_Relationship> getGoal_relationship_to() {
+		if (goal_relationship_to == null) {
+			goal_relationship_to = new EObjectWithInverseResolvingEList<Goal_Relationship>(Goal_Relationship.class,
+					this, Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_TO,
+					Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL_TO);
+		}
+		return goal_relationship_to;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Model getModel() {
+		if (eContainerFeatureID() != Prometheus_metamodel_system_specificationPackage.GOAL__MODEL)
+			return null;
+		return (Model) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetModel(Model newModel, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newModel,
+				Prometheus_metamodel_system_specificationPackage.GOAL__MODEL, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setModel(Model newModel) {
+		if (newModel != eInternalContainer()
+				|| (eContainerFeatureID() != Prometheus_metamodel_system_specificationPackage.GOAL__MODEL
+						&& newModel != null)) {
+			if (EcoreUtil.isAncestor(this, newModel))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newModel != null)
+				msgs = ((InternalEObject) newModel).eInverseAdd(this,
+						Prometheus_metamodel_system_specificationPackage.MODEL__GOALS, Model.class, msgs);
+			msgs = basicSetModel(newModel, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prometheus_metamodel_system_specificationPackage.GOAL__MODEL, newModel, newModel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP:
-			if (goal_relationship != null)
-				msgs = ((InternalEObject) goal_relationship).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL,
-						Goal_Relationship.class, msgs);
-			return basicSetGoal_relationship((Goal_Relationship) otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_FROM:
+			if (goal_relationship_from != null)
+				msgs = ((InternalEObject) goal_relationship_from).eInverseRemove(this,
+						Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL_FROM,
+						Goal_Relationship.class, msgs);
+			return basicSetGoal_relationship_from((Goal_Relationship) otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_TO:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getGoal_relationship_to()).basicAdd(otherEnd,
+					msgs);
+		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetModel((Model) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -195,10 +277,14 @@ public class GoalImpl extends EntityImpl implements Goal {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP:
-			return basicSetGoal_relationship(null, msgs);
 		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO:
 			return ((InternalEList<?>) getScenario()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_FROM:
+			return basicSetGoal_relationship_from(null, msgs);
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_TO:
+			return ((InternalEList<?>) getGoal_relationship_to()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
+			return basicSetModel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -209,14 +295,33 @@ public class GoalImpl extends EntityImpl implements Goal {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
+			return eInternalContainer().eInverseRemove(this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__GOALS, Model.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP:
-			if (resolve)
-				return getGoal_relationship();
-			return basicGetGoal_relationship();
 		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO:
 			return getScenario();
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_FROM:
+			if (resolve)
+				return getGoal_relationship_from();
+			return basicGetGoal_relationship_from();
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_TO:
+			return getGoal_relationship_to();
+		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
+			return getModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -230,12 +335,19 @@ public class GoalImpl extends EntityImpl implements Goal {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP:
-			setGoal_relationship((Goal_Relationship) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO:
 			getScenario().clear();
 			getScenario().addAll((Collection<? extends Scenario>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_FROM:
+			setGoal_relationship_from((Goal_Relationship) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_TO:
+			getGoal_relationship_to().clear();
+			getGoal_relationship_to().addAll((Collection<? extends Goal_Relationship>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
+			setModel((Model) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -249,11 +361,17 @@ public class GoalImpl extends EntityImpl implements Goal {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP:
-			setGoal_relationship((Goal_Relationship) null);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO:
 			getScenario().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_FROM:
+			setGoal_relationship_from((Goal_Relationship) null);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_TO:
+			getGoal_relationship_to().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
+			setModel((Model) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -267,10 +385,14 @@ public class GoalImpl extends EntityImpl implements Goal {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP:
-			return goal_relationship != null;
 		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO:
 			return scenario != null && !scenario.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_FROM:
+			return goal_relationship_from != null;
+		case Prometheus_metamodel_system_specificationPackage.GOAL__GOAL_RELATIONSHIP_TO:
+			return goal_relationship_to != null && !goal_relationship_to.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
+			return getModel() != null;
 		}
 		return super.eIsSet(featureID);
 	}

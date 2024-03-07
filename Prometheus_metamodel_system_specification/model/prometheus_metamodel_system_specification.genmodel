@@ -40,19 +40,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/percept"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/action"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/context"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/goal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/goal_relationship"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/scenario"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/physical_object"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/logical_object"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/functionality"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/goals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Model/goal_relationships"/>
     </genClasses>
     <genClasses ecoreClass="prometheus_metamodel_system_specification.ecore#//Context">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Context/scenario"/>
     </genClasses>
     <genClasses ecoreClass="prometheus_metamodel_system_specification.ecore#//Goal">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Goal/goal_relationship"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Goal/scenario"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Goal/goal_relationship_from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Goal/goal_relationship_to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Goal/model"/>
     </genClasses>
     <genClasses ecoreClass="prometheus_metamodel_system_specification.ecore#//Action">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Action/scenario"/>
@@ -75,9 +77,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prometheus_metamodel_system_specification.ecore#//Percept/external_path"/>
     </genClasses>
     <genClasses ecoreClass="prometheus_metamodel_system_specification.ecore#//Goal_Relationship">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Goal_Relationship/goal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Goal_Relationship/subgoals"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prometheus_metamodel_system_specification.ecore#//Goal_Relationship/type_of_relationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Goal_Relationship/goal_from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Goal_Relationship/goal_to"/>
     </genClasses>
     <genClasses ecoreClass="prometheus_metamodel_system_specification.ecore#//Physical_Object">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prometheus_metamodel_system_specification.ecore#//Physical_Object/scenario"/>

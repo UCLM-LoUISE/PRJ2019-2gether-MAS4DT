@@ -96,31 +96,13 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int MODEL__CONTEXT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Goal</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL__GOAL = 3;
-
-	/**
-	 * The feature id for the '<em><b>Goal relationship</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL__GOAL_RELATIONSHIP = 4;
-
-	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL__SCENARIO = 5;
+	int MODEL__SCENARIO = 3;
 
 	/**
 	 * The feature id for the '<em><b>Physical object</b></em>' containment reference list.
@@ -129,7 +111,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL__PHYSICAL_OBJECT = 6;
+	int MODEL__PHYSICAL_OBJECT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Logical object</b></em>' containment reference list.
@@ -138,7 +120,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL__LOGICAL_OBJECT = 7;
+	int MODEL__LOGICAL_OBJECT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Functionality</b></em>' containment reference list.
@@ -147,7 +129,25 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL__FUNCTIONALITY = 8;
+	int MODEL__FUNCTIONALITY = 6;
+
+	/**
+	 * The feature id for the '<em><b>Goals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__GOALS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Goal relationships</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__GOAL_RELATIONSHIPS = 8;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -351,22 +351,40 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int GOAL__DESCRIPTION = ENTITY__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Goal relationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GOAL__GOAL_RELATIONSHIP = ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL__SCENARIO = ENTITY_FEATURE_COUNT + 1;
+	int GOAL__SCENARIO = ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Goal relationship from</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL__GOAL_RELATIONSHIP_FROM = ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Goal relationship to</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL__GOAL_RELATIONSHIP_TO = ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL__MODEL = ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Goal</em>' class.
@@ -375,7 +393,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+	int GOAL_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Goal</em>' class.
@@ -669,31 +687,31 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int GOAL_RELATIONSHIP = 5;
 
 	/**
-	 * The feature id for the '<em><b>Goal</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GOAL_RELATIONSHIP__GOAL = 0;
-
-	/**
-	 * The feature id for the '<em><b>Subgoals</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GOAL_RELATIONSHIP__SUBGOALS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Type of relationship</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP = 2;
+	int GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP = 0;
+
+	/**
+	 * The feature id for the '<em><b>Goal from</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL_RELATIONSHIP__GOAL_FROM = 1;
+
+	/**
+	 * The feature id for the '<em><b>Goal to</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL_RELATIONSHIP__GOAL_TO = 2;
 
 	/**
 	 * The number of structural features of the '<em>Goal Relationship</em>' class.
@@ -1352,28 +1370,6 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EReference getModel_Context();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link prometheus_metamodel_system_specification.Model#getGoal <em>Goal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Goal</em>'.
-	 * @see prometheus_metamodel_system_specification.Model#getGoal()
-	 * @see #getModel()
-	 * @generated
-	 */
-	EReference getModel_Goal();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link prometheus_metamodel_system_specification.Model#getGoal_relationship <em>Goal relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Goal relationship</em>'.
-	 * @see prometheus_metamodel_system_specification.Model#getGoal_relationship()
-	 * @see #getModel()
-	 * @generated
-	 */
-	EReference getModel_Goal_relationship();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link prometheus_metamodel_system_specification.Model#getScenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1418,6 +1414,28 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EReference getModel_Functionality();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link prometheus_metamodel_system_specification.Model#getGoals <em>Goals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Goals</em>'.
+	 * @see prometheus_metamodel_system_specification.Model#getGoals()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EReference getModel_Goals();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link prometheus_metamodel_system_specification.Model#getGoal_relationships <em>Goal relationships</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Goal relationships</em>'.
+	 * @see prometheus_metamodel_system_specification.Model#getGoal_relationships()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EReference getModel_Goal_relationships();
+
+	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Context <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1449,17 +1467,6 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EClass getGoal();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship <em>Goal relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Goal relationship</em>'.
-	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship()
-	 * @see #getGoal()
-	 * @generated
-	 */
-	EReference getGoal_Goal_relationship();
-
-	/**
 	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Goal#getScenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1469,6 +1476,39 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 */
 	EReference getGoal_Scenario();
+
+	/**
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from <em>Goal relationship from</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Goal relationship from</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_from()
+	 * @see #getGoal()
+	 * @generated
+	 */
+	EReference getGoal_Goal_relationship_from();
+
+	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to <em>Goal relationship to</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Goal relationship to</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_to()
+	 * @see #getGoal()
+	 * @generated
+	 */
+	EReference getGoal_Goal_relationship_to();
+
+	/**
+	 * Returns the meta object for the container reference '{@link prometheus_metamodel_system_specification.Goal#getModel <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Model</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal#getModel()
+	 * @see #getGoal()
+	 * @generated
+	 */
+	EReference getGoal_Model();
 
 	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Action <em>Action</em>}'.
@@ -1677,28 +1717,6 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EClass getGoal_Relationship();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal <em>Goal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Goal</em>'.
-	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getGoal()
-	 * @see #getGoal_Relationship()
-	 * @generated
-	 */
-	EReference getGoal_Relationship_Goal();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link prometheus_metamodel_system_specification.Goal_Relationship#getSubgoals <em>Subgoals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Subgoals</em>'.
-	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getSubgoals()
-	 * @see #getGoal_Relationship()
-	 * @generated
-	 */
-	EReference getGoal_Relationship_Subgoals();
-
-	/**
 	 * Returns the meta object for the attribute '{@link prometheus_metamodel_system_specification.Goal_Relationship#getType_of_relationship <em>Type of relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1708,6 +1726,28 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 */
 	EAttribute getGoal_Relationship_Type_of_relationship();
+
+	/**
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from <em>Goal from</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Goal from</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from()
+	 * @see #getGoal_Relationship()
+	 * @generated
+	 */
+	EReference getGoal_Relationship_Goal_from();
+
+	/**
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to <em>Goal to</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Goal to</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to()
+	 * @see #getGoal_Relationship()
+	 * @generated
+	 */
+	EReference getGoal_Relationship_Goal_to();
 
 	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Physical_Object <em>Physical Object</em>}'.
@@ -2174,22 +2214,6 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EReference MODEL__CONTEXT = eINSTANCE.getModel_Context();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL__GOAL = eINSTANCE.getModel_Goal();
-
-		/**
-		 * The meta object literal for the '<em><b>Goal relationship</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL__GOAL_RELATIONSHIP = eINSTANCE.getModel_Goal_relationship();
-
-		/**
 		 * The meta object literal for the '<em><b>Scenario</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2222,6 +2246,22 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EReference MODEL__FUNCTIONALITY = eINSTANCE.getModel_Functionality();
 
 		/**
+		 * The meta object literal for the '<em><b>Goals</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL__GOALS = eINSTANCE.getModel_Goals();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal relationships</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL__GOAL_RELATIONSHIPS = eINSTANCE.getModel_Goal_relationships();
+
+		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.ContextImpl <em>Context</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2250,20 +2290,36 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EClass GOAL = eINSTANCE.getGoal();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal relationship</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GOAL__GOAL_RELATIONSHIP = eINSTANCE.getGoal_Goal_relationship();
-
-		/**
 		 * The meta object literal for the '<em><b>Scenario</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference GOAL__SCENARIO = eINSTANCE.getGoal_Scenario();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal relationship from</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL__GOAL_RELATIONSHIP_FROM = eINSTANCE.getGoal_Goal_relationship_from();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal relationship to</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL__GOAL_RELATIONSHIP_TO = eINSTANCE.getGoal_Goal_relationship_to();
+
+		/**
+		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL__MODEL = eINSTANCE.getGoal_Model();
 
 		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.ActionImpl <em>Action</em>}' class.
@@ -2424,28 +2480,28 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EClass GOAL_RELATIONSHIP = eINSTANCE.getGoal_Relationship();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GOAL_RELATIONSHIP__GOAL = eINSTANCE.getGoal_Relationship_Goal();
-
-		/**
-		 * The meta object literal for the '<em><b>Subgoals</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GOAL_RELATIONSHIP__SUBGOALS = eINSTANCE.getGoal_Relationship_Subgoals();
-
-		/**
 		 * The meta object literal for the '<em><b>Type of relationship</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP = eINSTANCE.getGoal_Relationship_Type_of_relationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal from</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL_RELATIONSHIP__GOAL_FROM = eINSTANCE.getGoal_Relationship_Goal_from();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal to</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL_RELATIONSHIP__GOAL_TO = eINSTANCE.getGoal_Relationship_Goal_to();
 
 		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.Physical_ObjectImpl <em>Physical Object</em>}' class.

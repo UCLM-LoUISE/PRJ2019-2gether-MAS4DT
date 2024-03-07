@@ -1,7 +1,8 @@
 #encoding=UTF-8
 #version=1
-Prometheus_metamodel,0.1.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/Prometheus_metamodel/,4,false
 Prometheus_metamodel_system_specification,0.1.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/Prometheus_metamodel_system_specification/,4,false
+Prometheus_metamodel_system_specification.edit,1.0.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/Prometheus_metamodel_system_specification.edit/,4,false
+Prometheus_metamodel_system_specification.editor,1.0.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/Prometheus_metamodel_system_specification.editor/,4,false
 bcpg,1.77.0,file:/C:/Users/Usuario/eclipse/modeling-2023-09/eclipse/configuration/org.eclipse.osgi/518/data/-922960579/plugins/bcpg_1.77.0.jar,4,false
 bcpkix,1.77.0,file:/C:/Users/Usuario/eclipse/modeling-2023-09/eclipse/configuration/org.eclipse.osgi/518/data/-922960579/plugins/bcpkix_1.77.0.jar,4,false
 bcprov,1.77.0,file:/C:/Users/Usuario/eclipse/modeling-2023-09/eclipse/configuration/org.eclipse.osgi/518/data/-922960579/plugins/bcprov_1.77.0.jar,4,false

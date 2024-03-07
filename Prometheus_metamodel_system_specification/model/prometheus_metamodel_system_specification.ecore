@@ -9,10 +9,6 @@
         upperBound="-1" eType="#//Action" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
         upperBound="-1" eType="#//Context" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" lowerBound="1" upperBound="-1"
-        eType="#//Goal" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship" lowerBound="1"
-        upperBound="-1" eType="#//Goal_Relationship" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
         upperBound="-1" eType="#//Scenario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" lowerBound="1"
@@ -21,16 +17,24 @@
         upperBound="-1" eType="#//Logical_Object" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
         upperBound="-1" eType="#//Functionality" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goals" upperBound="-1"
+        eType="#//Goal" containment="true" eOpposite="#//Goal/model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationships" upperBound="-1"
+        eType="#//Goal_Relationship" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
         upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/context"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Goal" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship" eType="#//Goal_Relationship"
-        eOpposite="#//Goal_Relationship/goal"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
         upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/goal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_from"
+        eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_to" upperBound="-1"
+        eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_to"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//Model"
+        eOpposite="#//Model/goals"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
@@ -57,11 +61,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="external_path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Goal_Relationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" lowerBound="1" eType="#//Goal"
-        eOpposite="#//Goal/goal_relationship"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subgoals" lowerBound="1"
-        upperBound="-1" eType="#//Goal" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type_of_relationship" eType="#//Enum_Type_of_Relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_from" eType="#//Goal"
+        eOpposite="#//Goal/goal_relationship_from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_to" eType="#//Goal"
+        eOpposite="#//Goal/goal_relationship_to"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Physical_Object" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
