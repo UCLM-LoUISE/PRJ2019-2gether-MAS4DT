@@ -138,8 +138,6 @@ public class Prometheus_metamodel_system_specificationSwitch<T> extends Switch<T
 			Scenario scenario = (Scenario) theEObject;
 			T result = caseScenario(scenario);
 			if (result == null)
-				result = caseStep(scenario);
-			if (result == null)
 				result = caseEntity(scenario);
 			if (result == null)
 				result = defaultCase(theEObject);

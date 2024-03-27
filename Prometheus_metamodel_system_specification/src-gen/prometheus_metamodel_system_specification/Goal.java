@@ -87,27 +87,17 @@ public interface Goal extends Entity {
 	void setModel(Model value);
 
 	/**
-	 * Returns the value of the '<em><b>Step</b></em>' reference.
+	 * Returns the value of the '<em><b>Step</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Step}.
 	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Step#getGoal <em>Goal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Step</em>' reference.
-	 * @see #setStep(Step)
+	 * @return the value of the '<em>Step</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Step()
 	 * @see prometheus_metamodel_system_specification.Step#getGoal
 	 * @model opposite="goal"
 	 * @generated
 	 */
-	Step getStep();
-
-	/**
-	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal#getStep <em>Step</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Step</em>' reference.
-	 * @see #getStep()
-	 * @generated
-	 */
-	void setStep(Step value);
+	EList<Step> getStep();
 
 } // Goal

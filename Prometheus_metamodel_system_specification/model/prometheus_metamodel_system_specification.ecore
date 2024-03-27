@@ -33,7 +33,8 @@
         eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_to"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//Model"
         eOpposite="#//Model/goals"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//Step" eOpposite="#//Step/goal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
+        eOpposite="#//Step/goal"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
@@ -43,7 +44,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="failure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="partial_change" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="side_effects" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//Step" eOpposite="#//Step/action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
+        eOpposite="#//Step/action"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Percept" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
@@ -55,7 +57,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expected_frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="external_to_system" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="external_path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//Step" eOpposite="#//Step/percept"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
+        eOpposite="#//Step/percept"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Goal_Relationship">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type_of_relationship" eType="#//Enum_Type_of_Relationship"/>
@@ -69,14 +72,16 @@
         upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/physical_object"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" upperBound="-1"
         eType="#//Physical_Object" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logical_object" upperBound="-1"
+        eType="#//Logical_Object" eOpposite="#//Logical_Object/physical_object"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Logical_Object" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" lowerBound="1"
-        upperBound="-1" eType="#//Physical_Object"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
         upperBound="-1" eType="#//Functionality" eOpposite="#//Functionality/logical_object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" upperBound="-1"
+        eType="#//Physical_Object" eOpposite="#//Physical_Object/logical_object"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Scenario" eSuperTypes="#//Entity #//Step">
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" lowerBound="1"
         upperBound="-1" eType="#//Physical_Object" eOpposite="#//Physical_Object/scenario"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
@@ -90,6 +95,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" lowerBound="1"
         upperBound="5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
+        eOpposite="#//Step/scenario"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Functionality" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="logical_object" lowerBound="1"
@@ -143,10 +150,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type_step" lowerBound="1"
         eType="#//Enum_Type_Step"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" eType="#//Goal" eOpposite="#//Goal/step"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="percept" eType="#//Percept"
-        eOpposite="#//Percept/step"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"
-        eOpposite="#//Action/step"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" upperBound="-1" eType="#//Goal"
+        eOpposite="#//Goal/step"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="percept" upperBound="-1"
+        eType="#//Percept" eOpposite="#//Percept/step"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
+        eType="#//Action" eOpposite="#//Action/step"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" upperBound="-1"
+        eType="#//Scenario" eOpposite="#//Scenario/step"/>
   </eClassifiers>
 </ecore:EPackage>

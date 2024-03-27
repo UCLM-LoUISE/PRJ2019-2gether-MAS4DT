@@ -378,7 +378,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int GOAL__MODEL = ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Step</b></em>' reference.
+	 * The feature id for the '<em><b>Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -505,7 +505,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int ACTION__SIDE_EFFECTS = ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Step</b></em>' reference.
+	 * The feature id for the '<em><b>Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -650,7 +650,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int PERCEPT__EXTERNAL_PATH = ENTITY_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Step</b></em>' reference.
+	 * The feature id for the '<em><b>Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -796,13 +796,22 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int PHYSICAL_OBJECT__PHYSICAL_OBJECT = ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Logical object</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHYSICAL_OBJECT__LOGICAL_OBJECT = ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Physical Object</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PHYSICAL_OBJECT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+	int PHYSICAL_OBJECT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Physical Object</em>' class.
@@ -860,22 +869,22 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int LOGICAL_OBJECT__DESCRIPTION = ENTITY__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Physical object</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL_OBJECT__PHYSICAL_OBJECT = ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Functionality</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGICAL_OBJECT__FUNCTIONALITY = ENTITY_FEATURE_COUNT + 1;
+	int LOGICAL_OBJECT__FUNCTIONALITY = ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Physical object</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_OBJECT__PHYSICAL_OBJECT = ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Logical Object</em>' class.
@@ -942,49 +951,13 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int SCENARIO__DESCRIPTION = ENTITY__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Type step</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIO__TYPE_STEP = ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Goal</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIO__GOAL = ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Percept</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIO__PERCEPT = ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIO__ACTION = ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Physical object</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__PHYSICAL_OBJECT = ENTITY_FEATURE_COUNT + 4;
+	int SCENARIO__PHYSICAL_OBJECT = ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -993,7 +966,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__CONTEXT = ENTITY_FEATURE_COUNT + 5;
+	int SCENARIO__CONTEXT = ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Functionality</b></em>' reference list.
@@ -1002,7 +975,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__FUNCTIONALITY = ENTITY_FEATURE_COUNT + 6;
+	int SCENARIO__FUNCTIONALITY = ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -1011,7 +984,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__STEPS = ENTITY_FEATURE_COUNT + 7;
+	int SCENARIO__STEPS = ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Trigger</b></em>' attribute.
@@ -1020,7 +993,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__TRIGGER = ENTITY_FEATURE_COUNT + 8;
+	int SCENARIO__TRIGGER = ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Variation</b></em>' attribute.
@@ -1029,7 +1002,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__VARIATION = ENTITY_FEATURE_COUNT + 9;
+	int SCENARIO__VARIATION = ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute list.
@@ -1038,7 +1011,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__PRIORITY = ENTITY_FEATURE_COUNT + 10;
+	int SCENARIO__PRIORITY = ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' reference.
@@ -1047,7 +1020,16 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__SCENARIO = ENTITY_FEATURE_COUNT + 11;
+	int SCENARIO__SCENARIO = ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Step</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__STEP = ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -1056,7 +1038,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 12;
+	int SCENARIO_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -1287,7 +1269,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int STEP__TYPE_STEP = ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Goal</b></em>' reference.
+	 * The feature id for the '<em><b>Goal</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1296,7 +1278,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int STEP__GOAL = ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Percept</b></em>' reference.
+	 * The feature id for the '<em><b>Percept</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1305,7 +1287,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int STEP__PERCEPT = ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' reference.
+	 * The feature id for the '<em><b>Action</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1314,13 +1296,22 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int STEP__ACTION = ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Scenario</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__SCENARIO = ENTITY_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 4;
+	int STEP_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Step</em>' class.
@@ -1545,10 +1536,10 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EReference getGoal_Model();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal#getStep <em>Step</em>}'.
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Goal#getStep <em>Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Step</em>'.
+	 * @return the meta object for the reference list '<em>Step</em>'.
 	 * @see prometheus_metamodel_system_specification.Goal#getStep()
 	 * @see #getGoal()
 	 * @generated
@@ -1632,10 +1623,10 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EAttribute getAction_Side_effects();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Action#getStep <em>Step</em>}'.
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Action#getStep <em>Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Step</em>'.
+	 * @return the meta object for the reference list '<em>Step</em>'.
 	 * @see prometheus_metamodel_system_specification.Action#getStep()
 	 * @see #getAction()
 	 * @generated
@@ -1741,10 +1732,10 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EAttribute getPercept_External_path();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Percept#getStep <em>Step</em>}'.
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Percept#getStep <em>Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Step</em>'.
+	 * @return the meta object for the reference list '<em>Step</em>'.
 	 * @see prometheus_metamodel_system_specification.Percept#getStep()
 	 * @see #getPercept()
 	 * @generated
@@ -1825,6 +1816,17 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 */
 	EReference getPhysical_Object_Physical_object();
+
+	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Physical_Object#getLogical_object <em>Logical object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Logical object</em>'.
+	 * @see prometheus_metamodel_system_specification.Physical_Object#getLogical_object()
+	 * @see #getPhysical_Object()
+	 * @generated
+	 */
+	EReference getPhysical_Object_Logical_object();
 
 	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Logical_Object <em>Logical Object</em>}'.
@@ -1955,6 +1957,17 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 */
 	EReference getScenario_Scenario();
+
+	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Scenario#getStep <em>Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Step</em>'.
+	 * @see prometheus_metamodel_system_specification.Scenario#getStep()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_Step();
 
 	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Functionality <em>Functionality</em>}'.
@@ -2140,10 +2153,10 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EAttribute getStep_Type_step();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Step#getGoal <em>Goal</em>}'.
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Step#getGoal <em>Goal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Goal</em>'.
+	 * @return the meta object for the reference list '<em>Goal</em>'.
 	 * @see prometheus_metamodel_system_specification.Step#getGoal()
 	 * @see #getStep()
 	 * @generated
@@ -2151,10 +2164,10 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EReference getStep_Goal();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Step#getPercept <em>Percept</em>}'.
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Step#getPercept <em>Percept</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Percept</em>'.
+	 * @return the meta object for the reference list '<em>Percept</em>'.
 	 * @see prometheus_metamodel_system_specification.Step#getPercept()
 	 * @see #getStep()
 	 * @generated
@@ -2162,15 +2175,26 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EReference getStep_Percept();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Step#getAction <em>Action</em>}'.
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Step#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Action</em>'.
+	 * @return the meta object for the reference list '<em>Action</em>'.
 	 * @see prometheus_metamodel_system_specification.Step#getAction()
 	 * @see #getStep()
 	 * @generated
 	 */
 	EReference getStep_Action();
+
+	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Step#getScenario <em>Scenario</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Scenario</em>'.
+	 * @see prometheus_metamodel_system_specification.Step#getScenario()
+	 * @see #getStep()
+	 * @generated
+	 */
+	EReference getStep_Scenario();
 
 	/**
 	 * Returns the meta object for enum '{@link prometheus_metamodel_system_specification.Enum_Type_of_Relationship <em>Enum Type of Relationship</em>}'.
@@ -2370,7 +2394,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EReference GOAL__MODEL = eINSTANCE.getGoal_Model();
 
 		/**
-		 * The meta object literal for the '<em><b>Step</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Step</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2436,7 +2460,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EAttribute ACTION__SIDE_EFFECTS = eINSTANCE.getAction_Side_effects();
 
 		/**
-		 * The meta object literal for the '<em><b>Step</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Step</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2518,7 +2542,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EAttribute PERCEPT__EXTERNAL_PATH = eINSTANCE.getPercept_External_path();
 
 		/**
-		 * The meta object literal for the '<em><b>Step</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Step</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2584,6 +2608,14 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		 * @generated
 		 */
 		EReference PHYSICAL_OBJECT__PHYSICAL_OBJECT = eINSTANCE.getPhysical_Object_Physical_object();
+
+		/**
+		 * The meta object literal for the '<em><b>Logical object</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PHYSICAL_OBJECT__LOGICAL_OBJECT = eINSTANCE.getPhysical_Object_Logical_object();
 
 		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.Logical_ObjectImpl <em>Logical Object</em>}' class.
@@ -2684,6 +2716,14 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		 * @generated
 		 */
 		EReference SCENARIO__SCENARIO = eINSTANCE.getScenario_Scenario();
+
+		/**
+		 * The meta object literal for the '<em><b>Step</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__STEP = eINSTANCE.getScenario_Step();
 
 		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.FunctionalityImpl <em>Functionality</em>}' class.
@@ -2830,7 +2870,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EAttribute STEP__TYPE_STEP = eINSTANCE.getStep_Type_step();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Goal</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2838,7 +2878,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EReference STEP__GOAL = eINSTANCE.getStep_Goal();
 
 		/**
-		 * The meta object literal for the '<em><b>Percept</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Percept</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2846,12 +2886,20 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EReference STEP__PERCEPT = eINSTANCE.getStep_Percept();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Action</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference STEP__ACTION = eINSTANCE.getStep_Action();
+
+		/**
+		 * The meta object literal for the '<em><b>Scenario</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STEP__SCENARIO = eINSTANCE.getStep_Scenario();
 
 		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.Enum_Type_of_Relationship <em>Enum Type of Relationship</em>}' enum.

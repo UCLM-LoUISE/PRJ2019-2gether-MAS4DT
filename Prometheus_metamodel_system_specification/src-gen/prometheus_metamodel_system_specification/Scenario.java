@@ -21,13 +21,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getVariation <em>Variation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getPriority <em>Priority</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Scenario#getStep <em>Step</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario()
  * @model
  * @generated
  */
-public interface Scenario extends Entity, Step {
+public interface Scenario extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Physical object</b></em>' reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Physical_Object}.
@@ -169,5 +170,19 @@ public interface Scenario extends Entity, Step {
 	 * @generated
 	 */
 	void setScenario(Scenario value);
+
+	/**
+	 * Returns the value of the '<em><b>Step</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Step}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Step#getScenario <em>Scenario</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Step</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Step()
+	 * @see prometheus_metamodel_system_specification.Step#getScenario
+	 * @model opposite="scenario"
+	 * @generated
+	 */
+	EList<Step> getStep();
 
 } // Scenario

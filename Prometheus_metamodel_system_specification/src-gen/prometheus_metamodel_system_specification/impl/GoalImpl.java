@@ -58,14 +58,14 @@ public class GoalImpl extends EntityImpl implements Goal {
 	protected EList<Goal_Relationship> goal_relationship_to;
 
 	/**
-	 * The cached value of the '{@link #getStep() <em>Step</em>}' reference.
+	 * The cached value of the '{@link #getStep() <em>Step</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStep()
 	 * @generated
 	 * @ordered
 	 */
-	protected Step step;
+	protected EList<Step> step;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,68 +232,13 @@ public class GoalImpl extends EntityImpl implements Goal {
 	 * @generated
 	 */
 	@Override
-	public Step getStep() {
-		if (step != null && step.eIsProxy()) {
-			InternalEObject oldStep = (InternalEObject) step;
-			step = (Step) eResolveProxy(oldStep);
-			if (step != oldStep) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Prometheus_metamodel_system_specificationPackage.GOAL__STEP, oldStep, step));
-			}
+	public EList<Step> getStep() {
+		if (step == null) {
+			step = new EObjectWithInverseResolvingEList.ManyInverse<Step>(Step.class, this,
+					Prometheus_metamodel_system_specificationPackage.GOAL__STEP,
+					Prometheus_metamodel_system_specificationPackage.STEP__GOAL);
 		}
 		return step;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Step basicGetStep() {
-		return step;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStep(Step newStep, NotificationChain msgs) {
-		Step oldStep = step;
-		step = newStep;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.GOAL__STEP, oldStep, newStep);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStep(Step newStep) {
-		if (newStep != step) {
-			NotificationChain msgs = null;
-			if (step != null)
-				msgs = ((InternalEObject) step).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.STEP__GOAL, Step.class, msgs);
-			if (newStep != null)
-				msgs = ((InternalEObject) newStep).eInverseAdd(this,
-						Prometheus_metamodel_system_specificationPackage.STEP__GOAL, Step.class, msgs);
-			msgs = basicSetStep(newStep, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.GOAL__STEP, newStep, newStep));
 	}
 
 	/**
@@ -319,10 +264,7 @@ public class GoalImpl extends EntityImpl implements Goal {
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetModel((Model) otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.GOAL__STEP:
-			if (step != null)
-				msgs = ((InternalEObject) step).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.STEP__GOAL, Step.class, msgs);
-			return basicSetStep((Step) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStep()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -342,7 +284,7 @@ public class GoalImpl extends EntityImpl implements Goal {
 		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
 			return basicSetModel(null, msgs);
 		case Prometheus_metamodel_system_specificationPackage.GOAL__STEP:
-			return basicSetStep(null, msgs);
+			return ((InternalEList<?>) getStep()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -379,9 +321,7 @@ public class GoalImpl extends EntityImpl implements Goal {
 		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
 			return getModel();
 		case Prometheus_metamodel_system_specificationPackage.GOAL__STEP:
-			if (resolve)
-				return getStep();
-			return basicGetStep();
+			return getStep();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -406,7 +346,8 @@ public class GoalImpl extends EntityImpl implements Goal {
 			setModel((Model) newValue);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.GOAL__STEP:
-			setStep((Step) newValue);
+			getStep().clear();
+			getStep().addAll((Collection<? extends Step>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -430,7 +371,7 @@ public class GoalImpl extends EntityImpl implements Goal {
 			setModel((Model) null);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.GOAL__STEP:
-			setStep((Step) null);
+			getStep().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -451,7 +392,7 @@ public class GoalImpl extends EntityImpl implements Goal {
 		case Prometheus_metamodel_system_specificationPackage.GOAL__MODEL:
 			return getModel() != null;
 		case Prometheus_metamodel_system_specificationPackage.GOAL__STEP:
-			return step != null;
+			return step != null && !step.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

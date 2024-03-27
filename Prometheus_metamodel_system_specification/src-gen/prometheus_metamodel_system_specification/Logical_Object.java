@@ -13,8 +13,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.Logical_Object#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Logical_Object#getFunctionality <em>Functionality</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Logical_Object#getPhysical_object <em>Physical object</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getLogical_Object()
@@ -25,11 +25,13 @@ public interface Logical_Object extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Physical object</b></em>' reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Physical_Object}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Physical_Object#getLogical_object <em>Logical object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Physical object</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getLogical_Object_Physical_object()
-	 * @model required="true"
+	 * @see prometheus_metamodel_system_specification.Physical_Object#getLogical_object
+	 * @model opposite="logical_object"
 	 * @generated
 	 */
 	EList<Physical_Object> getPhysical_object();

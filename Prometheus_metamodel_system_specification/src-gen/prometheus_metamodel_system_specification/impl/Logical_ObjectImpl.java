@@ -10,8 +10,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,23 +26,13 @@ import prometheus_metamodel_system_specification.Prometheus_metamodel_system_spe
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.impl.Logical_ObjectImpl#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.Logical_ObjectImpl#getFunctionality <em>Functionality</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.Logical_ObjectImpl#getPhysical_object <em>Physical object</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
-	/**
-	 * The cached value of the '{@link #getPhysical_object() <em>Physical object</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPhysical_object()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Physical_Object> physical_object;
-
 	/**
 	 * The cached value of the '{@link #getFunctionality() <em>Functionality</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -54,6 +42,16 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	 * @ordered
 	 */
 	protected EList<Functionality> functionality;
+
+	/**
+	 * The cached value of the '{@link #getPhysical_object() <em>Physical object</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhysical_object()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Physical_Object> physical_object;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,8 +80,9 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public EList<Physical_Object> getPhysical_object() {
 		if (physical_object == null) {
-			physical_object = new EObjectResolvingEList<Physical_Object>(Physical_Object.class, this,
-					Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT);
+			physical_object = new EObjectWithInverseResolvingEList.ManyInverse<Physical_Object>(Physical_Object.class,
+					this, Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT,
+					Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT);
 		}
 		return physical_object;
 	}
@@ -114,6 +113,8 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFunctionality()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPhysical_object()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -128,6 +129,8 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
 			return ((InternalEList<?>) getFunctionality()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
+			return ((InternalEList<?>) getPhysical_object()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -140,10 +143,10 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
-			return getPhysical_object();
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
 			return getFunctionality();
+		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
+			return getPhysical_object();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,13 +160,13 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
-			getPhysical_object().clear();
-			getPhysical_object().addAll((Collection<? extends Physical_Object>) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
 			getFunctionality().clear();
 			getFunctionality().addAll((Collection<? extends Functionality>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
+			getPhysical_object().clear();
+			getPhysical_object().addAll((Collection<? extends Physical_Object>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,11 +180,11 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
-			getPhysical_object().clear();
-			return;
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
 			getFunctionality().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
+			getPhysical_object().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -195,10 +198,10 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
-			return physical_object != null && !physical_object.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
 			return functionality != null && !functionality.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT:
+			return physical_object != null && !physical_object.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

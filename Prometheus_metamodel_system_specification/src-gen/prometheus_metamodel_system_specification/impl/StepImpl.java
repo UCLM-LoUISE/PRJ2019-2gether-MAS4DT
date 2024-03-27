@@ -2,19 +2,24 @@
  */
 package prometheus_metamodel_system_specification.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import prometheus_metamodel_system_specification.Action;
 import prometheus_metamodel_system_specification.Enum_Type_Step;
 import prometheus_metamodel_system_specification.Goal;
 import prometheus_metamodel_system_specification.Percept;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
+import prometheus_metamodel_system_specification.Scenario;
 import prometheus_metamodel_system_specification.Step;
 
 /**
@@ -29,6 +34,7 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.StepImpl#getGoal <em>Goal</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.StepImpl#getPercept <em>Percept</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.StepImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.StepImpl#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,34 +61,44 @@ public class StepImpl extends EntityImpl implements Step {
 	protected Enum_Type_Step type_step = TYPE_STEP_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGoal() <em>Goal</em>}' reference.
+	 * The cached value of the '{@link #getGoal() <em>Goal</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGoal()
 	 * @generated
 	 * @ordered
 	 */
-	protected Goal goal;
+	protected EList<Goal> goal;
 
 	/**
-	 * The cached value of the '{@link #getPercept() <em>Percept</em>}' reference.
+	 * The cached value of the '{@link #getPercept() <em>Percept</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPercept()
 	 * @generated
 	 * @ordered
 	 */
-	protected Percept percept;
+	protected EList<Percept> percept;
 
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected Action action;
+	protected EList<Action> action;
+
+	/**
+	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScenario()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Scenario> scenario;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,15 +149,11 @@ public class StepImpl extends EntityImpl implements Step {
 	 * @generated
 	 */
 	@Override
-	public Goal getGoal() {
-		if (goal != null && goal.eIsProxy()) {
-			InternalEObject oldGoal = (InternalEObject) goal;
-			goal = (Goal) eResolveProxy(oldGoal);
-			if (goal != oldGoal) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Prometheus_metamodel_system_specificationPackage.STEP__GOAL, oldGoal, goal));
-			}
+	public EList<Goal> getGoal() {
+		if (goal == null) {
+			goal = new EObjectWithInverseResolvingEList.ManyInverse<Goal>(Goal.class, this,
+					Prometheus_metamodel_system_specificationPackage.STEP__GOAL,
+					Prometheus_metamodel_system_specificationPackage.GOAL__STEP);
 		}
 		return goal;
 	}
@@ -151,67 +163,12 @@ public class StepImpl extends EntityImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Goal basicGetGoal() {
-		return goal;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetGoal(Goal newGoal, NotificationChain msgs) {
-		Goal oldGoal = goal;
-		goal = newGoal;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.STEP__GOAL, oldGoal, newGoal);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
-	public void setGoal(Goal newGoal) {
-		if (newGoal != goal) {
-			NotificationChain msgs = null;
-			if (goal != null)
-				msgs = ((InternalEObject) goal).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.GOAL__STEP, Goal.class, msgs);
-			if (newGoal != null)
-				msgs = ((InternalEObject) newGoal).eInverseAdd(this,
-						Prometheus_metamodel_system_specificationPackage.GOAL__STEP, Goal.class, msgs);
-			msgs = basicSetGoal(newGoal, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.STEP__GOAL, newGoal, newGoal));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Percept getPercept() {
-		if (percept != null && percept.eIsProxy()) {
-			InternalEObject oldPercept = (InternalEObject) percept;
-			percept = (Percept) eResolveProxy(oldPercept);
-			if (percept != oldPercept) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT, oldPercept, percept));
-			}
+	public EList<Percept> getPercept() {
+		if (percept == null) {
+			percept = new EObjectWithInverseResolvingEList.ManyInverse<Percept>(Percept.class, this,
+					Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT,
+					Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP);
 		}
 		return percept;
 	}
@@ -221,67 +178,12 @@ public class StepImpl extends EntityImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Percept basicGetPercept() {
-		return percept;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPercept(Percept newPercept, NotificationChain msgs) {
-		Percept oldPercept = percept;
-		percept = newPercept;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT, oldPercept, newPercept);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
-	public void setPercept(Percept newPercept) {
-		if (newPercept != percept) {
-			NotificationChain msgs = null;
-			if (percept != null)
-				msgs = ((InternalEObject) percept).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP, Percept.class, msgs);
-			if (newPercept != null)
-				msgs = ((InternalEObject) newPercept).eInverseAdd(this,
-						Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP, Percept.class, msgs);
-			msgs = basicSetPercept(newPercept, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT, newPercept, newPercept));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Action getAction() {
-		if (action != null && action.eIsProxy()) {
-			InternalEObject oldAction = (InternalEObject) action;
-			action = (Action) eResolveProxy(oldAction);
-			if (action != oldAction) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Prometheus_metamodel_system_specificationPackage.STEP__ACTION, oldAction, action));
-			}
+	public EList<Action> getAction() {
+		if (action == null) {
+			action = new EObjectWithInverseResolvingEList.ManyInverse<Action>(Action.class, this,
+					Prometheus_metamodel_system_specificationPackage.STEP__ACTION,
+					Prometheus_metamodel_system_specificationPackage.ACTION__STEP);
 		}
 		return action;
 	}
@@ -291,50 +193,14 @@ public class StepImpl extends EntityImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action basicGetAction() {
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs) {
-		Action oldAction = action;
-		action = newAction;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.STEP__ACTION, oldAction, newAction);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
-	public void setAction(Action newAction) {
-		if (newAction != action) {
-			NotificationChain msgs = null;
-			if (action != null)
-				msgs = ((InternalEObject) action).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.ACTION__STEP, Action.class, msgs);
-			if (newAction != null)
-				msgs = ((InternalEObject) newAction).eInverseAdd(this,
-						Prometheus_metamodel_system_specificationPackage.ACTION__STEP, Action.class, msgs);
-			msgs = basicSetAction(newAction, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.STEP__ACTION, newAction, newAction));
+	public EList<Scenario> getScenario() {
+		if (scenario == null) {
+			scenario = new EObjectWithInverseResolvingEList.ManyInverse<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.STEP__SCENARIO,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP);
+		}
+		return scenario;
 	}
 
 	/**
@@ -342,24 +208,18 @@ public class StepImpl extends EntityImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.STEP__GOAL:
-			if (goal != null)
-				msgs = ((InternalEObject) goal).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.GOAL__STEP, Goal.class, msgs);
-			return basicSetGoal((Goal) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getGoal()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT:
-			if (percept != null)
-				msgs = ((InternalEObject) percept).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP, Percept.class, msgs);
-			return basicSetPercept((Percept) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPercept()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.STEP__ACTION:
-			if (action != null)
-				msgs = ((InternalEObject) action).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.ACTION__STEP, Action.class, msgs);
-			return basicSetAction((Action) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAction()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.STEP__SCENARIO:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -373,11 +233,13 @@ public class StepImpl extends EntityImpl implements Step {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.STEP__GOAL:
-			return basicSetGoal(null, msgs);
+			return ((InternalEList<?>) getGoal()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT:
-			return basicSetPercept(null, msgs);
+			return ((InternalEList<?>) getPercept()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.STEP__ACTION:
-			return basicSetAction(null, msgs);
+			return ((InternalEList<?>) getAction()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.STEP__SCENARIO:
+			return ((InternalEList<?>) getScenario()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -393,17 +255,13 @@ public class StepImpl extends EntityImpl implements Step {
 		case Prometheus_metamodel_system_specificationPackage.STEP__TYPE_STEP:
 			return getType_step();
 		case Prometheus_metamodel_system_specificationPackage.STEP__GOAL:
-			if (resolve)
-				return getGoal();
-			return basicGetGoal();
+			return getGoal();
 		case Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT:
-			if (resolve)
-				return getPercept();
-			return basicGetPercept();
+			return getPercept();
 		case Prometheus_metamodel_system_specificationPackage.STEP__ACTION:
-			if (resolve)
-				return getAction();
-			return basicGetAction();
+			return getAction();
+		case Prometheus_metamodel_system_specificationPackage.STEP__SCENARIO:
+			return getScenario();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -413,6 +271,7 @@ public class StepImpl extends EntityImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -420,13 +279,20 @@ public class StepImpl extends EntityImpl implements Step {
 			setType_step((Enum_Type_Step) newValue);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.STEP__GOAL:
-			setGoal((Goal) newValue);
+			getGoal().clear();
+			getGoal().addAll((Collection<? extends Goal>) newValue);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT:
-			setPercept((Percept) newValue);
+			getPercept().clear();
+			getPercept().addAll((Collection<? extends Percept>) newValue);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.STEP__ACTION:
-			setAction((Action) newValue);
+			getAction().clear();
+			getAction().addAll((Collection<? extends Action>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.STEP__SCENARIO:
+			getScenario().clear();
+			getScenario().addAll((Collection<? extends Scenario>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -444,13 +310,16 @@ public class StepImpl extends EntityImpl implements Step {
 			setType_step(TYPE_STEP_EDEFAULT);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.STEP__GOAL:
-			setGoal((Goal) null);
+			getGoal().clear();
 			return;
 		case Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT:
-			setPercept((Percept) null);
+			getPercept().clear();
 			return;
 		case Prometheus_metamodel_system_specificationPackage.STEP__ACTION:
-			setAction((Action) null);
+			getAction().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.STEP__SCENARIO:
+			getScenario().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -467,11 +336,13 @@ public class StepImpl extends EntityImpl implements Step {
 		case Prometheus_metamodel_system_specificationPackage.STEP__TYPE_STEP:
 			return type_step != TYPE_STEP_EDEFAULT;
 		case Prometheus_metamodel_system_specificationPackage.STEP__GOAL:
-			return goal != null;
+			return goal != null && !goal.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT:
-			return percept != null;
+			return percept != null && !percept.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.STEP__ACTION:
-			return action != null;
+			return action != null && !action.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.STEP__SCENARIO:
+			return scenario != null && !scenario.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

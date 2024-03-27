@@ -198,27 +198,17 @@ public interface Percept extends Entity {
 	void setExternal_path(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Step</b></em>' reference.
+	 * Returns the value of the '<em><b>Step</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Step}.
 	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Step#getPercept <em>Percept</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Step</em>' reference.
-	 * @see #setStep(Step)
+	 * @return the value of the '<em>Step</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept_Step()
 	 * @see prometheus_metamodel_system_specification.Step#getPercept
 	 * @model opposite="percept"
 	 * @generated
 	 */
-	Step getStep();
-
-	/**
-	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Percept#getStep <em>Step</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Step</em>' reference.
-	 * @see #getStep()
-	 * @generated
-	 */
-	void setStep(Step value);
+	EList<Step> getStep();
 
 } // Percept

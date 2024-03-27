@@ -42,26 +42,10 @@ public class Logical_ObjectItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPhysical_objectPropertyDescriptor(object);
 			addFunctionalityPropertyDescriptor(object);
+			addPhysical_objectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Physical object feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPhysical_objectPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Logical_Object_physical_object_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Logical_Object_physical_object_feature",
-								"_UI_Logical_Object_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__PHYSICAL_OBJECT, true,
-						false, true, null, null, null));
 	}
 
 	/**
@@ -77,6 +61,22 @@ public class Logical_ObjectItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Logical_Object_functionality_feature",
 								"_UI_Logical_Object_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__FUNCTIONALITY, true,
+						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Physical object feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPhysical_objectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Logical_Object_physical_object_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Logical_Object_physical_object_feature",
+								"_UI_Logical_Object_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__PHYSICAL_OBJECT, true,
 						false, true, null, null, null));
 	}
 

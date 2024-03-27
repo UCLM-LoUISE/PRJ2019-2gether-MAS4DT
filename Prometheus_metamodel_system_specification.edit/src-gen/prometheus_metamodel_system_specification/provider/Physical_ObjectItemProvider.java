@@ -47,6 +47,7 @@ public class Physical_ObjectItemProvider extends EntityItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addScenarioPropertyDescriptor(object);
+			addLogical_objectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,6 +65,22 @@ public class Physical_ObjectItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Physical_Object_scenario_feature",
 								"_UI_Physical_Object_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__SCENARIO, true,
+						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Logical object feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogical_objectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Physical_Object_logical_object_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Physical_Object_logical_object_feature",
+								"_UI_Physical_Object_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__LOGICAL_OBJECT, true,
 						false, true, null, null, null));
 	}
 

@@ -649,6 +649,16 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
+	public EReference getPhysical_Object_Logical_object() {
+		return (EReference) physical_ObjectEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getLogical_Object() {
 		return logical_ObjectEClass;
 	}
@@ -660,7 +670,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getLogical_Object_Physical_object() {
-		return (EReference) logical_ObjectEClass.getEStructuralFeatures().get(0);
+		return (EReference) logical_ObjectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -670,7 +680,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getLogical_Object_Functionality() {
-		return (EReference) logical_ObjectEClass.getEStructuralFeatures().get(1);
+		return (EReference) logical_ObjectEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -761,6 +771,16 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	@Override
 	public EReference getScenario_Scenario() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getScenario_Step() {
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -969,6 +989,16 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
+	public EReference getStep_Scenario() {
+		return (EReference) stepEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getEnum_Type_of_Relationship() {
 		return enum_Type_of_RelationshipEEnum;
 	}
@@ -1081,10 +1111,11 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		physical_ObjectEClass = createEClass(PHYSICAL_OBJECT);
 		createEReference(physical_ObjectEClass, PHYSICAL_OBJECT__SCENARIO);
 		createEReference(physical_ObjectEClass, PHYSICAL_OBJECT__PHYSICAL_OBJECT);
+		createEReference(physical_ObjectEClass, PHYSICAL_OBJECT__LOGICAL_OBJECT);
 
 		logical_ObjectEClass = createEClass(LOGICAL_OBJECT);
-		createEReference(logical_ObjectEClass, LOGICAL_OBJECT__PHYSICAL_OBJECT);
 		createEReference(logical_ObjectEClass, LOGICAL_OBJECT__FUNCTIONALITY);
+		createEReference(logical_ObjectEClass, LOGICAL_OBJECT__PHYSICAL_OBJECT);
 
 		scenarioEClass = createEClass(SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__PHYSICAL_OBJECT);
@@ -1095,6 +1126,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEAttribute(scenarioEClass, SCENARIO__VARIATION);
 		createEAttribute(scenarioEClass, SCENARIO__PRIORITY);
 		createEReference(scenarioEClass, SCENARIO__SCENARIO);
+		createEReference(scenarioEClass, SCENARIO__STEP);
 
 		functionalityEClass = createEClass(FUNCTIONALITY);
 		createEReference(functionalityEClass, FUNCTIONALITY__LOGICAL_OBJECT);
@@ -1119,6 +1151,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(stepEClass, STEP__GOAL);
 		createEReference(stepEClass, STEP__PERCEPT);
 		createEReference(stepEClass, STEP__ACTION);
+		createEReference(stepEClass, STEP__SCENARIO);
 
 		// Create enums
 		enum_Type_of_RelationshipEEnum = createEEnum(ENUM_TYPE_OF_RELATIONSHIP);
@@ -1163,7 +1196,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		physical_ObjectEClass.getESuperTypes().add(this.getEntity());
 		logical_ObjectEClass.getESuperTypes().add(this.getEntity());
 		scenarioEClass.getESuperTypes().add(this.getEntity());
-		scenarioEClass.getESuperTypes().add(this.getStep());
 		functionalityEClass.getESuperTypes().add(this.getEntity());
 		stepEClass.getESuperTypes().add(this.getEntity());
 
@@ -1213,7 +1245,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getGoal_Model(), this.getModel(), this.getModel_Goals(), "model", null, 1, 1, Goal.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGoal_Step(), this.getStep(), this.getStep_Goal(), "step", null, 0, 1, Goal.class,
+		initEReference(getGoal_Step(), this.getStep(), this.getStep_Goal(), "step", null, 0, -1, Goal.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1232,7 +1264,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAction_Side_effects(), ecorePackage.getEString(), "side_effects", null, 0, 1, Action.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAction_Step(), this.getStep(), this.getStep_Action(), "step", null, 0, 1, Action.class,
+		initEReference(getAction_Step(), this.getStep(), this.getStep_Action(), "step", null, 0, -1, Action.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1259,7 +1291,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEAttribute(getPercept_External_path(), ecorePackage.getEString(), "external_path", null, 0, 1,
 				Percept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getPercept_Step(), this.getStep(), this.getStep_Percept(), "step", null, 0, 1, Percept.class,
+		initEReference(getPercept_Step(), this.getStep(), this.getStep_Percept(), "step", null, 0, -1, Percept.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1283,14 +1315,19 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getPhysical_Object_Physical_object(), this.getPhysical_Object(), null, "physical_object", null,
 				0, -1, Physical_Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysical_Object_Logical_object(), this.getLogical_Object(),
+				this.getLogical_Object_Physical_object(), "logical_object", null, 0, -1, Physical_Object.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(logical_ObjectEClass, Logical_Object.class, "Logical_Object", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLogical_Object_Physical_object(), this.getPhysical_Object(), null, "physical_object", null, 1,
-				-1, Logical_Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLogical_Object_Functionality(), this.getFunctionality(),
 				this.getFunctionality_Logical_object(), "functionality", null, 1, -1, Logical_Object.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogical_Object_Physical_object(), this.getPhysical_Object(),
+				this.getPhysical_Object_Logical_object(), "physical_object", null, 0, -1, Logical_Object.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1315,6 +1352,9 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEAttribute(getScenario_Priority(), ecorePackage.getEInt(), "priority", null, 1, 5, Scenario.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_Scenario(), this.getScenario(), null, "scenario", null, 0, 1, Scenario.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_Step(), this.getStep(), this.getStep_Scenario(), "step", null, 0, -1, Scenario.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1360,15 +1400,18 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStep_Type_step(), this.getEnum_Type_Step(), "type_step", null, 1, 1, Step.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_Goal(), this.getGoal(), this.getGoal_Step(), "goal", null, 0, 1, Step.class,
+		initEReference(getStep_Goal(), this.getGoal(), this.getGoal_Step(), "goal", null, 0, -1, Step.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_Percept(), this.getPercept(), this.getPercept_Step(), "percept", null, 0, 1, Step.class,
+		initEReference(getStep_Percept(), this.getPercept(), this.getPercept_Step(), "percept", null, 0, -1, Step.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_Action(), this.getAction(), this.getAction_Step(), "action", null, 0, 1, Step.class,
+		initEReference(getStep_Action(), this.getAction(), this.getAction_Step(), "action", null, 0, -1, Step.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_Scenario(), this.getScenario(), this.getScenario_Step(), "scenario", null, 0, -1,
+				Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(enum_Type_of_RelationshipEEnum, Enum_Type_of_Relationship.class, "Enum_Type_of_Relationship");

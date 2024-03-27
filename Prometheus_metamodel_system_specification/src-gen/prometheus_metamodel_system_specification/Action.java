@@ -152,27 +152,17 @@ public interface Action extends Entity {
 	void setSide_effects(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Step</b></em>' reference.
+	 * Returns the value of the '<em><b>Step</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Step}.
 	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Step#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Step</em>' reference.
-	 * @see #setStep(Step)
+	 * @return the value of the '<em>Step</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Step()
 	 * @see prometheus_metamodel_system_specification.Step#getAction
 	 * @model opposite="action"
 	 * @generated
 	 */
-	Step getStep();
-
-	/**
-	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Action#getStep <em>Step</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Step</em>' reference.
-	 * @see #getStep()
-	 * @generated
-	 */
-	void setStep(Step value);
+	EList<Step> getStep();
 
 } // Action

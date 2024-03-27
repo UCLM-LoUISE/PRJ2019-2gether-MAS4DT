@@ -47,10 +47,6 @@ public class ScenarioItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addType_stepPropertyDescriptor(object);
-			addGoalPropertyDescriptor(object);
-			addPerceptPropertyDescriptor(object);
-			addActionPropertyDescriptor(object);
 			addPhysical_objectPropertyDescriptor(object);
 			addContextPropertyDescriptor(object);
 			addFunctionalityPropertyDescriptor(object);
@@ -58,68 +54,9 @@ public class ScenarioItemProvider extends EntityItemProvider {
 			addVariationPropertyDescriptor(object);
 			addPriorityPropertyDescriptor(object);
 			addScenarioPropertyDescriptor(object);
+			addStepPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Type step feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addType_stepPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Step_type_step_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Step_type_step_feature", "_UI_Step_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.STEP__TYPE_STEP, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Goal feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGoalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Step_goal_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Step_goal_feature", "_UI_Step_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.STEP__GOAL, true, false, true, null,
-						null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Percept feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPerceptPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Step_percept_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Step_percept_feature", "_UI_Step_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.STEP__PERCEPT, true, false, true,
-						null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Action feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Step_action_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Step_action_feature", "_UI_Step_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.STEP__ACTION, true, false, true, null,
-						null, null));
 	}
 
 	/**
@@ -235,6 +172,22 @@ public class ScenarioItemProvider extends EntityItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Step feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStepPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_step_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_step_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__STEP, true, false, true,
+						null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -310,7 +263,6 @@ public class ScenarioItemProvider extends EntityItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Scenario.class)) {
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__TYPE_STEP:
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__TRIGGER:
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__VARIATION:
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PRIORITY:
@@ -333,10 +285,6 @@ public class ScenarioItemProvider extends EntityItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors
-				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__STEPS,
-						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createScenario()));
 
 		newChildDescriptors
 				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__STEPS,

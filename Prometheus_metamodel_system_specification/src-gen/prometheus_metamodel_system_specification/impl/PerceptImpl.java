@@ -194,14 +194,14 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	protected String external_path = EXTERNAL_PATH_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getStep() <em>Step</em>}' reference.
+	 * The cached value of the '{@link #getStep() <em>Step</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStep()
 	 * @generated
 	 * @ordered
 	 */
-	protected Step step;
+	protected EList<Step> step;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -416,68 +416,13 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	 * @generated
 	 */
 	@Override
-	public Step getStep() {
-		if (step != null && step.eIsProxy()) {
-			InternalEObject oldStep = (InternalEObject) step;
-			step = (Step) eResolveProxy(oldStep);
-			if (step != oldStep) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP, oldStep, step));
-			}
+	public EList<Step> getStep() {
+		if (step == null) {
+			step = new EObjectWithInverseResolvingEList.ManyInverse<Step>(Step.class, this,
+					Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP,
+					Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT);
 		}
 		return step;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Step basicGetStep() {
-		return step;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStep(Step newStep, NotificationChain msgs) {
-		Step oldStep = step;
-		step = newStep;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP, oldStep, newStep);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStep(Step newStep) {
-		if (newStep != step) {
-			NotificationChain msgs = null;
-			if (step != null)
-				msgs = ((InternalEObject) step).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT, Step.class, msgs);
-			if (newStep != null)
-				msgs = ((InternalEObject) newStep).eInverseAdd(this,
-						Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT, Step.class, msgs);
-			msgs = basicSetStep(newStep, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP, newStep, newStep));
 	}
 
 	/**
@@ -492,10 +437,7 @@ public class PerceptImpl extends EntityImpl implements Percept {
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__FUNCTIONALITY:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFunctionality()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
-			if (step != null)
-				msgs = ((InternalEObject) step).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.STEP__PERCEPT, Step.class, msgs);
-			return basicSetStep((Step) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStep()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -511,7 +453,7 @@ public class PerceptImpl extends EntityImpl implements Percept {
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__FUNCTIONALITY:
 			return ((InternalEList<?>) getFunctionality()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
-			return basicSetStep(null, msgs);
+			return ((InternalEList<?>) getStep()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -541,9 +483,7 @@ public class PerceptImpl extends EntityImpl implements Percept {
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__EXTERNAL_PATH:
 			return getExternal_path();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
-			if (resolve)
-				return getStep();
-			return basicGetStep();
+			return getStep();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -583,7 +523,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			setExternal_path((String) newValue);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
-			setStep((Step) newValue);
+			getStep().clear();
+			getStep().addAll((Collection<? extends Step>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -622,7 +563,7 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			setExternal_path(EXTERNAL_PATH_EDEFAULT);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
-			setStep((Step) null);
+			getStep().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -657,7 +598,7 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return EXTERNAL_PATH_EDEFAULT == null ? external_path != null
 					: !EXTERNAL_PATH_EDEFAULT.equals(external_path);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
-			return step != null;
+			return step != null && !step.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
