@@ -13,13 +13,13 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.Action#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getFunctionality <em>Functionality</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getParameters <em>Parameters</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getDuration <em>Duration</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getFailure <em>Failure</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getPartial_change <em>Partial change</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getSide_effects <em>Side effects</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Action#getStep <em>Step</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction()
@@ -27,20 +27,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Action extends Entity {
-	/**
-	 * Returns the value of the '<em><b>Scenario</b></em>' reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Scenario#getAction <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scenario</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Scenario()
-	 * @see prometheus_metamodel_system_specification.Scenario#getAction
-	 * @model opposite="action" required="true"
-	 * @generated
-	 */
-	EList<Scenario> getScenario();
-
 	/**
 	 * Returns the value of the '<em><b>Functionality</b></em>' reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Functionality}.
@@ -164,5 +150,29 @@ public interface Action extends Entity {
 	 * @generated
 	 */
 	void setSide_effects(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Step</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Step#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Step</em>' reference.
+	 * @see #setStep(Step)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Step()
+	 * @see prometheus_metamodel_system_specification.Step#getAction
+	 * @model opposite="action"
+	 * @generated
+	 */
+	Step getStep();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Action#getStep <em>Step</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Step</em>' reference.
+	 * @see #getStep()
+	 * @generated
+	 */
+	void setStep(Step value);
 
 } // Action

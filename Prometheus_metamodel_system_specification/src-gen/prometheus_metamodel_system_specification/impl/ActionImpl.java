@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import prometheus_metamodel_system_specification.Action;
 import prometheus_metamodel_system_specification.Functionality;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
-import prometheus_metamodel_system_specification.Scenario;
+import prometheus_metamodel_system_specification.Step;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,28 +29,18 @@ import prometheus_metamodel_system_specification.Scenario;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getFunctionality <em>Functionality</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getDuration <em>Duration</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getFailure <em>Failure</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getPartial_change <em>Partial change</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getSide_effects <em>Side effects</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getStep <em>Step</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ActionImpl extends EntityImpl implements Action {
-	/**
-	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScenario()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Scenario> scenario;
-
 	/**
 	 * The cached value of the '{@link #getFunctionality() <em>Functionality</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -162,6 +152,16 @@ public class ActionImpl extends EntityImpl implements Action {
 	protected String side_effects = SIDE_EFFECTS_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getStep() <em>Step</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStep()
+	 * @generated
+	 * @ordered
+	 */
+	protected Step step;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -178,21 +178,6 @@ public class ActionImpl extends EntityImpl implements Action {
 	@Override
 	protected EClass eStaticClass() {
 		return Prometheus_metamodel_system_specificationPackage.Literals.ACTION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Scenario> getScenario() {
-		if (scenario == null) {
-			scenario = new EObjectWithInverseResolvingEList.ManyInverse<Scenario>(Scenario.class, this,
-					Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO,
-					Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTION);
-		}
-		return scenario;
 	}
 
 	/**
@@ -337,14 +322,87 @@ public class ActionImpl extends EntityImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Step getStep() {
+		if (step != null && step.eIsProxy()) {
+			InternalEObject oldStep = (InternalEObject) step;
+			step = (Step) eResolveProxy(oldStep);
+			if (step != oldStep) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							Prometheus_metamodel_system_specificationPackage.ACTION__STEP, oldStep, step));
+			}
+		}
+		return step;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Step basicGetStep() {
+		return step;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStep(Step newStep, NotificationChain msgs) {
+		Step oldStep = step;
+		step = newStep;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					Prometheus_metamodel_system_specificationPackage.ACTION__STEP, oldStep, newStep);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStep(Step newStep) {
+		if (newStep != step) {
+			NotificationChain msgs = null;
+			if (step != null)
+				msgs = ((InternalEObject) step).eInverseRemove(this,
+						Prometheus_metamodel_system_specificationPackage.STEP__ACTION, Step.class, msgs);
+			if (newStep != null)
+				msgs = ((InternalEObject) newStep).eInverseAdd(this,
+						Prometheus_metamodel_system_specificationPackage.STEP__ACTION, Step.class, msgs);
+			msgs = basicSetStep(newStep, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prometheus_metamodel_system_specificationPackage.ACTION__STEP, newStep, newStep));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ACTION__FUNCTIONALITY:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFunctionality()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
+			if (step != null)
+				msgs = ((InternalEObject) step).eInverseRemove(this,
+						Prometheus_metamodel_system_specificationPackage.STEP__ACTION, Step.class, msgs);
+			return basicSetStep((Step) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -357,10 +415,10 @@ public class ActionImpl extends EntityImpl implements Action {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO:
-			return ((InternalEList<?>) getScenario()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ACTION__FUNCTIONALITY:
 			return ((InternalEList<?>) getFunctionality()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
+			return basicSetStep(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -373,8 +431,6 @@ public class ActionImpl extends EntityImpl implements Action {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO:
-			return getScenario();
 		case Prometheus_metamodel_system_specificationPackage.ACTION__FUNCTIONALITY:
 			return getFunctionality();
 		case Prometheus_metamodel_system_specificationPackage.ACTION__PARAMETERS:
@@ -387,6 +443,10 @@ public class ActionImpl extends EntityImpl implements Action {
 			return getPartial_change();
 		case Prometheus_metamodel_system_specificationPackage.ACTION__SIDE_EFFECTS:
 			return getSide_effects();
+		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
+			if (resolve)
+				return getStep();
+			return basicGetStep();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -400,10 +460,6 @@ public class ActionImpl extends EntityImpl implements Action {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO:
-			getScenario().clear();
-			getScenario().addAll((Collection<? extends Scenario>) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.ACTION__FUNCTIONALITY:
 			getFunctionality().clear();
 			getFunctionality().addAll((Collection<? extends Functionality>) newValue);
@@ -423,6 +479,9 @@ public class ActionImpl extends EntityImpl implements Action {
 		case Prometheus_metamodel_system_specificationPackage.ACTION__SIDE_EFFECTS:
 			setSide_effects((String) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
+			setStep((Step) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -435,9 +494,6 @@ public class ActionImpl extends EntityImpl implements Action {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO:
-			getScenario().clear();
-			return;
 		case Prometheus_metamodel_system_specificationPackage.ACTION__FUNCTIONALITY:
 			getFunctionality().clear();
 			return;
@@ -456,6 +512,9 @@ public class ActionImpl extends EntityImpl implements Action {
 		case Prometheus_metamodel_system_specificationPackage.ACTION__SIDE_EFFECTS:
 			setSide_effects(SIDE_EFFECTS_EDEFAULT);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
+			setStep((Step) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -468,8 +527,6 @@ public class ActionImpl extends EntityImpl implements Action {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO:
-			return scenario != null && !scenario.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.ACTION__FUNCTIONALITY:
 			return functionality != null && !functionality.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.ACTION__PARAMETERS:
@@ -483,6 +540,8 @@ public class ActionImpl extends EntityImpl implements Action {
 					: !PARTIAL_CHANGE_EDEFAULT.equals(partial_change);
 		case Prometheus_metamodel_system_specificationPackage.ACTION__SIDE_EFFECTS:
 			return SIDE_EFFECTS_EDEFAULT == null ? side_effects != null : !SIDE_EFFECTS_EDEFAULT.equals(side_effects);
+		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
+			return step != null;
 		}
 		return super.eIsSet(featureID);
 	}

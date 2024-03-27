@@ -45,6 +45,9 @@ public class StepItemProvider extends EntityItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addType_stepPropertyDescriptor(object);
+			addGoalPropertyDescriptor(object);
+			addPerceptPropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -62,6 +65,51 @@ public class StepItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Step_type_step_feature", "_UI_Step_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.STEP__TYPE_STEP, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Goal feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGoalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Step_goal_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Step_goal_feature", "_UI_Step_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.STEP__GOAL, true, false, true, null,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Percept feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPerceptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Step_percept_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Step_percept_feature", "_UI_Step_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.STEP__PERCEPT, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Step_action_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Step_action_feature", "_UI_Step_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.STEP__ACTION, true, false, true, null,
+						null, null));
 	}
 
 	/**

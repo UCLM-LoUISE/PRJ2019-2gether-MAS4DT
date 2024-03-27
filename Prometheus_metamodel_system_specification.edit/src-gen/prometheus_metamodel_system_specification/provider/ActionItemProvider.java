@@ -44,31 +44,15 @@ public class ActionItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addScenarioPropertyDescriptor(object);
 			addFunctionalityPropertyDescriptor(object);
 			addParametersPropertyDescriptor(object);
 			addDurationPropertyDescriptor(object);
 			addFailurePropertyDescriptor(object);
 			addPartial_changePropertyDescriptor(object);
 			addSide_effectsPropertyDescriptor(object);
+			addStepPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Scenario feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScenarioPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Action_scenario_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Action_scenario_feature",
-								"_UI_Action_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__SCENARIO, true, false, true,
-						null, null, null));
 	}
 
 	/**
@@ -165,6 +149,21 @@ public class ActionItemProvider extends EntityItemProvider {
 								"_UI_Action_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__SIDE_EFFECTS, true, false,
 						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Step feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStepPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_step_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_step_feature", "_UI_Action_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__STEP, true, false, true, null,
+						null, null));
 	}
 
 	/**

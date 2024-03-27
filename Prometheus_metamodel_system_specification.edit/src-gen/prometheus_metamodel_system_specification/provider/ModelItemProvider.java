@@ -70,13 +70,13 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PERCEPT);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ACTION);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CONTEXT);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIO);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PHYSICAL_OBJECT);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__LOGICAL_OBJECT);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__FUNCTIONALITY);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PERCEPTS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ACTIONS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CONTEXTS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIOS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PHYSICAL_OBJECTS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__LOGICAL_OBJECTS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__FUNCTIONALITIES);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOALS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL_RELATIONSHIPS);
 		}
@@ -140,13 +140,13 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Model.class)) {
-		case Prometheus_metamodel_system_specificationPackage.MODEL__PERCEPT:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTION:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXT:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIO:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECT:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__LOGICAL_OBJECT:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITY:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__PERCEPTS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTIONS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXTS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECTS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__LOGICAL_OBJECTS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITIES:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -167,31 +167,31 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors
-				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PERCEPT,
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PERCEPTS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createPercept()));
 
 		newChildDescriptors
-				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ACTION,
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ACTIONS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createAction()));
 
 		newChildDescriptors
-				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CONTEXT,
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CONTEXTS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createContext()));
 
 		newChildDescriptors
-				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIO,
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIOS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createScenario()));
 
 		newChildDescriptors.add(
-				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PHYSICAL_OBJECT,
+				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PHYSICAL_OBJECTS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createPhysical_Object()));
 
 		newChildDescriptors.add(
-				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__LOGICAL_OBJECT,
+				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__LOGICAL_OBJECTS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createLogical_Object()));
 
 		newChildDescriptors.add(
-				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__FUNCTIONALITY,
+				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__FUNCTIONALITIES,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createFunctionality()));
 
 		newChildDescriptors

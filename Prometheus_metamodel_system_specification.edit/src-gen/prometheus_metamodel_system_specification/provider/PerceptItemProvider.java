@@ -44,7 +44,6 @@ public class PerceptItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addScenarioPropertyDescriptor(object);
 			addFunctionalityPropertyDescriptor(object);
 			addInformation_carriedPropertyDescriptor(object);
 			addKnowledge_updatedPropertyDescriptor(object);
@@ -53,24 +52,9 @@ public class PerceptItemProvider extends EntityItemProvider {
 			addExpected_frequencyPropertyDescriptor(object);
 			addExternal_to_systemPropertyDescriptor(object);
 			addExternal_pathPropertyDescriptor(object);
+			addStepPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Scenario feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScenarioPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Percept_scenario_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Percept_scenario_feature",
-								"_UI_Percept_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__SCENARIO, true, false, true,
-						null, null, null));
 	}
 
 	/**
@@ -199,6 +183,21 @@ public class PerceptItemProvider extends EntityItemProvider {
 								"_UI_Percept_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__EXTERNAL_PATH, true, false,
 						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Step feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStepPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_step_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_step_feature", "_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__STEP, true, false, true,
+						null, null, null));
 	}
 
 	/**

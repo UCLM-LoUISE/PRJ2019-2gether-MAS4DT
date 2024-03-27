@@ -13,37 +13,21 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.Scenario#getGoal <em>Goal</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getContext <em>Context</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Scenario#getAction <em>Action</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Scenario#getPercept <em>Percept</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getFunctionality <em>Functionality</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getSteps <em>Steps</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getVariation <em>Variation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getPriority <em>Priority</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Scenario#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario()
  * @model
  * @generated
  */
-public interface Scenario extends Entity {
-	/**
-	 * Returns the value of the '<em><b>Goal</b></em>' reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Goal}.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getScenario <em>Scenario</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Goal</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Goal()
-	 * @see prometheus_metamodel_system_specification.Goal#getScenario
-	 * @model opposite="scenario" required="true"
-	 * @generated
-	 */
-	EList<Goal> getGoal();
-
+public interface Scenario extends Entity, Step {
 	/**
 	 * Returns the value of the '<em><b>Physical object</b></em>' reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Physical_Object}.
@@ -81,34 +65,6 @@ public interface Scenario extends Entity {
 	 * @generated
 	 */
 	void setContext(Context value);
-
-	/**
-	 * Returns the value of the '<em><b>Action</b></em>' reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Action}.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Action#getScenario <em>Scenario</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Action()
-	 * @see prometheus_metamodel_system_specification.Action#getScenario
-	 * @model opposite="scenario" required="true"
-	 * @generated
-	 */
-	EList<Action> getAction();
-
-	/**
-	 * Returns the value of the '<em><b>Percept</b></em>' reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Percept}.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Percept#getScenario <em>Scenario</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Percept</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Percept()
-	 * @see prometheus_metamodel_system_specification.Percept#getScenario
-	 * @model opposite="scenario" required="true"
-	 * @generated
-	 */
-	EList<Percept> getPercept();
 
 	/**
 	 * Returns the value of the '<em><b>Functionality</b></em>' reference list.
@@ -191,5 +147,27 @@ public interface Scenario extends Entity {
 	 * @generated
 	 */
 	EList<Integer> getPriority();
+
+	/**
+	 * Returns the value of the '<em><b>Scenario</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenario</em>' reference.
+	 * @see #setScenario(Scenario)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Scenario()
+	 * @model
+	 * @generated
+	 */
+	Scenario getScenario();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Scenario#getScenario <em>Scenario</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Scenario</em>' reference.
+	 * @see #getScenario()
+	 * @generated
+	 */
+	void setScenario(Scenario value);
 
 } // Scenario

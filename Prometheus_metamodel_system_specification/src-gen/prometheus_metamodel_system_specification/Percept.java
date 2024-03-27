@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.Percept#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getFunctionality <em>Functionality</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getInformation_carried <em>Information carried</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getKnowledge_updated <em>Knowledge updated</em>}</li>
@@ -22,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getExpected_frequency <em>Expected frequency</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#isExternal_to_system <em>External to system</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getExternal_path <em>External path</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Percept#getStep <em>Step</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept()
@@ -29,20 +29,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Percept extends Entity {
-	/**
-	 * Returns the value of the '<em><b>Scenario</b></em>' reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Scenario#getPercept <em>Percept</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scenario</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept_Scenario()
-	 * @see prometheus_metamodel_system_specification.Scenario#getPercept
-	 * @model opposite="percept" required="true"
-	 * @generated
-	 */
-	EList<Scenario> getScenario();
-
 	/**
 	 * Returns the value of the '<em><b>Functionality</b></em>' reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Functionality}.
@@ -210,5 +196,29 @@ public interface Percept extends Entity {
 	 * @generated
 	 */
 	void setExternal_path(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Step</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Step#getPercept <em>Percept</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Step</em>' reference.
+	 * @see #setStep(Step)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept_Step()
+	 * @see prometheus_metamodel_system_specification.Step#getPercept
+	 * @model opposite="percept"
+	 * @generated
+	 */
+	Step getStep();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Percept#getStep <em>Step</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Step</em>' reference.
+	 * @see #getStep()
+	 * @generated
+	 */
+	void setStep(Step value);
 
 } // Percept

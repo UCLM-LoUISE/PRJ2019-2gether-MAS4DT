@@ -13,10 +13,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.Goal#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from <em>Goal relationship from</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to <em>Goal relationship to</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal#getModel <em>Model</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Goal#getStep <em>Step</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal()
@@ -24,20 +24,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Goal extends Entity {
-	/**
-	 * Returns the value of the '<em><b>Scenario</b></em>' reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Scenario#getGoal <em>Goal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scenario</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Scenario()
-	 * @see prometheus_metamodel_system_specification.Scenario#getGoal
-	 * @model opposite="goal" required="true"
-	 * @generated
-	 */
-	EList<Scenario> getScenario();
-
 	/**
 	 * Returns the value of the '<em><b>Goal relationship from</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from <em>Goal from</em>}'.
@@ -99,5 +85,29 @@ public interface Goal extends Entity {
 	 * @generated
 	 */
 	void setModel(Model value);
+
+	/**
+	 * Returns the value of the '<em><b>Step</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Step#getGoal <em>Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Step</em>' reference.
+	 * @see #setStep(Step)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Step()
+	 * @see prometheus_metamodel_system_specification.Step#getGoal
+	 * @model opposite="goal"
+	 * @generated
+	 */
+	Step getStep();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal#getStep <em>Step</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Step</em>' reference.
+	 * @see #getStep()
+	 * @generated
+	 */
+	void setStep(Step value);
 
 } // Goal

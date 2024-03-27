@@ -42,27 +42,12 @@ public class GoalItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addScenarioPropertyDescriptor(object);
 			addGoal_relationship_fromPropertyDescriptor(object);
 			addGoal_relationship_toPropertyDescriptor(object);
 			addModelPropertyDescriptor(object);
+			addStepPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Scenario feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScenarioPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Goal_scenario_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Goal_scenario_feature", "_UI_Goal_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__SCENARIO, true, false, true,
-						null, null, null));
 	}
 
 	/**
@@ -109,6 +94,21 @@ public class GoalItemProvider extends EntityItemProvider {
 						getResourceLocator(), getString("_UI_Goal_model_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Goal_model_feature", "_UI_Goal_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__MODEL, true, false, true, null,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Step feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStepPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Goal_step_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_step_feature", "_UI_Goal_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__STEP, true, false, true, null,
 						null, null));
 	}
 
