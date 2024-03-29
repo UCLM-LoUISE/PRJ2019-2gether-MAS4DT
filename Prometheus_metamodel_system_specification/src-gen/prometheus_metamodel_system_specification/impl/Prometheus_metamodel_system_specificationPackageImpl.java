@@ -769,18 +769,8 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getScenario_Scenario() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getScenario_Step() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(8);
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1125,7 +1115,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEAttribute(scenarioEClass, SCENARIO__TRIGGER);
 		createEAttribute(scenarioEClass, SCENARIO__VARIATION);
 		createEAttribute(scenarioEClass, SCENARIO__PRIORITY);
-		createEReference(scenarioEClass, SCENARIO__SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__STEP);
 
 		functionalityEClass = createEClass(FUNCTIONALITY);
@@ -1236,11 +1225,11 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGoal_Goal_relationship_from(), this.getGoal_Relationship(),
-				this.getGoal_Relationship_Goal_from(), "goal_relationship_from", null, 0, 1, Goal.class, !IS_TRANSIENT,
+				this.getGoal_Relationship_Goal_from(), "goal_relationship_from", null, 0, -1, Goal.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getGoal_Goal_relationship_to(), this.getGoal_Relationship(), this.getGoal_Relationship_Goal_to(),
-				"goal_relationship_to", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				"goal_relationship_to", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGoal_Model(), this.getModel(), this.getModel_Goals(), "model", null, 1, 1, Goal.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -1351,9 +1340,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenario_Priority(), ecorePackage.getEInt(), "priority", null, 1, 5, Scenario.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScenario_Scenario(), this.getScenario(), null, "scenario", null, 0, 1, Scenario.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_Step(), this.getStep(), this.getStep_Scenario(), "step", null, 0, -1, Scenario.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

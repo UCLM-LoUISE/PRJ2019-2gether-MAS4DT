@@ -28,9 +28,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Goal" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_from"
-        eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_from"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_to" upperBound="-1"
-        eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_to"/>
+        upperBound="-1" eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_to" eType="#//Goal_Relationship"
+        eOpposite="#//Goal_Relationship/goal_to"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//Model"
         eOpposite="#//Model/goals"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
@@ -94,7 +94,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" lowerBound="1"
         upperBound="5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
         eOpposite="#//Step/scenario"/>
   </eClassifiers>

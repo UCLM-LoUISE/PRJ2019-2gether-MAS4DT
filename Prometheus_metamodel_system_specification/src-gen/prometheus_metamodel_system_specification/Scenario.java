@@ -20,7 +20,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getVariation <em>Variation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getPriority <em>Priority</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Scenario#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getStep <em>Step</em>}</li>
  * </ul>
  *
@@ -148,28 +147,6 @@ public interface Scenario extends Entity {
 	 * @generated
 	 */
 	EList<Integer> getPriority();
-
-	/**
-	 * Returns the value of the '<em><b>Scenario</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scenario</em>' reference.
-	 * @see #setScenario(Scenario)
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Scenario()
-	 * @model
-	 * @generated
-	 */
-	Scenario getScenario();
-
-	/**
-	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Scenario#getScenario <em>Scenario</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scenario</em>' reference.
-	 * @see #getScenario()
-	 * @generated
-	 */
-	void setScenario(Scenario value);
 
 	/**
 	 * Returns the value of the '<em><b>Step</b></em>' reference list.

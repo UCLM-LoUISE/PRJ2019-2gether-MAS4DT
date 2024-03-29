@@ -5,7 +5,7 @@
     <semanticResources>prometheus_metamodel_system_specification.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_-eZooM_TEe6kgoN19aXUZA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_-8ItgM_TEe6kgoN19aXUZA" name="prometheus_metamodel_system_specification class diagram" repPath="#_-71LgM_TEe6kgoN19aXUZA" changeId="1711549709752">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_-8ItgM_TEe6kgoN19aXUZA" name="prometheus_metamodel_system_specification class diagram" repPath="#_-71LgM_TEe6kgoN19aXUZA" changeId="1711729999914">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="prometheus_metamodel_system_specification.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -853,22 +853,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5bPBGuKoEe6Abbyp8IdnlA" id="(0.3416149068322981,1.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5bPBG-KoEe6Abbyp8IdnlA" id="(0.0,0.7653061224489796)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_ExAdIOLCEe6Abbyp8IdnlA" type="4001" element="_EwtiTeLCEe6Abbyp8IdnlA" source="__lw5V8_TEe6kgoN19aXUZA" target="__lw5V8_TEe6kgoN19aXUZA">
-          <children xmi:type="notation:Node" xmi:id="_ExBEMOLCEe6Abbyp8IdnlA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ExBEMeLCEe6Abbyp8IdnlA" x="22" y="-14"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_ExBEMuLCEe6Abbyp8IdnlA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ExBEM-LCEe6Abbyp8IdnlA" x="7" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_ExBrQOLCEe6Abbyp8IdnlA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ExBrQeLCEe6Abbyp8IdnlA" x="-3" y="-10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_ExAdIeLCEe6Abbyp8IdnlA" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_ExAdIuLCEe6Abbyp8IdnlA" fontColor="7490599" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ExAdI-LCEe6Abbyp8IdnlA" points="[-15, -72, -47, -53]$[-43, -72, -75, -53]$[-43, 23, -75, 42]$[33, 23, 1, 42]$[33, 0, 1, 19]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ExBrQuLCEe6Abbyp8IdnlA" id="(0.06521739130434782,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ExBrQ-LCEe6Abbyp8IdnlA" id="(0.20434782608695654,0.8698630136986302)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_jgQCMOxFEe6zEqwo0AdkqA" type="4001" element="_jf75MuxFEe6zEqwo0AdkqA" source="__lwSSc_TEe6kgoN19aXUZA" target="__lw5UM_TEe6kgoN19aXUZA">
           <children xmi:type="notation:Node" xmi:id="_jgTskOxFEe6zEqwo0AdkqA" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jgTskexFEe6zEqwo0AdkqA" x="12" y="-10"/>
@@ -1144,7 +1128,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="__kkmgM_TEe6kgoN19aXUZA" name="Scenario" tooltipText="" outgoingEdges="__ldXXc_TEe6kgoN19aXUZA __liP18_TEe6kgoN19aXUZA __llTKc_TEe6kgoN19aXUZA _EwtiTeLCEe6Abbyp8IdnlA _4VsnNOxFEe6zEqwo0AdkqA" incomingEdges="__lZs9s_TEe6kgoN19aXUZA __loWds_TEe6kgoN19aXUZA __lo9hs_TEe6kgoN19aXUZA _EwtiTeLCEe6Abbyp8IdnlA" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="__kkmgM_TEe6kgoN19aXUZA" name="Scenario" tooltipText="" outgoingEdges="__ldXXc_TEe6kgoN19aXUZA __liP18_TEe6kgoN19aXUZA __llTKc_TEe6kgoN19aXUZA _4VsnNOxFEe6zEqwo0AdkqA" incomingEdges="__lZs9s_TEe6kgoN19aXUZA __loWds_TEe6kgoN19aXUZA __lo9hs_TEe6kgoN19aXUZA" width="12" height="10">
       <target xmi:type="ecore:EClass" href="prometheus_metamodel_system_specification.ecore#//Scenario"/>
       <semanticElements xmi:type="ecore:EClass" href="prometheus_metamodel_system_specification.ecore#//Scenario"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1770,7 +1754,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="__hx19txwEe65DdqcyWeqtg" sourceNode="__kgVEM_TEe6kgoN19aXUZA" targetNode="__kiKQs_TEe6kgoN19aXUZA" beginLabel="[0..1] goal_from" endLabel="[0..1] goal_relationship_from">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="__hx19txwEe65DdqcyWeqtg" sourceNode="__kgVEM_TEe6kgoN19aXUZA" targetNode="__kiKQs_TEe6kgoN19aXUZA" beginLabel="[0..1] goal_from" endLabel="[0..*] goal_relationship_from">
       <target xmi:type="ecore:EReference" href="prometheus_metamodel_system_specification.ecore#//Goal/goal_relationship_from"/>
       <semanticElements xmi:type="ecore:EReference" href="prometheus_metamodel_system_specification.ecore#//Goal_Relationship/goal_from"/>
       <semanticElements xmi:type="ecore:EReference" href="prometheus_metamodel_system_specification.ecore#//Goal/goal_relationship_from"/>
@@ -1781,7 +1765,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Pw6-KNxxEe65DdqcyWeqtg" sourceNode="__kgVEM_TEe6kgoN19aXUZA" targetNode="__kiKQs_TEe6kgoN19aXUZA" beginLabel="[0..1] goal_to" endLabel="[0..*] goal_relationship_to">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Pw6-KNxxEe65DdqcyWeqtg" sourceNode="__kgVEM_TEe6kgoN19aXUZA" targetNode="__kiKQs_TEe6kgoN19aXUZA" beginLabel="[0..1] goal_to" endLabel="[0..1] goal_relationship_to">
       <target xmi:type="ecore:EReference" href="prometheus_metamodel_system_specification.ecore#//Goal/goal_relationship_to"/>
       <semanticElements xmi:type="ecore:EReference" href="prometheus_metamodel_system_specification.ecore#//Goal/goal_relationship_to"/>
       <semanticElements xmi:type="ecore:EReference" href="prometheus_metamodel_system_specification.ecore#//Goal_Relationship/goal_to"/>
@@ -1834,16 +1818,6 @@
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_5bF3JuKoEe6Abbyp8IdnlA" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_EwtiTeLCEe6Abbyp8IdnlA" name="[0..1] scenario" sourceNode="__kkmgM_TEe6kgoN19aXUZA" targetNode="__kkmgM_TEe6kgoN19aXUZA">
-      <target xmi:type="ecore:EReference" href="prometheus_metamodel_system_specification.ecore#//Scenario/scenario"/>
-      <semanticElements xmi:type="ecore:EReference" href="prometheus_metamodel_system_specification.ecore#//Scenario/scenario"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_EwvXYOLCEe6Abbyp8IdnlA" routingStyle="manhattan" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_EwvXYuLCEe6Abbyp8IdnlA" showIcon="false"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_EwvXYeLCEe6Abbyp8IdnlA" labelSize="6" showIcon="false" labelColor="39,76,114"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_jf75MuxFEe6zEqwo0AdkqA" sourceNode="__kjYYM_TEe6kgoN19aXUZA" targetNode="__kjYY8_TEe6kgoN19aXUZA" beginLabel="[0..*] physical_object" endLabel="[0..*] logical_object">
       <target xmi:type="ecore:EReference" href="prometheus_metamodel_system_specification.ecore#//Physical_Object/logical_object"/>

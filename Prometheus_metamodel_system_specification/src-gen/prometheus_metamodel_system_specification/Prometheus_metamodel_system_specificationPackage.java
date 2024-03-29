@@ -351,7 +351,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int GOAL__DESCRIPTION = ENTITY__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Goal relationship from</b></em>' reference.
+	 * The feature id for the '<em><b>Goal relationship from</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -360,7 +360,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int GOAL__GOAL_RELATIONSHIP_FROM = ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Goal relationship to</b></em>' reference list.
+	 * The feature id for the '<em><b>Goal relationship to</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1014,22 +1014,13 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int SCENARIO__PRIORITY = ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Scenario</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIO__SCENARIO = ENTITY_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Step</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__STEP = ENTITY_FEATURE_COUNT + 8;
+	int SCENARIO__STEP = ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -1038,7 +1029,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 9;
+	int SCENARIO_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -1503,10 +1494,10 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EClass getGoal();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from <em>Goal relationship from</em>}'.
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from <em>Goal relationship from</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Goal relationship from</em>'.
+	 * @return the meta object for the reference list '<em>Goal relationship from</em>'.
 	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_from()
 	 * @see #getGoal()
 	 * @generated
@@ -1514,10 +1505,10 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EReference getGoal_Goal_relationship_from();
 
 	/**
-	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to <em>Goal relationship to</em>}'.
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to <em>Goal relationship to</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Goal relationship to</em>'.
+	 * @return the meta object for the reference '<em>Goal relationship to</em>'.
 	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_to()
 	 * @see #getGoal()
 	 * @generated
@@ -1948,17 +1939,6 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EAttribute getScenario_Priority();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Scenario#getScenario <em>Scenario</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Scenario</em>'.
-	 * @see prometheus_metamodel_system_specification.Scenario#getScenario()
-	 * @see #getScenario()
-	 * @generated
-	 */
-	EReference getScenario_Scenario();
-
-	/**
 	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Scenario#getStep <em>Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2370,7 +2350,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EClass GOAL = eINSTANCE.getGoal();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal relationship from</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Goal relationship from</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2378,7 +2358,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EReference GOAL__GOAL_RELATIONSHIP_FROM = eINSTANCE.getGoal_Goal_relationship_from();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal relationship to</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Goal relationship to</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2708,14 +2688,6 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		 * @generated
 		 */
 		EAttribute SCENARIO__PRIORITY = eINSTANCE.getScenario_Priority();
-
-		/**
-		 * The meta object literal for the '<em><b>Scenario</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCENARIO__SCENARIO = eINSTANCE.getScenario_Scenario();
 
 		/**
 		 * The meta object literal for the '<em><b>Step</b></em>' reference list feature.

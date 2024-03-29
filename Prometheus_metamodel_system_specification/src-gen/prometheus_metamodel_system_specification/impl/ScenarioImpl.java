@@ -40,7 +40,6 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getVariation <em>Variation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getPriority <em>Priority</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getStep <em>Step</em>}</li>
  * </ul>
  *
@@ -136,16 +135,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 	 * @ordered
 	 */
 	protected EList<Integer> priority;
-
-	/**
-	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScenario()
-	 * @generated
-	 * @ordered
-	 */
-	protected Scenario scenario;
 
 	/**
 	 * The cached value of the '{@link #getStep() <em>Step</em>}' reference list.
@@ -358,49 +347,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 	 * @generated
 	 */
 	@Override
-	public Scenario getScenario() {
-		if (scenario != null && scenario.eIsProxy()) {
-			InternalEObject oldScenario = (InternalEObject) scenario;
-			scenario = (Scenario) eResolveProxy(oldScenario);
-			if (scenario != oldScenario) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO, oldScenario,
-							scenario));
-			}
-		}
-		return scenario;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Scenario basicGetScenario() {
-		return scenario;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setScenario(Scenario newScenario) {
-		Scenario oldScenario = scenario;
-		scenario = newScenario;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO, oldScenario, scenario));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Step> getStep() {
 		if (step == null) {
 			step = new EObjectWithInverseResolvingEList.ManyInverse<Step>(Step.class, this,
@@ -480,10 +426,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			return getVariation();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PRIORITY:
 			return getPriority();
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO:
-			if (resolve)
-				return getScenario();
-			return basicGetScenario();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
 			return getStep();
 		}
@@ -524,9 +466,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			getPriority().clear();
 			getPriority().addAll((Collection<? extends Integer>) newValue);
 			return;
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO:
-			setScenario((Scenario) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
 			getStep().clear();
 			getStep().addAll((Collection<? extends Step>) newValue);
@@ -564,9 +503,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PRIORITY:
 			getPriority().clear();
 			return;
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO:
-			setScenario((Scenario) null);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
 			getStep().clear();
 			return;
@@ -596,8 +532,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			return VARIATION_EDEFAULT == null ? variation != null : !VARIATION_EDEFAULT.equals(variation);
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PRIORITY:
 			return priority != null && !priority.isEmpty();
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO:
-			return scenario != null;
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
 			return step != null && !step.isEmpty();
 		}
