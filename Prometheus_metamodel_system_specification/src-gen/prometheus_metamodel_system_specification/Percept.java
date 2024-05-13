@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Percept#isExternal_to_system <em>External to system</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getExternal_path <em>External path</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getStep <em>Step</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Percept#getPhysical_object <em>Physical object</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept()
@@ -210,5 +211,19 @@ public interface Percept extends Entity {
 	 * @generated
 	 */
 	EList<Step> getStep();
+
+	/**
+	 * Returns the value of the '<em><b>Physical object</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Physical_Object}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Physical_Object#getPercept <em>Percept</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Physical object</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept_Physical_object()
+	 * @see prometheus_metamodel_system_specification.Physical_Object#getPercept
+	 * @model opposite="percept"
+	 * @generated
+	 */
+	EList<Physical_Object> getPhysical_object();
 
 } // Percept

@@ -47,7 +47,9 @@ public class Physical_ObjectItemProvider extends EntityItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addScenarioPropertyDescriptor(object);
-			addLogical_objectPropertyDescriptor(object);
+			addLogical_object_shadowPropertyDescriptor(object);
+			addLogical_object_twinPropertyDescriptor(object);
+			addPerceptPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -69,19 +71,51 @@ public class Physical_ObjectItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Logical object feature.
+	 * This adds a property descriptor for the Logical object shadow feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLogical_objectPropertyDescriptor(Object object) {
+	protected void addLogical_object_shadowPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Physical_Object_logical_object_shadow_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Physical_Object_logical_object_shadow_feature",
+						"_UI_Physical_Object_type"),
+				Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW, true,
+				false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Logical object twin feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogical_object_twinPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Physical_Object_logical_object_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Physical_Object_logical_object_feature",
+						getResourceLocator(), getString("_UI_Physical_Object_logical_object_twin_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Physical_Object_logical_object_twin_feature", "_UI_Physical_Object_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN,
+						true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Percept feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPerceptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Physical_Object_percept_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Physical_Object_percept_feature",
 								"_UI_Physical_Object_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__LOGICAL_OBJECT, true,
-						false, true, null, null, null));
+						Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__PERCEPT, true, false,
+						true, null, null, null));
 	}
 
 	/**

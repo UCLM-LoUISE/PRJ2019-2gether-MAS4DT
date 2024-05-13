@@ -27,14 +27,18 @@
         upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/context"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Goal" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_from"
-        upperBound="-1" eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_from"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_to" eType="#//Goal_Relationship"
-        eOpposite="#//Goal_Relationship/goal_to"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_from_and"
+        upperBound="-1" eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_from_and"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_to_and"
+        eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_to_and"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//Model"
         eOpposite="#//Model/goals"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
         eOpposite="#//Step/goal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_from_or"
+        upperBound="-1" eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_from_or"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_relationship_to_or"
+        eType="#//Goal_Relationship" eOpposite="#//Goal_Relationship/goal_to_or"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
@@ -59,27 +63,39 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="external_path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
         eOpposite="#//Step/percept"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" upperBound="-1"
+        eType="#//Physical_Object" eOpposite="#//Physical_Object/percept"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Goal_Relationship">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type_of_relationship" eType="#//Enum_Type_of_Relationship"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_from" eType="#//Goal"
-        eOpposite="#//Goal/goal_relationship_from"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_to" eType="#//Goal"
-        eOpposite="#//Goal/goal_relationship_to"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_from_and" eType="#//Goal"
+        eOpposite="#//Goal/goal_relationship_from_and"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_to_and" eType="#//Goal"
+        eOpposite="#//Goal/goal_relationship_to_and"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_from_or" eType="#//Goal"
+        eOpposite="#//Goal/goal_relationship_from_or"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal_to_or" eType="#//Goal"
+        eOpposite="#//Goal/goal_relationship_to_or"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Physical_Object" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
         upperBound="-1" eType="#//Scenario" eOpposite="#//Scenario/physical_object"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" upperBound="-1"
         eType="#//Physical_Object" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="logical_object" upperBound="-1"
-        eType="#//Logical_Object" eOpposite="#//Logical_Object/physical_object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logical_object_shadow"
+        upperBound="-1" eType="#//Logical_Object" eOpposite="#//Logical_Object/physical_object_shadow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logical_object_twin" upperBound="-1"
+        eType="#//Logical_Object" eOpposite="#//Logical_Object/physical_object_twin"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="percept" upperBound="-1"
+        eType="#//Percept" eOpposite="#//Percept/physical_object"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Logical_Object" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionality" lowerBound="1"
         upperBound="-1" eType="#//Functionality" eOpposite="#//Functionality/logical_object"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" upperBound="-1"
-        eType="#//Physical_Object" eOpposite="#//Physical_Object/logical_object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object_shadow"
+        upperBound="-1" eType="#//Physical_Object" eOpposite="#//Physical_Object/logical_object_shadow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object_twin" upperBound="-1"
+        eType="#//Physical_Object" eOpposite="#//Physical_Object/logical_object_twin"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Scenario" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="physical_object" lowerBound="1"

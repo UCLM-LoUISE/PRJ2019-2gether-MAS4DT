@@ -351,22 +351,22 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int GOAL__DESCRIPTION = ENTITY__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Goal relationship from</b></em>' reference list.
+	 * The feature id for the '<em><b>Goal relationship from and</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL__GOAL_RELATIONSHIP_FROM = ENTITY_FEATURE_COUNT + 0;
+	int GOAL__GOAL_RELATIONSHIP_FROM_AND = ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Goal relationship to</b></em>' reference.
+	 * The feature id for the '<em><b>Goal relationship to and</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL__GOAL_RELATIONSHIP_TO = ENTITY_FEATURE_COUNT + 1;
+	int GOAL__GOAL_RELATIONSHIP_TO_AND = ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -387,13 +387,31 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int GOAL__STEP = ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Goal relationship from or</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL__GOAL_RELATIONSHIP_FROM_OR = ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Goal relationship to or</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL__GOAL_RELATIONSHIP_TO_OR = ENTITY_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Goal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 4;
+	int GOAL_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Goal</em>' class.
@@ -659,13 +677,22 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int PERCEPT__STEP = ENTITY_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Physical object</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERCEPT__PHYSICAL_OBJECT = ENTITY_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Percept</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERCEPT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 9;
+	int PERCEPT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Percept</em>' class.
@@ -696,22 +723,40 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP = 0;
 
 	/**
-	 * The feature id for the '<em><b>Goal from</b></em>' reference.
+	 * The feature id for the '<em><b>Goal from and</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL_RELATIONSHIP__GOAL_FROM = 1;
+	int GOAL_RELATIONSHIP__GOAL_FROM_AND = 1;
 
 	/**
-	 * The feature id for the '<em><b>Goal to</b></em>' reference.
+	 * The feature id for the '<em><b>Goal to and</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL_RELATIONSHIP__GOAL_TO = 2;
+	int GOAL_RELATIONSHIP__GOAL_TO_AND = 2;
+
+	/**
+	 * The feature id for the '<em><b>Goal from or</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL_RELATIONSHIP__GOAL_FROM_OR = 3;
+
+	/**
+	 * The feature id for the '<em><b>Goal to or</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL_RELATIONSHIP__GOAL_TO_OR = 4;
 
 	/**
 	 * The number of structural features of the '<em>Goal Relationship</em>' class.
@@ -720,7 +765,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL_RELATIONSHIP_FEATURE_COUNT = 3;
+	int GOAL_RELATIONSHIP_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Goal Relationship</em>' class.
@@ -796,13 +841,31 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int PHYSICAL_OBJECT__PHYSICAL_OBJECT = ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Logical object</b></em>' reference list.
+	 * The feature id for the '<em><b>Logical object shadow</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PHYSICAL_OBJECT__LOGICAL_OBJECT = ENTITY_FEATURE_COUNT + 2;
+	int PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW = ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Logical object twin</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN = ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Percept</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHYSICAL_OBJECT__PERCEPT = ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Physical Object</em>' class.
@@ -811,7 +874,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int PHYSICAL_OBJECT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 3;
+	int PHYSICAL_OBJECT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Physical Object</em>' class.
@@ -878,13 +941,22 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	int LOGICAL_OBJECT__FUNCTIONALITY = ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Physical object</b></em>' reference list.
+	 * The feature id for the '<em><b>Physical object shadow</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGICAL_OBJECT__PHYSICAL_OBJECT = ENTITY_FEATURE_COUNT + 1;
+	int LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW = ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Physical object twin</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_OBJECT__PHYSICAL_OBJECT_TWIN = ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Logical Object</em>' class.
@@ -893,7 +965,7 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 * @ordered
 	 */
-	int LOGICAL_OBJECT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+	int LOGICAL_OBJECT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Logical Object</em>' class.
@@ -1494,26 +1566,26 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EClass getGoal();
 
 	/**
-	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from <em>Goal relationship from</em>}'.
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_and <em>Goal relationship from and</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Goal relationship from</em>'.
-	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_from()
+	 * @return the meta object for the reference list '<em>Goal relationship from and</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_and()
 	 * @see #getGoal()
 	 * @generated
 	 */
-	EReference getGoal_Goal_relationship_from();
+	EReference getGoal_Goal_relationship_from_and();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to <em>Goal relationship to</em>}'.
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_and <em>Goal relationship to and</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Goal relationship to</em>'.
-	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_to()
+	 * @return the meta object for the reference '<em>Goal relationship to and</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_and()
 	 * @see #getGoal()
 	 * @generated
 	 */
-	EReference getGoal_Goal_relationship_to();
+	EReference getGoal_Goal_relationship_to_and();
 
 	/**
 	 * Returns the meta object for the container reference '{@link prometheus_metamodel_system_specification.Goal#getModel <em>Model</em>}'.
@@ -1536,6 +1608,28 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 */
 	EReference getGoal_Step();
+
+	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_or <em>Goal relationship from or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Goal relationship from or</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_or()
+	 * @see #getGoal()
+	 * @generated
+	 */
+	EReference getGoal_Goal_relationship_from_or();
+
+	/**
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_or <em>Goal relationship to or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Goal relationship to or</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_or()
+	 * @see #getGoal()
+	 * @generated
+	 */
+	EReference getGoal_Goal_relationship_to_or();
 
 	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Action <em>Action</em>}'.
@@ -1734,6 +1828,17 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EReference getPercept_Step();
 
 	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Percept#getPhysical_object <em>Physical object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Physical object</em>'.
+	 * @see prometheus_metamodel_system_specification.Percept#getPhysical_object()
+	 * @see #getPercept()
+	 * @generated
+	 */
+	EReference getPercept_Physical_object();
+
+	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Goal_Relationship <em>Goal Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1755,26 +1860,48 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EAttribute getGoal_Relationship_Type_of_relationship();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from <em>Goal from</em>}'.
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_and <em>Goal from and</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Goal from</em>'.
-	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from()
+	 * @return the meta object for the reference '<em>Goal from and</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_and()
 	 * @see #getGoal_Relationship()
 	 * @generated
 	 */
-	EReference getGoal_Relationship_Goal_from();
+	EReference getGoal_Relationship_Goal_from_and();
 
 	/**
-	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to <em>Goal to</em>}'.
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to_and <em>Goal to and</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Goal to</em>'.
-	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to()
+	 * @return the meta object for the reference '<em>Goal to and</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to_and()
 	 * @see #getGoal_Relationship()
 	 * @generated
 	 */
-	EReference getGoal_Relationship_Goal_to();
+	EReference getGoal_Relationship_Goal_to_and();
+
+	/**
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_or <em>Goal from or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Goal from or</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_or()
+	 * @see #getGoal_Relationship()
+	 * @generated
+	 */
+	EReference getGoal_Relationship_Goal_from_or();
+
+	/**
+	 * Returns the meta object for the reference '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to_or <em>Goal to or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Goal to or</em>'.
+	 * @see prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to_or()
+	 * @see #getGoal_Relationship()
+	 * @generated
+	 */
+	EReference getGoal_Relationship_Goal_to_or();
 
 	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Physical_Object <em>Physical Object</em>}'.
@@ -1809,15 +1936,37 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EReference getPhysical_Object_Physical_object();
 
 	/**
-	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Physical_Object#getLogical_object <em>Logical object</em>}'.
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Physical_Object#getLogical_object_shadow <em>Logical object shadow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Logical object</em>'.
-	 * @see prometheus_metamodel_system_specification.Physical_Object#getLogical_object()
+	 * @return the meta object for the reference list '<em>Logical object shadow</em>'.
+	 * @see prometheus_metamodel_system_specification.Physical_Object#getLogical_object_shadow()
 	 * @see #getPhysical_Object()
 	 * @generated
 	 */
-	EReference getPhysical_Object_Logical_object();
+	EReference getPhysical_Object_Logical_object_shadow();
+
+	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Physical_Object#getLogical_object_twin <em>Logical object twin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Logical object twin</em>'.
+	 * @see prometheus_metamodel_system_specification.Physical_Object#getLogical_object_twin()
+	 * @see #getPhysical_Object()
+	 * @generated
+	 */
+	EReference getPhysical_Object_Logical_object_twin();
+
+	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Physical_Object#getPercept <em>Percept</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Percept</em>'.
+	 * @see prometheus_metamodel_system_specification.Physical_Object#getPercept()
+	 * @see #getPhysical_Object()
+	 * @generated
+	 */
+	EReference getPhysical_Object_Percept();
 
 	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Logical_Object <em>Logical Object</em>}'.
@@ -1830,17 +1979,6 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	EClass getLogical_Object();
 
 	/**
-	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Logical_Object#getPhysical_object <em>Physical object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Physical object</em>'.
-	 * @see prometheus_metamodel_system_specification.Logical_Object#getPhysical_object()
-	 * @see #getLogical_Object()
-	 * @generated
-	 */
-	EReference getLogical_Object_Physical_object();
-
-	/**
 	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Logical_Object#getFunctionality <em>Functionality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1850,6 +1988,28 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 	 * @generated
 	 */
 	EReference getLogical_Object_Functionality();
+
+	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Logical_Object#getPhysical_object_shadow <em>Physical object shadow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Physical object shadow</em>'.
+	 * @see prometheus_metamodel_system_specification.Logical_Object#getPhysical_object_shadow()
+	 * @see #getLogical_Object()
+	 * @generated
+	 */
+	EReference getLogical_Object_Physical_object_shadow();
+
+	/**
+	 * Returns the meta object for the reference list '{@link prometheus_metamodel_system_specification.Logical_Object#getPhysical_object_twin <em>Physical object twin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Physical object twin</em>'.
+	 * @see prometheus_metamodel_system_specification.Logical_Object#getPhysical_object_twin()
+	 * @see #getLogical_Object()
+	 * @generated
+	 */
+	EReference getLogical_Object_Physical_object_twin();
 
 	/**
 	 * Returns the meta object for class '{@link prometheus_metamodel_system_specification.Scenario <em>Scenario</em>}'.
@@ -2350,20 +2510,20 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EClass GOAL = eINSTANCE.getGoal();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal relationship from</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Goal relationship from and</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GOAL__GOAL_RELATIONSHIP_FROM = eINSTANCE.getGoal_Goal_relationship_from();
+		EReference GOAL__GOAL_RELATIONSHIP_FROM_AND = eINSTANCE.getGoal_Goal_relationship_from_and();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal relationship to</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Goal relationship to and</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GOAL__GOAL_RELATIONSHIP_TO = eINSTANCE.getGoal_Goal_relationship_to();
+		EReference GOAL__GOAL_RELATIONSHIP_TO_AND = eINSTANCE.getGoal_Goal_relationship_to_and();
 
 		/**
 		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
@@ -2380,6 +2540,22 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		 * @generated
 		 */
 		EReference GOAL__STEP = eINSTANCE.getGoal_Step();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal relationship from or</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL__GOAL_RELATIONSHIP_FROM_OR = eINSTANCE.getGoal_Goal_relationship_from_or();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal relationship to or</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL__GOAL_RELATIONSHIP_TO_OR = eINSTANCE.getGoal_Goal_relationship_to_or();
 
 		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.ActionImpl <em>Action</em>}' class.
@@ -2530,6 +2706,14 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EReference PERCEPT__STEP = eINSTANCE.getPercept_Step();
 
 		/**
+		 * The meta object literal for the '<em><b>Physical object</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERCEPT__PHYSICAL_OBJECT = eINSTANCE.getPercept_Physical_object();
+
+		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.Goal_RelationshipImpl <em>Goal Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2548,20 +2732,36 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EAttribute GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP = eINSTANCE.getGoal_Relationship_Type_of_relationship();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal from</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Goal from and</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GOAL_RELATIONSHIP__GOAL_FROM = eINSTANCE.getGoal_Relationship_Goal_from();
+		EReference GOAL_RELATIONSHIP__GOAL_FROM_AND = eINSTANCE.getGoal_Relationship_Goal_from_and();
 
 		/**
-		 * The meta object literal for the '<em><b>Goal to</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Goal to and</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GOAL_RELATIONSHIP__GOAL_TO = eINSTANCE.getGoal_Relationship_Goal_to();
+		EReference GOAL_RELATIONSHIP__GOAL_TO_AND = eINSTANCE.getGoal_Relationship_Goal_to_and();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal from or</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL_RELATIONSHIP__GOAL_FROM_OR = eINSTANCE.getGoal_Relationship_Goal_from_or();
+
+		/**
+		 * The meta object literal for the '<em><b>Goal to or</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL_RELATIONSHIP__GOAL_TO_OR = eINSTANCE.getGoal_Relationship_Goal_to_or();
 
 		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.Physical_ObjectImpl <em>Physical Object</em>}' class.
@@ -2590,12 +2790,28 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EReference PHYSICAL_OBJECT__PHYSICAL_OBJECT = eINSTANCE.getPhysical_Object_Physical_object();
 
 		/**
-		 * The meta object literal for the '<em><b>Logical object</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Logical object shadow</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PHYSICAL_OBJECT__LOGICAL_OBJECT = eINSTANCE.getPhysical_Object_Logical_object();
+		EReference PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW = eINSTANCE.getPhysical_Object_Logical_object_shadow();
+
+		/**
+		 * The meta object literal for the '<em><b>Logical object twin</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN = eINSTANCE.getPhysical_Object_Logical_object_twin();
+
+		/**
+		 * The meta object literal for the '<em><b>Percept</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PHYSICAL_OBJECT__PERCEPT = eINSTANCE.getPhysical_Object_Percept();
 
 		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.Logical_ObjectImpl <em>Logical Object</em>}' class.
@@ -2608,20 +2824,28 @@ public interface Prometheus_metamodel_system_specificationPackage extends EPacka
 		EClass LOGICAL_OBJECT = eINSTANCE.getLogical_Object();
 
 		/**
-		 * The meta object literal for the '<em><b>Physical object</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOGICAL_OBJECT__PHYSICAL_OBJECT = eINSTANCE.getLogical_Object_Physical_object();
-
-		/**
 		 * The meta object literal for the '<em><b>Functionality</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference LOGICAL_OBJECT__FUNCTIONALITY = eINSTANCE.getLogical_Object_Functionality();
+
+		/**
+		 * The meta object literal for the '<em><b>Physical object shadow</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW = eINSTANCE.getLogical_Object_Physical_object_shadow();
+
+		/**
+		 * The meta object literal for the '<em><b>Physical object twin</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGICAL_OBJECT__PHYSICAL_OBJECT_TWIN = eINSTANCE.getLogical_Object_Physical_object_twin();
 
 		/**
 		 * The meta object literal for the '{@link prometheus_metamodel_system_specification.impl.ScenarioImpl <em>Scenario</em>}' class.

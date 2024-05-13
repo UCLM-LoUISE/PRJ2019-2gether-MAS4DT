@@ -11,23 +11,23 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import prometheus_metamodel_system_specification.Logical_Object;
+import prometheus_metamodel_system_specification.Actor;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 
 /**
- * This is the item provider adapter for a {@link prometheus_metamodel_system_specification.Logical_Object} object.
+ * This is the item provider adapter for a {@link prometheus_metamodel_system_specification.Actor} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Logical_ObjectItemProvider extends EntityItemProvider {
+public class ActorItemProvider extends EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Logical_ObjectItemProvider(AdapterFactory adapterFactory) {
+	public ActorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,70 +42,67 @@ public class Logical_ObjectItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFunctionalityPropertyDescriptor(object);
-			addPhysical_object_shadowPropertyDescriptor(object);
-			addPhysical_object_twinPropertyDescriptor(object);
+			addScenarioPropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
+			addPerceptPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Functionality feature.
+	 * This adds a property descriptor for the Scenario feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFunctionalityPropertyDescriptor(Object object) {
+	protected void addScenarioPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Logical_Object_functionality_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Logical_Object_functionality_feature",
-								"_UI_Logical_Object_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__FUNCTIONALITY, true,
-						false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Actor_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Actor_scenario_feature", "_UI_Actor_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTOR__SCENARIO, true, false, true,
+						null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Physical object shadow feature.
+	 * This adds a property descriptor for the Action feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPhysical_object_shadowPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Logical_Object_physical_object_shadow_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Logical_Object_physical_object_shadow_feature",
-						"_UI_Logical_Object_type"),
-				Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW, true,
-				false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Physical object twin feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPhysical_object_twinPropertyDescriptor(Object object) {
+	protected void addActionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Logical_Object_physical_object_twin_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Logical_Object_physical_object_twin_feature", "_UI_Logical_Object_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__PHYSICAL_OBJECT_TWIN,
-						true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Actor_action_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Actor_action_feature", "_UI_Actor_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTOR__ACTION, true, false, true,
+						null, null, null));
 	}
 
 	/**
-	 * This returns Logical_Object.gif.
+	 * This adds a property descriptor for the Percept feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPerceptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Actor_percept_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Actor_percept_feature", "_UI_Actor_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTOR__PERCEPT, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This returns Actor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Logical_Object"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Actor"));
 	}
 
 	/**
@@ -126,9 +123,9 @@ public class Logical_ObjectItemProvider extends EntityItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Logical_Object) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Logical_Object_type")
-				: getString("_UI_Logical_Object_type") + " " + label;
+		String label = ((Actor) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Actor_type")
+				: getString("_UI_Actor_type") + " " + label;
 	}
 
 	/**

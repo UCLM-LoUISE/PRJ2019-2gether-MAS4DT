@@ -53,6 +53,7 @@ public class PerceptItemProvider extends EntityItemProvider {
 			addExternal_to_systemPropertyDescriptor(object);
 			addExternal_pathPropertyDescriptor(object);
 			addStepPropertyDescriptor(object);
+			addPhysical_objectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -198,6 +199,22 @@ public class PerceptItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Percept_step_feature", "_UI_Percept_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__STEP, true, false, true,
 						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Physical object feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPhysical_objectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_physical_object_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_physical_object_feature",
+								"_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__PHYSICAL_OBJECT, true, false,
+						true, null, null, null));
 	}
 
 	/**

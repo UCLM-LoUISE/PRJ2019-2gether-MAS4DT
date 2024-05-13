@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Logical_Object;
+import prometheus_metamodel_system_specification.Percept;
 import prometheus_metamodel_system_specification.Physical_Object;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 import prometheus_metamodel_system_specification.Scenario;
@@ -30,7 +31,9 @@ import prometheus_metamodel_system_specification.Scenario;
  * <ul>
  *   <li>{@link prometheus_metamodel_system_specification.impl.Physical_ObjectImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.Physical_ObjectImpl#getPhysical_object <em>Physical object</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.impl.Physical_ObjectImpl#getLogical_object <em>Logical object</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.Physical_ObjectImpl#getLogical_object_shadow <em>Logical object shadow</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.Physical_ObjectImpl#getLogical_object_twin <em>Logical object twin</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.Physical_ObjectImpl#getPercept <em>Percept</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,14 +60,34 @@ public class Physical_ObjectImpl extends EntityImpl implements Physical_Object {
 	protected EList<Physical_Object> physical_object;
 
 	/**
-	 * The cached value of the '{@link #getLogical_object() <em>Logical object</em>}' reference list.
+	 * The cached value of the '{@link #getLogical_object_shadow() <em>Logical object shadow</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLogical_object()
+	 * @see #getLogical_object_shadow()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Logical_Object> logical_object;
+	protected EList<Logical_Object> logical_object_shadow;
+
+	/**
+	 * The cached value of the '{@link #getLogical_object_twin() <em>Logical object twin</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogical_object_twin()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Logical_Object> logical_object_twin;
+
+	/**
+	 * The cached value of the '{@link #getPercept() <em>Percept</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPercept()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Percept> percept;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,13 +143,44 @@ public class Physical_ObjectImpl extends EntityImpl implements Physical_Object {
 	 * @generated
 	 */
 	@Override
-	public EList<Logical_Object> getLogical_object() {
-		if (logical_object == null) {
-			logical_object = new EObjectWithInverseResolvingEList.ManyInverse<Logical_Object>(Logical_Object.class,
-					this, Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT,
-					Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT);
+	public EList<Logical_Object> getLogical_object_shadow() {
+		if (logical_object_shadow == null) {
+			logical_object_shadow = new EObjectWithInverseResolvingEList.ManyInverse<Logical_Object>(
+					Logical_Object.class, this,
+					Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW,
+					Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW);
 		}
-		return logical_object;
+		return logical_object_shadow;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Logical_Object> getLogical_object_twin() {
+		if (logical_object_twin == null) {
+			logical_object_twin = new EObjectWithInverseResolvingEList.ManyInverse<Logical_Object>(Logical_Object.class,
+					this, Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN,
+					Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_TWIN);
+		}
+		return logical_object_twin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Percept> getPercept() {
+		if (percept == null) {
+			percept = new EObjectWithInverseResolvingEList.ManyInverse<Percept>(Percept.class, this,
+					Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PERCEPT,
+					Prometheus_metamodel_system_specificationPackage.PERCEPT__PHYSICAL_OBJECT);
+		}
+		return percept;
 	}
 
 	/**
@@ -140,8 +194,14 @@ public class Physical_ObjectImpl extends EntityImpl implements Physical_Object {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__SCENARIO:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario()).basicAdd(otherEnd, msgs);
-		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getLogical_object()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getLogical_object_shadow()).basicAdd(otherEnd,
+					msgs);
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getLogical_object_twin()).basicAdd(otherEnd,
+					msgs);
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PERCEPT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPercept()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -158,8 +218,12 @@ public class Physical_ObjectImpl extends EntityImpl implements Physical_Object {
 			return ((InternalEList<?>) getScenario()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PHYSICAL_OBJECT:
 			return ((InternalEList<?>) getPhysical_object()).basicRemove(otherEnd, msgs);
-		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT:
-			return ((InternalEList<?>) getLogical_object()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW:
+			return ((InternalEList<?>) getLogical_object_shadow()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN:
+			return ((InternalEList<?>) getLogical_object_twin()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PERCEPT:
+			return ((InternalEList<?>) getPercept()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -176,8 +240,12 @@ public class Physical_ObjectImpl extends EntityImpl implements Physical_Object {
 			return getScenario();
 		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PHYSICAL_OBJECT:
 			return getPhysical_object();
-		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT:
-			return getLogical_object();
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW:
+			return getLogical_object_shadow();
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN:
+			return getLogical_object_twin();
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PERCEPT:
+			return getPercept();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,9 +267,17 @@ public class Physical_ObjectImpl extends EntityImpl implements Physical_Object {
 			getPhysical_object().clear();
 			getPhysical_object().addAll((Collection<? extends Physical_Object>) newValue);
 			return;
-		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT:
-			getLogical_object().clear();
-			getLogical_object().addAll((Collection<? extends Logical_Object>) newValue);
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW:
+			getLogical_object_shadow().clear();
+			getLogical_object_shadow().addAll((Collection<? extends Logical_Object>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN:
+			getLogical_object_twin().clear();
+			getLogical_object_twin().addAll((Collection<? extends Logical_Object>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PERCEPT:
+			getPercept().clear();
+			getPercept().addAll((Collection<? extends Percept>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -221,8 +297,14 @@ public class Physical_ObjectImpl extends EntityImpl implements Physical_Object {
 		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PHYSICAL_OBJECT:
 			getPhysical_object().clear();
 			return;
-		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT:
-			getLogical_object().clear();
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW:
+			getLogical_object_shadow().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN:
+			getLogical_object_twin().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PERCEPT:
+			getPercept().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -240,8 +322,12 @@ public class Physical_ObjectImpl extends EntityImpl implements Physical_Object {
 			return scenario != null && !scenario.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PHYSICAL_OBJECT:
 			return physical_object != null && !physical_object.isEmpty();
-		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT:
-			return logical_object != null && !logical_object.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_SHADOW:
+			return logical_object_shadow != null && !logical_object_shadow.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__LOGICAL_OBJECT_TWIN:
+			return logical_object_twin != null && !logical_object_twin.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PERCEPT:
+			return percept != null && !percept.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

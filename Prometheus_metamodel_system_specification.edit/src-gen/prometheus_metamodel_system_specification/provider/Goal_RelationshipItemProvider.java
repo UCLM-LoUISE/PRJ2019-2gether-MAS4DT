@@ -55,8 +55,10 @@ public class Goal_RelationshipItemProvider extends ItemProviderAdapter implement
 			super.getPropertyDescriptors(object);
 
 			addType_of_relationshipPropertyDescriptor(object);
-			addGoal_fromPropertyDescriptor(object);
-			addGoal_toPropertyDescriptor(object);
+			addGoal_from_andPropertyDescriptor(object);
+			addGoal_to_andPropertyDescriptor(object);
+			addGoal_from_orPropertyDescriptor(object);
+			addGoal_to_orPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,34 +80,66 @@ public class Goal_RelationshipItemProvider extends ItemProviderAdapter implement
 	}
 
 	/**
-	 * This adds a property descriptor for the Goal from feature.
+	 * This adds a property descriptor for the Goal from and feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGoal_fromPropertyDescriptor(Object object) {
+	protected void addGoal_from_andPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Goal_Relationship_goal_from_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_goal_from_feature",
+						getResourceLocator(), getString("_UI_Goal_Relationship_goal_from_and_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_goal_from_and_feature",
 								"_UI_Goal_Relationship_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__GOAL_FROM, true,
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__GOAL_FROM_AND,
+						true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Goal to and feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGoal_to_andPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Goal_Relationship_goal_to_and_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_goal_to_and_feature",
+								"_UI_Goal_Relationship_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__GOAL_TO_AND, true,
 						false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Goal to feature.
+	 * This adds a property descriptor for the Goal from or feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGoal_toPropertyDescriptor(Object object) {
+	protected void addGoal_from_orPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Goal_Relationship_goal_to_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_goal_to_feature",
+						getResourceLocator(), getString("_UI_Goal_Relationship_goal_from_or_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_goal_from_or_feature",
 								"_UI_Goal_Relationship_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__GOAL_TO, true,
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__GOAL_FROM_OR, true,
+						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Goal to or feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGoal_to_orPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Goal_Relationship_goal_to_or_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_goal_to_or_feature",
+								"_UI_Goal_Relationship_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__GOAL_TO_OR, true,
 						false, true, null, null, null));
 	}
 

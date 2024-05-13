@@ -42,43 +42,45 @@ public class GoalItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGoal_relationship_fromPropertyDescriptor(object);
-			addGoal_relationship_toPropertyDescriptor(object);
+			addGoal_relationship_from_andPropertyDescriptor(object);
+			addGoal_relationship_to_andPropertyDescriptor(object);
 			addModelPropertyDescriptor(object);
 			addStepPropertyDescriptor(object);
+			addGoal_relationship_from_orPropertyDescriptor(object);
+			addGoal_relationship_to_orPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Goal relationship from feature.
+	 * This adds a property descriptor for the Goal relationship from and feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGoal_relationship_fromPropertyDescriptor(Object object) {
+	protected void addGoal_relationship_from_andPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Goal_goal_relationship_from_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Goal_goal_relationship_from_feature",
+						getResourceLocator(), getString("_UI_Goal_goal_relationship_from_and_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_goal_relationship_from_and_feature",
 								"_UI_Goal_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__GOAL_RELATIONSHIP_FROM, true,
-						false, true, null, null, null));
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__GOAL_RELATIONSHIP_FROM_AND,
+						true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Goal relationship to feature.
+	 * This adds a property descriptor for the Goal relationship to and feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGoal_relationship_toPropertyDescriptor(Object object) {
+	protected void addGoal_relationship_to_andPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Goal_goal_relationship_to_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Goal_goal_relationship_to_feature",
+						getResourceLocator(), getString("_UI_Goal_goal_relationship_to_and_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_goal_relationship_to_and_feature",
 								"_UI_Goal_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__GOAL_RELATIONSHIP_TO, true,
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__GOAL_RELATIONSHIP_TO_AND, true,
 						false, true, null, null, null));
 	}
 
@@ -110,6 +112,38 @@ public class GoalItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Goal_step_feature", "_UI_Goal_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__STEP, true, false, true, null,
 						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Goal relationship from or feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGoal_relationship_from_orPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Goal_goal_relationship_from_or_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_goal_relationship_from_or_feature",
+								"_UI_Goal_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__GOAL_RELATIONSHIP_FROM_OR, true,
+						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Goal relationship to or feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGoal_relationship_to_orPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Goal_goal_relationship_to_or_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_goal_relationship_to_or_feature",
+								"_UI_Goal_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__GOAL_RELATIONSHIP_TO_OR, true,
+						false, true, null, null, null));
 	}
 
 	/**

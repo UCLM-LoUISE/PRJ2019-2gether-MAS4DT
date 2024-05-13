@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Functionality;
 import prometheus_metamodel_system_specification.Percept;
+import prometheus_metamodel_system_specification.Physical_Object;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 import prometheus_metamodel_system_specification.Step;
 
@@ -38,6 +39,7 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#isExternal_to_system <em>External to system</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getExternal_path <em>External path</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getStep <em>Step</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getPhysical_object <em>Physical object</em>}</li>
  * </ul>
  *
  * @generated
@@ -202,6 +204,16 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	 * @ordered
 	 */
 	protected EList<Step> step;
+
+	/**
+	 * The cached value of the '{@link #getPhysical_object() <em>Physical object</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhysical_object()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Physical_Object> physical_object;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -430,6 +442,21 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Physical_Object> getPhysical_object() {
+		if (physical_object == null) {
+			physical_object = new EObjectWithInverseResolvingEList.ManyInverse<Physical_Object>(Physical_Object.class,
+					this, Prometheus_metamodel_system_specificationPackage.PERCEPT__PHYSICAL_OBJECT,
+					Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PERCEPT);
+		}
+		return physical_object;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -438,6 +465,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFunctionality()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStep()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__PHYSICAL_OBJECT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPhysical_object()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -454,6 +483,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return ((InternalEList<?>) getFunctionality()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
 			return ((InternalEList<?>) getStep()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__PHYSICAL_OBJECT:
+			return ((InternalEList<?>) getPhysical_object()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -484,6 +515,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return getExternal_path();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
 			return getStep();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__PHYSICAL_OBJECT:
+			return getPhysical_object();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -526,6 +559,10 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			getStep().clear();
 			getStep().addAll((Collection<? extends Step>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__PHYSICAL_OBJECT:
+			getPhysical_object().clear();
+			getPhysical_object().addAll((Collection<? extends Physical_Object>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -565,6 +602,9 @@ public class PerceptImpl extends EntityImpl implements Percept {
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
 			getStep().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__PHYSICAL_OBJECT:
+			getPhysical_object().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -599,6 +639,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 					: !EXTERNAL_PATH_EDEFAULT.equals(external_path);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
 			return step != null && !step.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__PHYSICAL_OBJECT:
+			return physical_object != null && !physical_object.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

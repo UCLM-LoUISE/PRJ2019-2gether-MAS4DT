@@ -14,8 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getType_of_relationship <em>Type of relationship</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from <em>Goal from</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to <em>Goal to</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_and <em>Goal from and</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to_and <em>Goal to and</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_or <em>Goal from or</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to_or <em>Goal to or</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship()
@@ -49,51 +51,99 @@ public interface Goal_Relationship extends EObject {
 	void setType_of_relationship(Enum_Type_of_Relationship value);
 
 	/**
-	 * Returns the value of the '<em><b>Goal from</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from <em>Goal relationship from</em>}'.
+	 * Returns the value of the '<em><b>Goal from and</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_and <em>Goal relationship from and</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Goal from</em>' reference.
-	 * @see #setGoal_from(Goal)
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Goal_from()
-	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_from
-	 * @model opposite="goal_relationship_from"
+	 * @return the value of the '<em>Goal from and</em>' reference.
+	 * @see #setGoal_from_and(Goal)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Goal_from_and()
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_and
+	 * @model opposite="goal_relationship_from_and"
 	 * @generated
 	 */
-	Goal getGoal_from();
+	Goal getGoal_from_and();
 
 	/**
-	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from <em>Goal from</em>}' reference.
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_and <em>Goal from and</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Goal from</em>' reference.
-	 * @see #getGoal_from()
+	 * @param value the new value of the '<em>Goal from and</em>' reference.
+	 * @see #getGoal_from_and()
 	 * @generated
 	 */
-	void setGoal_from(Goal value);
+	void setGoal_from_and(Goal value);
 
 	/**
-	 * Returns the value of the '<em><b>Goal to</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to <em>Goal relationship to</em>}'.
+	 * Returns the value of the '<em><b>Goal to and</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_and <em>Goal relationship to and</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Goal to</em>' reference.
-	 * @see #setGoal_to(Goal)
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Goal_to()
-	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_to
-	 * @model opposite="goal_relationship_to"
+	 * @return the value of the '<em>Goal to and</em>' reference.
+	 * @see #setGoal_to_and(Goal)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Goal_to_and()
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_and
+	 * @model opposite="goal_relationship_to_and"
 	 * @generated
 	 */
-	Goal getGoal_to();
+	Goal getGoal_to_and();
 
 	/**
-	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to <em>Goal to</em>}' reference.
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to_and <em>Goal to and</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Goal to</em>' reference.
-	 * @see #getGoal_to()
+	 * @param value the new value of the '<em>Goal to and</em>' reference.
+	 * @see #getGoal_to_and()
 	 * @generated
 	 */
-	void setGoal_to(Goal value);
+	void setGoal_to_and(Goal value);
+
+	/**
+	 * Returns the value of the '<em><b>Goal from or</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_or <em>Goal relationship from or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal from or</em>' reference.
+	 * @see #setGoal_from_or(Goal)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Goal_from_or()
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_or
+	 * @model opposite="goal_relationship_from_or"
+	 * @generated
+	 */
+	Goal getGoal_from_or();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_or <em>Goal from or</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Goal from or</em>' reference.
+	 * @see #getGoal_from_or()
+	 * @generated
+	 */
+	void setGoal_from_or(Goal value);
+
+	/**
+	 * Returns the value of the '<em><b>Goal to or</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_or <em>Goal relationship to or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal to or</em>' reference.
+	 * @see #setGoal_to_or(Goal)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Goal_to_or()
+	 * @see prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_or
+	 * @model opposite="goal_relationship_to_or"
+	 * @generated
+	 */
+	Goal getGoal_to_or();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to_or <em>Goal to or</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Goal to or</em>' reference.
+	 * @see #getGoal_to_or()
+	 * @generated
+	 */
+	void setGoal_to_or(Goal value);
 
 } // Goal_Relationship
