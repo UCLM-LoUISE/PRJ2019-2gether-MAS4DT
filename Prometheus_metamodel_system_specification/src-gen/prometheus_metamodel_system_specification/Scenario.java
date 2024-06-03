@@ -21,6 +21,12 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getVariation <em>Variation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getPriority <em>Priority</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getStep <em>Step</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Scenario#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Scenario#getPercept_scenario <em>Percept scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Scenario#getAction_scenario <em>Action scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Scenario#getRol_scenario <em>Rol scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Scenario#getData_scenario <em>Data scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Scenario#getGoals_scenario <em>Goals scenario</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario()
@@ -161,5 +167,77 @@ public interface Scenario extends Entity {
 	 * @generated
 	 */
 	EList<Step> getStep();
+
+	/**
+	 * Returns the value of the '<em><b>Scenario</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenario</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Scenario()
+	 * @model
+	 * @generated
+	 */
+	EList<Scenario> getScenario();
+
+	/**
+	 * Returns the value of the '<em><b>Percept scenario</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Percept}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Percept scenario</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Percept_scenario()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Percept> getPercept_scenario();
+
+	/**
+	 * Returns the value of the '<em><b>Action scenario</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Action}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action scenario</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Action_scenario()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Action> getAction_scenario();
+
+	/**
+	 * Returns the value of the '<em><b>Rol scenario</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Rol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rol scenario</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Rol_scenario()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Rol> getRol_scenario();
+
+	/**
+	 * Returns the value of the '<em><b>Data scenario</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Data}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data scenario</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Data_scenario()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Data> getData_scenario();
+
+	/**
+	 * Returns the value of the '<em><b>Goals scenario</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Goal}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goals scenario</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Goals_scenario()
+	 * @model
+	 * @generated
+	 */
+	EList<Goal> getGoals_scenario();
 
 } // Scenario

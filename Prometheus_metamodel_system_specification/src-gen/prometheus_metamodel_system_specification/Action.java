@@ -20,6 +20,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Action#getPartial_change <em>Partial change</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getSide_effects <em>Side effects</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getStep <em>Step</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Action#getActor <em>Actor</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Action#getPhysical_object <em>Physical object</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Action#getRol <em>Rol</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction()
@@ -164,5 +167,43 @@ public interface Action extends Entity {
 	 * @generated
 	 */
 	EList<Step> getStep();
+
+	/**
+	 * Returns the value of the '<em><b>Actor</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Actor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Actor</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Actor()
+	 * @model
+	 * @generated
+	 */
+	EList<Actor> getActor();
+
+	/**
+	 * Returns the value of the '<em><b>Physical object</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Physical_Object}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Physical object</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Physical_object()
+	 * @model
+	 * @generated
+	 */
+	EList<Physical_Object> getPhysical_object();
+
+	/**
+	 * Returns the value of the '<em><b>Rol</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Rol}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Rol#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rol</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Rol()
+	 * @see prometheus_metamodel_system_specification.Rol#getAction
+	 * @model opposite="action"
+	 * @generated
+	 */
+	EList<Rol> getRol();
 
 } // Action

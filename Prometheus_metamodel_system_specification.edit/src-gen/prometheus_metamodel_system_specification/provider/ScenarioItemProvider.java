@@ -54,6 +54,8 @@ public class ScenarioItemProvider extends EntityItemProvider {
 			addVariationPropertyDescriptor(object);
 			addPriorityPropertyDescriptor(object);
 			addStepPropertyDescriptor(object);
+			addScenarioPropertyDescriptor(object);
+			addGoals_scenarioPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -171,6 +173,38 @@ public class ScenarioItemProvider extends EntityItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_scenario_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__SCENARIO, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Goals scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGoals_scenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_goals_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_goals_scenario_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__GOALS_SCENARIO, true, false,
+						true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -183,6 +217,10 @@ public class ScenarioItemProvider extends EntityItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__STEPS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__PERCEPT_SCENARIO);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__ACTION_SCENARIO);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__ROL_SCENARIO);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__DATA_SCENARIO);
 		}
 		return childrenFeatures;
 	}
@@ -252,6 +290,10 @@ public class ScenarioItemProvider extends EntityItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEPS:
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PERCEPT_SCENARIO:
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTION_SCENARIO:
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ROL_SCENARIO:
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__DATA_SCENARIO:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -272,6 +314,22 @@ public class ScenarioItemProvider extends EntityItemProvider {
 		newChildDescriptors
 				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__STEPS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createStep()));
+
+		newChildDescriptors.add(createChildParameter(
+				Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__PERCEPT_SCENARIO,
+				Prometheus_metamodel_system_specificationFactory.eINSTANCE.createPercept()));
+
+		newChildDescriptors.add(createChildParameter(
+				Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__ACTION_SCENARIO,
+				Prometheus_metamodel_system_specificationFactory.eINSTANCE.createAction()));
+
+		newChildDescriptors.add(
+				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__ROL_SCENARIO,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createRol()));
+
+		newChildDescriptors.add(
+				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__DATA_SCENARIO,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createData()));
 	}
 
 }

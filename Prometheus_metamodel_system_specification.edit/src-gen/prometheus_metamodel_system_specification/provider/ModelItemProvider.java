@@ -73,12 +73,15 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PERCEPTS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ACTIONS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CONTEXTS);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIOS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PHYSICAL_OBJECTS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__LOGICAL_OBJECTS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__FUNCTIONALITIES);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOALS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL_RELATIONSHIPS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ACTORS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ROLES);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__DATA);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIOS);
 		}
 		return childrenFeatures;
 	}
@@ -143,12 +146,15 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PERCEPTS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTIONS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXTS:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECTS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__LOGICAL_OBJECTS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITIES:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTORS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ROLES:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__DATA:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -178,10 +184,6 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CONTEXTS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createContext()));
 
-		newChildDescriptors
-				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIOS,
-						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createScenario()));
-
 		newChildDescriptors.add(
 				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PHYSICAL_OBJECTS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createPhysical_Object()));
@@ -201,6 +203,22 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		newChildDescriptors.add(createChildParameter(
 				Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL_RELATIONSHIPS,
 				Prometheus_metamodel_system_specificationFactory.eINSTANCE.createGoal_Relationship()));
+
+		newChildDescriptors
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ACTORS,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createActor()));
+
+		newChildDescriptors
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ROLES,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createRol()));
+
+		newChildDescriptors
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__DATA,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createData()));
+
+		newChildDescriptors
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIOS,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createScenario()));
 	}
 
 	/**

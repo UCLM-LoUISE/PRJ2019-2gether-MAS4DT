@@ -8,14 +8,10 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import prometheus_metamodel_system_specification.Physical_Object;
-import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationFactory;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 
 /**
@@ -49,7 +45,9 @@ public class Physical_ObjectItemProvider extends EntityItemProvider {
 			addScenarioPropertyDescriptor(object);
 			addLogical_object_shadowPropertyDescriptor(object);
 			addLogical_object_twinPropertyDescriptor(object);
+			addPhysical_objectPropertyDescriptor(object);
 			addPerceptPropertyDescriptor(object);
+			addActorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -103,6 +101,22 @@ public class Physical_ObjectItemProvider extends EntityItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Physical object feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPhysical_objectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Physical_Object_physical_object_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Physical_Object_physical_object_feature",
+								"_UI_Physical_Object_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__PHYSICAL_OBJECT,
+						true, false, true, null, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Percept feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,34 +133,19 @@ public class Physical_ObjectItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Actor feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__PHYSICAL_OBJECT);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addActorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Physical_Object_actor_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Physical_Object_actor_feature",
+								"_UI_Physical_Object_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__ACTOR, true, false,
+						true, null, null, null));
 	}
 
 	/**
@@ -193,12 +192,6 @@ public class Physical_ObjectItemProvider extends EntityItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Physical_Object.class)) {
-		case Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__PHYSICAL_OBJECT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -212,10 +205,6 @@ public class Physical_ObjectItemProvider extends EntityItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(
-				Prometheus_metamodel_system_specificationPackage.Literals.PHYSICAL_OBJECT__PHYSICAL_OBJECT,
-				Prometheus_metamodel_system_specificationFactory.eINSTANCE.createPhysical_Object()));
 	}
 
 }

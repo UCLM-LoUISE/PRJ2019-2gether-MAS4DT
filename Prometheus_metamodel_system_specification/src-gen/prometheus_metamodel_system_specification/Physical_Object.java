@@ -14,10 +14,11 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link prometheus_metamodel_system_specification.Physical_Object#getScenario <em>Scenario</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Physical_Object#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Physical_Object#getLogical_object_shadow <em>Logical object shadow</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Physical_Object#getLogical_object_twin <em>Logical object twin</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Physical_Object#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Physical_Object#getPercept <em>Percept</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Physical_Object#getActor <em>Actor</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPhysical_Object()
@@ -40,13 +41,13 @@ public interface Physical_Object extends Entity {
 	EList<Scenario> getScenario();
 
 	/**
-	 * Returns the value of the '<em><b>Physical object</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Physical object</b></em>' reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Physical_Object}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Physical object</em>' containment reference list.
+	 * @return the value of the '<em>Physical object</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPhysical_Object_Physical_object()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Physical_Object> getPhysical_object();
@@ -82,15 +83,27 @@ public interface Physical_Object extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Percept</b></em>' reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Percept}.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Percept#getPhysical_object <em>Physical object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Percept</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPhysical_Object_Percept()
-	 * @see prometheus_metamodel_system_specification.Percept#getPhysical_object
-	 * @model opposite="physical_object"
+	 * @model
 	 * @generated
 	 */
 	EList<Percept> getPercept();
+
+	/**
+	 * Returns the value of the '<em><b>Actor</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Actor}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Actor#getPhysical_object <em>Physical object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Actor</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPhysical_Object_Actor()
+	 * @see prometheus_metamodel_system_specification.Actor#getPhysical_object
+	 * @model opposite="physical_object"
+	 * @generated
+	 */
+	EList<Actor> getActor();
 
 } // Physical_Object

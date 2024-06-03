@@ -131,6 +131,33 @@ public interface Prometheus_metamodel_system_specificationFactory extends EFacto
 	Step createStep();
 
 	/**
+	 * Returns a new object of class '<em>Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Actor</em>'.
+	 * @generated
+	 */
+	Actor createActor();
+
+	/**
+	 * Returns a new object of class '<em>Rol</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rol</em>'.
+	 * @generated
+	 */
+	Rol createRol();
+
+	/**
+	 * Returns a new object of class '<em>Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data</em>'.
+	 * @generated
+	 */
+	Data createData();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

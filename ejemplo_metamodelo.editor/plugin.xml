@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ejemplo_metamodelo -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ejemplo_metamodelo.presentation.Ejemplo_metamodeloModelWizardID"
+            name="%_UI_Ejemplo_metamodeloModelWizard_label"
+            class="ejemplo_metamodelo.presentation.Ejemplo_metamodeloModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Ejemplo_metamodeloModelFile.gif">
+         <description>%_UI_Ejemplo_metamodeloModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ejemplo_metamodelo -->
+      <editor
+            id="ejemplo_metamodelo.presentation.Ejemplo_metamodeloEditorID"
+            name="%_UI_Ejemplo_metamodeloEditor_label"
+            icon="icons/full/obj16/Ejemplo_metamodeloModelFile.gif"
+            extensions="ejemplo_metamodelo"
+            class="ejemplo_metamodelo.presentation.Ejemplo_metamodeloEditor"
+            contributorClass="ejemplo_metamodelo.presentation.Ejemplo_metamodeloActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

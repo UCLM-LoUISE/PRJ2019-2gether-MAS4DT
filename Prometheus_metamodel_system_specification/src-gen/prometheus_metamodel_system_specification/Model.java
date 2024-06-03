@@ -18,12 +18,15 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link prometheus_metamodel_system_specification.Model#getPercepts <em>Percepts</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getActions <em>Actions</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getContexts <em>Contexts</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Model#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getPhysical_objects <em>Physical objects</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getLogical_objects <em>Logical objects</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getFunctionalities <em>Functionalities</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getGoals <em>Goals</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getGoal_relationships <em>Goal relationships</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getActors <em>Actors</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getRoles <em>Roles</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getData <em>Data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getScenarios <em>Scenarios</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel()
@@ -66,18 +69,6 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<Context> getContexts();
-
-	/**
-	 * Returns the value of the '<em><b>Scenarios</b></em>' containment reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scenarios</em>' containment reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Scenarios()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Scenario> getScenarios();
 
 	/**
 	 * Returns the value of the '<em><b>Physical objects</b></em>' containment reference list.
@@ -140,5 +131,53 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<Goal_Relationship> getGoal_relationships();
+
+	/**
+	 * Returns the value of the '<em><b>Actors</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Actor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Actors</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Actors()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Actor> getActors();
+
+	/**
+	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Rol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Roles</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Roles()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Rol> getRoles();
+
+	/**
+	 * Returns the value of the '<em><b>Data</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Data}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Data()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Data> getData();
+
+	/**
+	 * Returns the value of the '<em><b>Scenarios</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenarios</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Scenarios()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Scenario> getScenarios();
 
 } // Model

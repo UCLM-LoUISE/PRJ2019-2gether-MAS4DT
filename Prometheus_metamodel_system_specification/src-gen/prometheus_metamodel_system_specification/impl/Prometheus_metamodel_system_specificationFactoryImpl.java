@@ -82,6 +82,12 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 			return createAttribute();
 		case Prometheus_metamodel_system_specificationPackage.STEP:
 			return createStep();
+		case Prometheus_metamodel_system_specificationPackage.ACTOR:
+			return createActor();
+		case Prometheus_metamodel_system_specificationPackage.ROL:
+			return createRol();
+		case Prometheus_metamodel_system_specificationPackage.DATA:
+			return createData();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -266,6 +272,39 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Actor createActor() {
+		ActorImpl actor = new ActorImpl();
+		return actor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Rol createRol() {
+		RolImpl rol = new RolImpl();
+		return rol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Data createData() {
+		DataImpl data = new DataImpl();
+		return data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Enum_Type_of_Relationship createEnum_Type_of_RelationshipFromString(EDataType eDataType,
 			String initialValue) {
 		Enum_Type_of_Relationship result = Enum_Type_of_Relationship.get(initialValue);
@@ -340,6 +379,12 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 
 	/**
 	 * <!-- begin-user-doc -->

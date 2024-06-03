@@ -53,7 +53,8 @@ public class PerceptItemProvider extends EntityItemProvider {
 			addExternal_to_systemPropertyDescriptor(object);
 			addExternal_pathPropertyDescriptor(object);
 			addStepPropertyDescriptor(object);
-			addPhysical_objectPropertyDescriptor(object);
+			addRolPropertyDescriptor(object);
+			addScenarioPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -202,19 +203,34 @@ public class PerceptItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Physical object feature.
+	 * This adds a property descriptor for the Rol feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPhysical_objectPropertyDescriptor(Object object) {
+	protected void addRolPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Percept_physical_object_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Percept_physical_object_feature",
+						getResourceLocator(), getString("_UI_Percept_rol_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_rol_feature", "_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__ROL, true, false, true, null,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_scenario_feature",
 								"_UI_Percept_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__PHYSICAL_OBJECT, true, false,
-						true, null, null, null));
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__SCENARIO, true, false, true,
+						null, null, null));
 	}
 
 	/**

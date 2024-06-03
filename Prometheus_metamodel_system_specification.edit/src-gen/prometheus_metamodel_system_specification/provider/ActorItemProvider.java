@@ -42,26 +42,12 @@ public class ActorItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addScenarioPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
 			addPerceptPropertyDescriptor(object);
+			addPhysical_objectPropertyDescriptor(object);
+			addScenarioPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Scenario feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScenarioPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Actor_scenario_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Actor_scenario_feature", "_UI_Actor_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.ACTOR__SCENARIO, true, false, true,
-						null, null, null));
 	}
 
 	/**
@@ -91,6 +77,37 @@ public class ActorItemProvider extends EntityItemProvider {
 						getResourceLocator(), getString("_UI_Actor_percept_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Actor_percept_feature", "_UI_Actor_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.ACTOR__PERCEPT, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Physical object feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPhysical_objectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Actor_physical_object_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Actor_physical_object_feature",
+								"_UI_Actor_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTOR__PHYSICAL_OBJECT, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Actor_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Actor_scenario_feature", "_UI_Actor_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTOR__SCENARIO, true, false, true,
 						null, null, null));
 	}
 

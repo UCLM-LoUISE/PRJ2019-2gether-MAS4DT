@@ -175,6 +175,33 @@ public class Prometheus_metamodel_system_specificationSwitch<T> extends Switch<T
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case Prometheus_metamodel_system_specificationPackage.ACTOR: {
+			Actor actor = (Actor) theEObject;
+			T result = caseActor(actor);
+			if (result == null)
+				result = caseEntity(actor);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Prometheus_metamodel_system_specificationPackage.ROL: {
+			Rol rol = (Rol) theEObject;
+			T result = caseRol(rol);
+			if (result == null)
+				result = caseEntity(rol);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Prometheus_metamodel_system_specificationPackage.DATA: {
+			Data data = (Data) theEObject;
+			T result = caseData(data);
+			if (result == null)
+				result = caseEntity(data);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -372,6 +399,51 @@ public class Prometheus_metamodel_system_specificationSwitch<T> extends Switch<T
 	 * @generated
 	 */
 	public T caseStep(Step object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Actor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActor(Actor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rol</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rol</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRol(Rol object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseData(Data object) {
 		return null;
 	}
 

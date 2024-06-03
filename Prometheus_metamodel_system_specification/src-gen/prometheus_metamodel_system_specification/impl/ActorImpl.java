@@ -4,21 +4,20 @@ package prometheus_metamodel_system_specification.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Action;
 import prometheus_metamodel_system_specification.Actor;
 import prometheus_metamodel_system_specification.Percept;
+import prometheus_metamodel_system_specification.Physical_Object;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 import prometheus_metamodel_system_specification.Scenario;
 
@@ -30,24 +29,15 @@ import prometheus_metamodel_system_specification.Scenario;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.impl.ActorImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActorImpl#getAction <em>Action</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActorImpl#getPercept <em>Percept</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ActorImpl#getPhysical_object <em>Physical object</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ActorImpl#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ActorImpl extends EntityImpl implements Actor {
-	/**
-	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScenario()
-	 * @generated
-	 * @ordered
-	 */
-	protected Scenario scenario;
-
 	/**
 	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -69,6 +59,26 @@ public class ActorImpl extends EntityImpl implements Actor {
 	protected EList<Percept> percept;
 
 	/**
+	 * The cached value of the '{@link #getPhysical_object() <em>Physical object</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhysical_object()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Physical_Object> physical_object;
+
+	/**
+	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScenario()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Scenario> scenario;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -85,76 +95,6 @@ public class ActorImpl extends EntityImpl implements Actor {
 	@Override
 	protected EClass eStaticClass() {
 		return Prometheus_metamodel_system_specificationPackage.Literals.ACTOR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Scenario getScenario() {
-		if (scenario != null && scenario.eIsProxy()) {
-			InternalEObject oldScenario = (InternalEObject) scenario;
-			scenario = (Scenario) eResolveProxy(oldScenario);
-			if (scenario != oldScenario) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO, oldScenario, scenario));
-			}
-		}
-		return scenario;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Scenario basicGetScenario() {
-		return scenario;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetScenario(Scenario newScenario, NotificationChain msgs) {
-		Scenario oldScenario = scenario;
-		scenario = newScenario;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO, oldScenario, newScenario);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setScenario(Scenario newScenario) {
-		if (newScenario != scenario) {
-			NotificationChain msgs = null;
-			if (scenario != null)
-				msgs = ((InternalEObject) scenario).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTOR, Scenario.class, msgs);
-			if (newScenario != null)
-				msgs = ((InternalEObject) newScenario).eInverseAdd(this,
-						Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTOR, Scenario.class, msgs);
-			msgs = basicSetScenario(newScenario, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO, newScenario, newScenario));
 	}
 
 	/**
@@ -191,13 +131,40 @@ public class ActorImpl extends EntityImpl implements Actor {
 	 * @generated
 	 */
 	@Override
+	public EList<Physical_Object> getPhysical_object() {
+		if (physical_object == null) {
+			physical_object = new EObjectWithInverseResolvingEList.ManyInverse<Physical_Object>(Physical_Object.class,
+					this, Prometheus_metamodel_system_specificationPackage.ACTOR__PHYSICAL_OBJECT,
+					Prometheus_metamodel_system_specificationPackage.PHYSICAL_OBJECT__ACTOR);
+		}
+		return physical_object;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Scenario> getScenario() {
+		if (scenario == null) {
+			scenario = new EObjectResolvingEList<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO);
+		}
+		return scenario;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
-			if (scenario != null)
-				msgs = ((InternalEObject) scenario).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTOR, Scenario.class, msgs);
-			return basicSetScenario((Scenario) otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__PHYSICAL_OBJECT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPhysical_object()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -210,8 +177,8 @@ public class ActorImpl extends EntityImpl implements Actor {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
-			return basicSetScenario(null, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__PHYSICAL_OBJECT:
+			return ((InternalEList<?>) getPhysical_object()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -224,14 +191,14 @@ public class ActorImpl extends EntityImpl implements Actor {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
-			if (resolve)
-				return getScenario();
-			return basicGetScenario();
 		case Prometheus_metamodel_system_specificationPackage.ACTOR__ACTION:
 			return getAction();
 		case Prometheus_metamodel_system_specificationPackage.ACTOR__PERCEPT:
 			return getPercept();
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__PHYSICAL_OBJECT:
+			return getPhysical_object();
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
+			return getScenario();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -245,9 +212,6 @@ public class ActorImpl extends EntityImpl implements Actor {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
-			setScenario((Scenario) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.ACTOR__ACTION:
 			getAction().clear();
 			getAction().addAll((Collection<? extends Action>) newValue);
@@ -255,6 +219,14 @@ public class ActorImpl extends EntityImpl implements Actor {
 		case Prometheus_metamodel_system_specificationPackage.ACTOR__PERCEPT:
 			getPercept().clear();
 			getPercept().addAll((Collection<? extends Percept>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__PHYSICAL_OBJECT:
+			getPhysical_object().clear();
+			getPhysical_object().addAll((Collection<? extends Physical_Object>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
+			getScenario().clear();
+			getScenario().addAll((Collection<? extends Scenario>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -268,14 +240,17 @@ public class ActorImpl extends EntityImpl implements Actor {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
-			setScenario((Scenario) null);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.ACTOR__ACTION:
 			getAction().clear();
 			return;
 		case Prometheus_metamodel_system_specificationPackage.ACTOR__PERCEPT:
 			getPercept().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__PHYSICAL_OBJECT:
+			getPhysical_object().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
+			getScenario().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -289,12 +264,14 @@ public class ActorImpl extends EntityImpl implements Actor {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
-			return scenario != null;
 		case Prometheus_metamodel_system_specificationPackage.ACTOR__ACTION:
 			return action != null && !action.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.ACTOR__PERCEPT:
 			return percept != null && !percept.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__PHYSICAL_OBJECT:
+			return physical_object != null && !physical_object.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.ACTOR__SCENARIO:
+			return scenario != null && !scenario.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

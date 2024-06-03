@@ -18,7 +18,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Action;
+import prometheus_metamodel_system_specification.Actor;
 import prometheus_metamodel_system_specification.Context;
+import prometheus_metamodel_system_specification.Data;
 import prometheus_metamodel_system_specification.Functionality;
 import prometheus_metamodel_system_specification.Goal;
 import prometheus_metamodel_system_specification.Goal_Relationship;
@@ -27,6 +29,7 @@ import prometheus_metamodel_system_specification.Model;
 import prometheus_metamodel_system_specification.Percept;
 import prometheus_metamodel_system_specification.Physical_Object;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
+import prometheus_metamodel_system_specification.Rol;
 import prometheus_metamodel_system_specification.Scenario;
 
 /**
@@ -40,12 +43,15 @@ import prometheus_metamodel_system_specification.Scenario;
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getPercepts <em>Percepts</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getContexts <em>Contexts</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getPhysical_objects <em>Physical objects</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getLogical_objects <em>Logical objects</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getFunctionalities <em>Functionalities</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getGoals <em>Goals</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getGoal_relationships <em>Goal relationships</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getActors <em>Actors</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getRoles <em>Roles</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getData <em>Data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getScenarios <em>Scenarios</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,16 +86,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @ordered
 	 */
 	protected EList<Context> contexts;
-
-	/**
-	 * The cached value of the '{@link #getScenarios() <em>Scenarios</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScenarios()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Scenario> scenarios;
 
 	/**
 	 * The cached value of the '{@link #getPhysical_objects() <em>Physical objects</em>}' containment reference list.
@@ -140,6 +136,46 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @ordered
 	 */
 	protected EList<Goal_Relationship> goal_relationships;
+
+	/**
+	 * The cached value of the '{@link #getActors() <em>Actors</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Actor> actors;
+
+	/**
+	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Rol> roles;
+
+	/**
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getData()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Data> data;
+
+	/**
+	 * The cached value of the '{@link #getScenarios() <em>Scenarios</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScenarios()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Scenario> scenarios;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,20 +236,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 					Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXTS);
 		}
 		return contexts;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Scenario> getScenarios() {
-		if (scenarios == null) {
-			scenarios = new EObjectContainmentEList<Scenario>(Scenario.class, this,
-					Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS);
-		}
-		return scenarios;
 	}
 
 	/**
@@ -292,6 +314,62 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Actor> getActors() {
+		if (actors == null) {
+			actors = new EObjectContainmentEList<Actor>(Actor.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__ACTORS);
+		}
+		return actors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Rol> getRoles() {
+		if (roles == null) {
+			roles = new EObjectContainmentEList<Rol>(Rol.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__ROLES);
+		}
+		return roles;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getData() {
+		if (data == null) {
+			data = new EObjectContainmentEList<Data>(Data.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__DATA);
+		}
+		return data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Scenario> getScenarios() {
+		if (scenarios == null) {
+			scenarios = new EObjectContainmentEList<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS);
+		}
+		return scenarios;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -316,8 +394,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return ((InternalEList<?>) getActions()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXTS:
 			return ((InternalEList<?>) getContexts()).basicRemove(otherEnd, msgs);
-		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
-			return ((InternalEList<?>) getScenarios()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECTS:
 			return ((InternalEList<?>) getPhysical_objects()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__LOGICAL_OBJECTS:
@@ -328,6 +404,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return ((InternalEList<?>) getGoals()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
 			return ((InternalEList<?>) getGoal_relationships()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTORS:
+			return ((InternalEList<?>) getActors()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ROLES:
+			return ((InternalEList<?>) getRoles()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__DATA:
+			return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
+			return ((InternalEList<?>) getScenarios()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -346,8 +430,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return getActions();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXTS:
 			return getContexts();
-		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
-			return getScenarios();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECTS:
 			return getPhysical_objects();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__LOGICAL_OBJECTS:
@@ -358,6 +440,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return getGoals();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
 			return getGoal_relationships();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTORS:
+			return getActors();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ROLES:
+			return getRoles();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__DATA:
+			return getData();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
+			return getScenarios();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -383,10 +473,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			getContexts().clear();
 			getContexts().addAll((Collection<? extends Context>) newValue);
 			return;
-		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
-			getScenarios().clear();
-			getScenarios().addAll((Collection<? extends Scenario>) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECTS:
 			getPhysical_objects().clear();
 			getPhysical_objects().addAll((Collection<? extends Physical_Object>) newValue);
@@ -406,6 +492,22 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
 			getGoal_relationships().clear();
 			getGoal_relationships().addAll((Collection<? extends Goal_Relationship>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTORS:
+			getActors().clear();
+			getActors().addAll((Collection<? extends Actor>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ROLES:
+			getRoles().clear();
+			getRoles().addAll((Collection<? extends Rol>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__DATA:
+			getData().clear();
+			getData().addAll((Collection<? extends Data>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
+			getScenarios().clear();
+			getScenarios().addAll((Collection<? extends Scenario>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -428,9 +530,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXTS:
 			getContexts().clear();
 			return;
-		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
-			getScenarios().clear();
-			return;
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECTS:
 			getPhysical_objects().clear();
 			return;
@@ -445,6 +544,18 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return;
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
 			getGoal_relationships().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTORS:
+			getActors().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ROLES:
+			getRoles().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__DATA:
+			getData().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
+			getScenarios().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -464,8 +575,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return actions != null && !actions.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXTS:
 			return contexts != null && !contexts.isEmpty();
-		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
-			return scenarios != null && !scenarios.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECTS:
 			return physical_objects != null && !physical_objects.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__LOGICAL_OBJECTS:
@@ -476,6 +585,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return goals != null && !goals.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
 			return goal_relationships != null && !goal_relationships.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTORS:
+			return actors != null && !actors.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__ROLES:
+			return roles != null && !roles.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__DATA:
+			return data != null && !data.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
+			return scenarios != null && !scenarios.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

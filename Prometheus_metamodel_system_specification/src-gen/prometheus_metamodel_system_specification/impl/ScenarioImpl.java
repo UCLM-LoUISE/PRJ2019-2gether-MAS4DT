@@ -16,12 +16,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import prometheus_metamodel_system_specification.Action;
 import prometheus_metamodel_system_specification.Context;
+import prometheus_metamodel_system_specification.Data;
 import prometheus_metamodel_system_specification.Functionality;
+import prometheus_metamodel_system_specification.Goal;
+import prometheus_metamodel_system_specification.Percept;
 import prometheus_metamodel_system_specification.Physical_Object;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
+import prometheus_metamodel_system_specification.Rol;
 import prometheus_metamodel_system_specification.Scenario;
 import prometheus_metamodel_system_specification.Step;
 
@@ -41,6 +47,12 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getVariation <em>Variation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getStep <em>Step</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getPercept_scenario <em>Percept scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getAction_scenario <em>Action scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getRol_scenario <em>Rol scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getData_scenario <em>Data scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getGoals_scenario <em>Goals scenario</em>}</li>
  * </ul>
  *
  * @generated
@@ -145,6 +157,66 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 	 * @ordered
 	 */
 	protected EList<Step> step;
+
+	/**
+	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScenario()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Scenario> scenario;
+
+	/**
+	 * The cached value of the '{@link #getPercept_scenario() <em>Percept scenario</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPercept_scenario()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Percept> percept_scenario;
+
+	/**
+	 * The cached value of the '{@link #getAction_scenario() <em>Action scenario</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAction_scenario()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Action> action_scenario;
+
+	/**
+	 * The cached value of the '{@link #getRol_scenario() <em>Rol scenario</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRol_scenario()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Rol> rol_scenario;
+
+	/**
+	 * The cached value of the '{@link #getData_scenario() <em>Data scenario</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getData_scenario()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Data> data_scenario;
+
+	/**
+	 * The cached value of the '{@link #getGoals_scenario() <em>Goals scenario</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGoals_scenario()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Goal> goals_scenario;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -361,6 +433,90 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Scenario> getScenario() {
+		if (scenario == null) {
+			scenario = new EObjectResolvingEList<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO);
+		}
+		return scenario;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Percept> getPercept_scenario() {
+		if (percept_scenario == null) {
+			percept_scenario = new EObjectContainmentEList<Percept>(Percept.class, this,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__PERCEPT_SCENARIO);
+		}
+		return percept_scenario;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Action> getAction_scenario() {
+		if (action_scenario == null) {
+			action_scenario = new EObjectContainmentEList<Action>(Action.class, this,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTION_SCENARIO);
+		}
+		return action_scenario;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Rol> getRol_scenario() {
+		if (rol_scenario == null) {
+			rol_scenario = new EObjectContainmentEList<Rol>(Rol.class, this,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__ROL_SCENARIO);
+		}
+		return rol_scenario;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getData_scenario() {
+		if (data_scenario == null) {
+			data_scenario = new EObjectContainmentEList<Data>(Data.class, this,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__DATA_SCENARIO);
+		}
+		return data_scenario;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Goal> getGoals_scenario() {
+		if (goals_scenario == null) {
+			goals_scenario = new EObjectResolvingEList<Goal>(Goal.class, this,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__GOALS_SCENARIO);
+		}
+		return goals_scenario;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -398,6 +554,14 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			return ((InternalEList<?>) getSteps()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
 			return ((InternalEList<?>) getStep()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PERCEPT_SCENARIO:
+			return ((InternalEList<?>) getPercept_scenario()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTION_SCENARIO:
+			return ((InternalEList<?>) getAction_scenario()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ROL_SCENARIO:
+			return ((InternalEList<?>) getRol_scenario()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__DATA_SCENARIO:
+			return ((InternalEList<?>) getData_scenario()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -428,6 +592,18 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			return getPriority();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
 			return getStep();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO:
+			return getScenario();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PERCEPT_SCENARIO:
+			return getPercept_scenario();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTION_SCENARIO:
+			return getAction_scenario();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ROL_SCENARIO:
+			return getRol_scenario();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__DATA_SCENARIO:
+			return getData_scenario();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__GOALS_SCENARIO:
+			return getGoals_scenario();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -470,6 +646,30 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			getStep().clear();
 			getStep().addAll((Collection<? extends Step>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO:
+			getScenario().clear();
+			getScenario().addAll((Collection<? extends Scenario>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PERCEPT_SCENARIO:
+			getPercept_scenario().clear();
+			getPercept_scenario().addAll((Collection<? extends Percept>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTION_SCENARIO:
+			getAction_scenario().clear();
+			getAction_scenario().addAll((Collection<? extends Action>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ROL_SCENARIO:
+			getRol_scenario().clear();
+			getRol_scenario().addAll((Collection<? extends Rol>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__DATA_SCENARIO:
+			getData_scenario().clear();
+			getData_scenario().addAll((Collection<? extends Data>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__GOALS_SCENARIO:
+			getGoals_scenario().clear();
+			getGoals_scenario().addAll((Collection<? extends Goal>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -506,6 +706,24 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
 			getStep().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO:
+			getScenario().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PERCEPT_SCENARIO:
+			getPercept_scenario().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTION_SCENARIO:
+			getAction_scenario().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ROL_SCENARIO:
+			getRol_scenario().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__DATA_SCENARIO:
+			getData_scenario().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__GOALS_SCENARIO:
+			getGoals_scenario().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -534,6 +752,18 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			return priority != null && !priority.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
 			return step != null && !step.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__SCENARIO:
+			return scenario != null && !scenario.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__PERCEPT_SCENARIO:
+			return percept_scenario != null && !percept_scenario.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTION_SCENARIO:
+			return action_scenario != null && !action_scenario.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__ROL_SCENARIO:
+			return rol_scenario != null && !rol_scenario.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__DATA_SCENARIO:
+			return data_scenario != null && !data_scenario.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.SCENARIO__GOALS_SCENARIO:
+			return goals_scenario != null && !goals_scenario.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

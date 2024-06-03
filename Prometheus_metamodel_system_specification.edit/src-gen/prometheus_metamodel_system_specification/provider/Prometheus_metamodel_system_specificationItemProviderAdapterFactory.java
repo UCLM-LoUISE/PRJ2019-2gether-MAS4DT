@@ -350,6 +350,75 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Actor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ActorItemProvider actorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Actor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createActorAdapter() {
+		if (actorItemProvider == null) {
+			actorItemProvider = new ActorItemProvider(this);
+		}
+
+		return actorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Rol} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RolItemProvider rolItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Rol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRolAdapter() {
+		if (rolItemProvider == null) {
+			rolItemProvider = new RolItemProvider(this);
+		}
+
+		return rolItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Data} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataItemProvider dataItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Data}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataAdapter() {
+		if (dataItemProvider == null) {
+			dataItemProvider = new DataItemProvider(this);
+		}
+
+		return dataItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -478,6 +547,12 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 			attributeItemProvider.dispose();
 		if (stepItemProvider != null)
 			stepItemProvider.dispose();
+		if (actorItemProvider != null)
+			actorItemProvider.dispose();
+		if (rolItemProvider != null)
+			rolItemProvider.dispose();
+		if (dataItemProvider != null)
+			dataItemProvider.dispose();
 	}
 
 }

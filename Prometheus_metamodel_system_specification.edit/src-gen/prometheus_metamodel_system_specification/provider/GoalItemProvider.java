@@ -48,6 +48,7 @@ public class GoalItemProvider extends EntityItemProvider {
 			addStepPropertyDescriptor(object);
 			addGoal_relationship_from_orPropertyDescriptor(object);
 			addGoal_relationship_to_orPropertyDescriptor(object);
+			addRolPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -144,6 +145,21 @@ public class GoalItemProvider extends EntityItemProvider {
 								"_UI_Goal_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__GOAL_RELATIONSHIP_TO_OR, true,
 						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Goal_rol_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_rol_feature", "_UI_Goal_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__ROL, true, false, true, null,
+						null, null));
 	}
 
 	/**

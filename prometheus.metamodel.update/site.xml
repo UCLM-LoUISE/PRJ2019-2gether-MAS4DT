@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/prometheus.metamodel_1.0.0.202405261238.jar" id="prometheus.metamodel" version="1.0.0.202405261238">
+      <category name="Prometheus_metamodel_system_specification"/>
+   </feature>
+   <category-def name="Prometheus_metamodel_system_specification" label="Prometheus"/>
+</site>

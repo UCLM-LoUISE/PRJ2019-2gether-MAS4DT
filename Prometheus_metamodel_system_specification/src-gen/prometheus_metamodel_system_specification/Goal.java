@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Goal#getStep <em>Step</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_or <em>Goal relationship from or</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_or <em>Goal relationship to or</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Goal#getRol <em>Rol</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal()
@@ -139,5 +140,19 @@ public interface Goal extends Entity {
 	 * @generated
 	 */
 	void setGoal_relationship_to_or(Goal_Relationship value);
+
+	/**
+	 * Returns the value of the '<em><b>Rol</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Rol}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Rol#getGoal <em>Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rol</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Rol()
+	 * @see prometheus_metamodel_system_specification.Rol#getGoal
+	 * @model opposite="goal"
+	 * @generated
+	 */
+	EList<Rol> getRol();
 
 } // Goal

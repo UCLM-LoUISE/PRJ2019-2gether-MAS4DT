@@ -13,12 +13,16 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Action;
+import prometheus_metamodel_system_specification.Actor;
 import prometheus_metamodel_system_specification.Functionality;
+import prometheus_metamodel_system_specification.Physical_Object;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
+import prometheus_metamodel_system_specification.Rol;
 import prometheus_metamodel_system_specification.Step;
 
 /**
@@ -36,6 +40,9 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getPartial_change <em>Partial change</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getSide_effects <em>Side effects</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getStep <em>Step</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getActor <em>Actor</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getPhysical_object <em>Physical object</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getRol <em>Rol</em>}</li>
  * </ul>
  *
  * @generated
@@ -160,6 +167,36 @@ public class ActionImpl extends EntityImpl implements Action {
 	 * @ordered
 	 */
 	protected EList<Step> step;
+
+	/**
+	 * The cached value of the '{@link #getActor() <em>Actor</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActor()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Actor> actor;
+
+	/**
+	 * The cached value of the '{@link #getPhysical_object() <em>Physical object</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhysical_object()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Physical_Object> physical_object;
+
+	/**
+	 * The cached value of the '{@link #getRol() <em>Rol</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRol()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Rol> rol;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -337,6 +374,49 @@ public class ActionImpl extends EntityImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Actor> getActor() {
+		if (actor == null) {
+			actor = new EObjectResolvingEList<Actor>(Actor.class, this,
+					Prometheus_metamodel_system_specificationPackage.ACTION__ACTOR);
+		}
+		return actor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Physical_Object> getPhysical_object() {
+		if (physical_object == null) {
+			physical_object = new EObjectResolvingEList<Physical_Object>(Physical_Object.class, this,
+					Prometheus_metamodel_system_specificationPackage.ACTION__PHYSICAL_OBJECT);
+		}
+		return physical_object;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Rol> getRol() {
+		if (rol == null) {
+			rol = new EObjectWithInverseResolvingEList.ManyInverse<Rol>(Rol.class, this,
+					Prometheus_metamodel_system_specificationPackage.ACTION__ROL,
+					Prometheus_metamodel_system_specificationPackage.ROL__ACTION);
+		}
+		return rol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -345,6 +425,8 @@ public class ActionImpl extends EntityImpl implements Action {
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFunctionality()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStep()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRol()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -361,6 +443,8 @@ public class ActionImpl extends EntityImpl implements Action {
 			return ((InternalEList<?>) getFunctionality()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
 			return ((InternalEList<?>) getStep()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
+			return ((InternalEList<?>) getRol()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -387,6 +471,12 @@ public class ActionImpl extends EntityImpl implements Action {
 			return getSide_effects();
 		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
 			return getStep();
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ACTOR:
+			return getActor();
+		case Prometheus_metamodel_system_specificationPackage.ACTION__PHYSICAL_OBJECT:
+			return getPhysical_object();
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
+			return getRol();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -423,6 +513,18 @@ public class ActionImpl extends EntityImpl implements Action {
 			getStep().clear();
 			getStep().addAll((Collection<? extends Step>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ACTOR:
+			getActor().clear();
+			getActor().addAll((Collection<? extends Actor>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__PHYSICAL_OBJECT:
+			getPhysical_object().clear();
+			getPhysical_object().addAll((Collection<? extends Physical_Object>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
+			getRol().clear();
+			getRol().addAll((Collection<? extends Rol>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -456,6 +558,15 @@ public class ActionImpl extends EntityImpl implements Action {
 		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
 			getStep().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ACTOR:
+			getActor().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__PHYSICAL_OBJECT:
+			getPhysical_object().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
+			getRol().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -483,6 +594,12 @@ public class ActionImpl extends EntityImpl implements Action {
 			return SIDE_EFFECTS_EDEFAULT == null ? side_effects != null : !SIDE_EFFECTS_EDEFAULT.equals(side_effects);
 		case Prometheus_metamodel_system_specificationPackage.ACTION__STEP:
 			return step != null && !step.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ACTOR:
+			return actor != null && !actor.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.ACTION__PHYSICAL_OBJECT:
+			return physical_object != null && !physical_object.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
+			return rol != null && !rol.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
