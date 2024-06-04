@@ -158,6 +158,15 @@ public interface Prometheus_metamodel_system_specificationFactory extends EFacto
 	Data createData();
 
 	/**
+	 * Returns a new object of class '<em>Agent</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Agent</em>'.
+	 * @generated
+	 */
+	Agent createAgent();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

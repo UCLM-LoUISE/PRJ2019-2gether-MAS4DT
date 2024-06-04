@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getType_of_relationship <em>Type of relationship</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_and <em>Goal from and</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_to_and <em>Goal to and</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal_Relationship#getGoal_from_or <em>Goal from or</em>}</li>
@@ -25,31 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Goal_Relationship extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Type of relationship</b></em>' attribute.
-	 * The literals are from the enumeration {@link prometheus_metamodel_system_specification.Enum_Type_of_Relationship}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type of relationship</em>' attribute.
-	 * @see prometheus_metamodel_system_specification.Enum_Type_of_Relationship
-	 * @see #setType_of_relationship(Enum_Type_of_Relationship)
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Relationship_Type_of_relationship()
-	 * @model dataType="prometheus_metamodel_system_specification.Enum_Type_of_Relationship"
-	 * @generated
-	 */
-	Enum_Type_of_Relationship getType_of_relationship();
-
-	/**
-	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Goal_Relationship#getType_of_relationship <em>Type of relationship</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type of relationship</em>' attribute.
-	 * @see prometheus_metamodel_system_specification.Enum_Type_of_Relationship
-	 * @see #getType_of_relationship()
-	 * @generated
-	 */
-	void setType_of_relationship(Enum_Type_of_Relationship value);
-
 	/**
 	 * Returns the value of the '<em><b>Goal from and</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_and <em>Goal relationship from and</em>}'.

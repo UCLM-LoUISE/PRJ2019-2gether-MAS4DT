@@ -33,7 +33,7 @@ public interface Functionality extends Entity {
 	 * @return the value of the '<em>Logical object</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getFunctionality_Logical_object()
 	 * @see prometheus_metamodel_system_specification.Logical_Object#getFunctionality
-	 * @model opposite="functionality" required="true"
+	 * @model opposite="functionality"
 	 * @generated
 	 */
 	EList<Logical_Object> getLogical_object();
@@ -47,7 +47,7 @@ public interface Functionality extends Entity {
 	 * @return the value of the '<em>Action</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getFunctionality_Action()
 	 * @see prometheus_metamodel_system_specification.Action#getFunctionality
-	 * @model opposite="functionality" required="true"
+	 * @model opposite="functionality"
 	 * @generated
 	 */
 	EList<Action> getAction();
@@ -61,7 +61,7 @@ public interface Functionality extends Entity {
 	 * @return the value of the '<em>Percept</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getFunctionality_Percept()
 	 * @see prometheus_metamodel_system_specification.Percept#getFunctionality
-	 * @model opposite="functionality" required="true"
+	 * @model opposite="functionality"
 	 * @generated
 	 */
 	EList<Percept> getPercept();
@@ -75,7 +75,7 @@ public interface Functionality extends Entity {
 	 * @return the value of the '<em>Scenario</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getFunctionality_Scenario()
 	 * @see prometheus_metamodel_system_specification.Scenario#getFunctionality
-	 * @model opposite="functionality" required="true"
+	 * @model opposite="functionality"
 	 * @generated
 	 */
 	EList<Scenario> getScenario();

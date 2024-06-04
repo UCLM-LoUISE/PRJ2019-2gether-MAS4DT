@@ -419,6 +419,29 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Agent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AgentItemProvider agentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Agent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAgentAdapter() {
+		if (agentItemProvider == null) {
+			agentItemProvider = new AgentItemProvider(this);
+		}
+
+		return agentItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -553,6 +576,8 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 			rolItemProvider.dispose();
 		if (dataItemProvider != null)
 			dataItemProvider.dispose();
+		if (agentItemProvider != null)
+			agentItemProvider.dispose();
 	}
 
 }

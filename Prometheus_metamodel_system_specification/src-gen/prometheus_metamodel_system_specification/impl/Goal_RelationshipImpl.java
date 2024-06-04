@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import prometheus_metamodel_system_specification.Enum_Type_of_Relationship;
 import prometheus_metamodel_system_specification.Goal;
 import prometheus_metamodel_system_specification.Goal_Relationship;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
@@ -22,7 +21,6 @@ import prometheus_metamodel_system_specification.Prometheus_metamodel_system_spe
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.impl.Goal_RelationshipImpl#getType_of_relationship <em>Type of relationship</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.Goal_RelationshipImpl#getGoal_from_and <em>Goal from and</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.Goal_RelationshipImpl#getGoal_to_and <em>Goal to and</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.Goal_RelationshipImpl#getGoal_from_or <em>Goal from or</em>}</li>
@@ -32,26 +30,6 @@ import prometheus_metamodel_system_specification.Prometheus_metamodel_system_spe
  * @generated
  */
 public class Goal_RelationshipImpl extends MinimalEObjectImpl.Container implements Goal_Relationship {
-	/**
-	 * The default value of the '{@link #getType_of_relationship() <em>Type of relationship</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType_of_relationship()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Enum_Type_of_Relationship TYPE_OF_RELATIONSHIP_EDEFAULT = Enum_Type_of_Relationship.AND;
-
-	/**
-	 * The cached value of the '{@link #getType_of_relationship() <em>Type of relationship</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType_of_relationship()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enum_Type_of_Relationship type_of_relationship = TYPE_OF_RELATIONSHIP_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getGoal_from_and() <em>Goal from and</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -109,32 +87,6 @@ public class Goal_RelationshipImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	protected EClass eStaticClass() {
 		return Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Enum_Type_of_Relationship getType_of_relationship() {
-		return type_of_relationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setType_of_relationship(Enum_Type_of_Relationship newType_of_relationship) {
-		Enum_Type_of_Relationship oldType_of_relationship = type_of_relationship;
-		type_of_relationship = newType_of_relationship == null ? TYPE_OF_RELATIONSHIP_EDEFAULT
-				: newType_of_relationship;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP,
-					oldType_of_relationship, type_of_relationship));
 	}
 
 	/**
@@ -501,8 +453,6 @@ public class Goal_RelationshipImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP:
-			return getType_of_relationship();
 		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL_FROM_AND:
 			if (resolve)
 				return getGoal_from_and();
@@ -532,9 +482,6 @@ public class Goal_RelationshipImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP:
-			setType_of_relationship((Enum_Type_of_Relationship) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL_FROM_AND:
 			setGoal_from_and((Goal) newValue);
 			return;
@@ -559,9 +506,6 @@ public class Goal_RelationshipImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP:
-			setType_of_relationship(TYPE_OF_RELATIONSHIP_EDEFAULT);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL_FROM_AND:
 			setGoal_from_and((Goal) null);
 			return;
@@ -586,8 +530,6 @@ public class Goal_RelationshipImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP:
-			return type_of_relationship != TYPE_OF_RELATIONSHIP_EDEFAULT;
 		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL_FROM_AND:
 			return goal_from_and != null;
 		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__GOAL_TO_AND:
@@ -598,23 +540,6 @@ public class Goal_RelationshipImpl extends MinimalEObjectImpl.Container implemen
 			return goal_to_or != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (type_of_relationship: ");
-		result.append(type_of_relationship);
-		result.append(')');
-		return result.toString();
 	}
 
 } //Goal_RelationshipImpl

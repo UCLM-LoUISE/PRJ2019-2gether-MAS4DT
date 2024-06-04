@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_from_or <em>Goal relationship from or</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal#getGoal_relationship_to_or <em>Goal relationship to or</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Goal#getRol <em>Rol</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Goal#getScenario_goals <em>Scenario goals</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal()
@@ -154,5 +155,19 @@ public interface Goal extends Entity {
 	 * @generated
 	 */
 	EList<Rol> getRol();
+
+	/**
+	 * Returns the value of the '<em><b>Scenario goals</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Scenario#getGoals_scenario <em>Goals scenario</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenario goals</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getGoal_Scenario_goals()
+	 * @see prometheus_metamodel_system_specification.Scenario#getGoals_scenario
+	 * @model opposite="goals_scenario"
+	 * @generated
+	 */
+	EList<Scenario> getScenario_goals();
 
 } // Goal

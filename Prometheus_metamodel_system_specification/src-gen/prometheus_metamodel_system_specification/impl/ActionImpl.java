@@ -23,6 +23,7 @@ import prometheus_metamodel_system_specification.Functionality;
 import prometheus_metamodel_system_specification.Physical_Object;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 import prometheus_metamodel_system_specification.Rol;
+import prometheus_metamodel_system_specification.Scenario;
 import prometheus_metamodel_system_specification.Step;
 
 /**
@@ -43,6 +44,7 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getActor <em>Actor</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getRol <em>Rol</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ActionImpl#getScenario_action <em>Scenario action</em>}</li>
  * </ul>
  *
  * @generated
@@ -197,6 +199,16 @@ public class ActionImpl extends EntityImpl implements Action {
 	 * @ordered
 	 */
 	protected EList<Rol> rol;
+
+	/**
+	 * The cached value of the '{@link #getScenario_action() <em>Scenario action</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScenario_action()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Scenario> scenario_action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -417,6 +429,21 @@ public class ActionImpl extends EntityImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Scenario> getScenario_action() {
+		if (scenario_action == null) {
+			scenario_action = new EObjectWithInverseResolvingEList.ManyInverse<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO_ACTION,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__ACTION_SCENARIO);
+		}
+		return scenario_action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -427,6 +454,8 @@ public class ActionImpl extends EntityImpl implements Action {
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStep()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRol()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO_ACTION:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario_action()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -445,6 +474,8 @@ public class ActionImpl extends EntityImpl implements Action {
 			return ((InternalEList<?>) getStep()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
 			return ((InternalEList<?>) getRol()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO_ACTION:
+			return ((InternalEList<?>) getScenario_action()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -477,6 +508,8 @@ public class ActionImpl extends EntityImpl implements Action {
 			return getPhysical_object();
 		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
 			return getRol();
+		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO_ACTION:
+			return getScenario_action();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -525,6 +558,10 @@ public class ActionImpl extends EntityImpl implements Action {
 			getRol().clear();
 			getRol().addAll((Collection<? extends Rol>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO_ACTION:
+			getScenario_action().clear();
+			getScenario_action().addAll((Collection<? extends Scenario>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -567,6 +604,9 @@ public class ActionImpl extends EntityImpl implements Action {
 		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
 			getRol().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO_ACTION:
+			getScenario_action().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -600,6 +640,8 @@ public class ActionImpl extends EntityImpl implements Action {
 			return physical_object != null && !physical_object.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.ACTION__ROL:
 			return rol != null && !rol.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.ACTION__SCENARIO_ACTION:
+			return scenario_action != null && !scenario_action.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -54,6 +54,7 @@ public class ActionItemProvider extends EntityItemProvider {
 			addActorPropertyDescriptor(object);
 			addPhysical_objectPropertyDescriptor(object);
 			addRolPropertyDescriptor(object);
+			addScenario_actionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -213,6 +214,22 @@ public class ActionItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Action_rol_feature", "_UI_Action_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__ROL, true, false, true, null,
 						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenario_actionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_scenario_action_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_scenario_action_feature",
+								"_UI_Action_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__SCENARIO_ACTION, true, false,
+						true, null, null, null));
 	}
 
 	/**

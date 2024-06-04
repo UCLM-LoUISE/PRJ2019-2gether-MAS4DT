@@ -20,6 +20,7 @@ import prometheus_metamodel_system_specification.Goal_Relationship;
 import prometheus_metamodel_system_specification.Model;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 import prometheus_metamodel_system_specification.Rol;
+import prometheus_metamodel_system_specification.Scenario;
 import prometheus_metamodel_system_specification.Step;
 
 /**
@@ -37,6 +38,7 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.GoalImpl#getGoal_relationship_from_or <em>Goal relationship from or</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.GoalImpl#getGoal_relationship_to_or <em>Goal relationship to or</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.GoalImpl#getRol <em>Rol</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.GoalImpl#getScenario_goals <em>Scenario goals</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,6 +99,16 @@ public class GoalImpl extends EntityImpl implements Goal {
 	 * @ordered
 	 */
 	protected EList<Rol> rol;
+
+	/**
+	 * The cached value of the '{@link #getScenario_goals() <em>Scenario goals</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScenario_goals()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Scenario> scenario_goals;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -384,6 +396,21 @@ public class GoalImpl extends EntityImpl implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Scenario> getScenario_goals() {
+		if (scenario_goals == null) {
+			scenario_goals = new EObjectWithInverseResolvingEList.ManyInverse<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO_GOALS,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__GOALS_SCENARIO);
+		}
+		return scenario_goals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -414,6 +441,8 @@ public class GoalImpl extends EntityImpl implements Goal {
 			return basicSetGoal_relationship_to_or((Goal_Relationship) otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.GOAL__ROL:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRol()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO_GOALS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario_goals()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -440,6 +469,8 @@ public class GoalImpl extends EntityImpl implements Goal {
 			return basicSetGoal_relationship_to_or(null, msgs);
 		case Prometheus_metamodel_system_specificationPackage.GOAL__ROL:
 			return ((InternalEList<?>) getRol()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO_GOALS:
+			return ((InternalEList<?>) getScenario_goals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -485,6 +516,8 @@ public class GoalImpl extends EntityImpl implements Goal {
 			return basicGetGoal_relationship_to_or();
 		case Prometheus_metamodel_system_specificationPackage.GOAL__ROL:
 			return getRol();
+		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO_GOALS:
+			return getScenario_goals();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -523,6 +556,10 @@ public class GoalImpl extends EntityImpl implements Goal {
 			getRol().clear();
 			getRol().addAll((Collection<? extends Rol>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO_GOALS:
+			getScenario_goals().clear();
+			getScenario_goals().addAll((Collection<? extends Scenario>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -556,6 +593,9 @@ public class GoalImpl extends EntityImpl implements Goal {
 		case Prometheus_metamodel_system_specificationPackage.GOAL__ROL:
 			getRol().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO_GOALS:
+			getScenario_goals().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -582,6 +622,8 @@ public class GoalImpl extends EntityImpl implements Goal {
 			return goal_relationship_to_or != null;
 		case Prometheus_metamodel_system_specificationPackage.GOAL__ROL:
 			return rol != null && !rol.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.GOAL__SCENARIO_GOALS:
+			return scenario_goals != null && !scenario_goals.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

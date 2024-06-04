@@ -49,6 +49,7 @@ public class GoalItemProvider extends EntityItemProvider {
 			addGoal_relationship_from_orPropertyDescriptor(object);
 			addGoal_relationship_to_orPropertyDescriptor(object);
 			addRolPropertyDescriptor(object);
+			addScenario_goalsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -160,6 +161,22 @@ public class GoalItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Goal_rol_feature", "_UI_Goal_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__ROL, true, false, true, null,
 						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario goals feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenario_goalsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Goal_scenario_goals_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Goal_scenario_goals_feature",
+								"_UI_Goal_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.GOAL__SCENARIO_GOALS, true, false,
+						true, null, null, null));
 	}
 
 	/**

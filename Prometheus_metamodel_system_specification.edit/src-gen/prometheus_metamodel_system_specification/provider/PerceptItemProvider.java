@@ -55,6 +55,7 @@ public class PerceptItemProvider extends EntityItemProvider {
 			addStepPropertyDescriptor(object);
 			addRolPropertyDescriptor(object);
 			addScenarioPropertyDescriptor(object);
+			addScenario_perceptPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -231,6 +232,22 @@ public class PerceptItemProvider extends EntityItemProvider {
 								"_UI_Percept_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__SCENARIO, true, false, true,
 						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario percept feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenario_perceptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_scenario_percept_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_scenario_percept_feature",
+								"_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__SCENARIO_PERCEPT, true,
+						false, true, null, null, null));
 	}
 
 	/**

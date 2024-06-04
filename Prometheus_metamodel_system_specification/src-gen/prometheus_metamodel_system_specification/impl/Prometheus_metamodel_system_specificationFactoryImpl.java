@@ -88,6 +88,8 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 			return createRol();
 		case Prometheus_metamodel_system_specificationPackage.DATA:
 			return createData();
+		case Prometheus_metamodel_system_specificationPackage.AGENT:
+			return createAgent();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -101,8 +103,6 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case Prometheus_metamodel_system_specificationPackage.ENUM_TYPE_OF_RELATIONSHIP:
-			return createEnum_Type_of_RelationshipFromString(eDataType, initialValue);
 		case Prometheus_metamodel_system_specificationPackage.ENUM_TYPES:
 			return createEnum_TypesFromString(eDataType, initialValue);
 		case Prometheus_metamodel_system_specificationPackage.ENUM_VISIBILITY:
@@ -122,8 +122,6 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case Prometheus_metamodel_system_specificationPackage.ENUM_TYPE_OF_RELATIONSHIP:
-			return convertEnum_Type_of_RelationshipToString(eDataType, instanceValue);
 		case Prometheus_metamodel_system_specificationPackage.ENUM_TYPES:
 			return convertEnum_TypesToString(eDataType, instanceValue);
 		case Prometheus_metamodel_system_specificationPackage.ENUM_VISIBILITY:
@@ -305,22 +303,10 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Enum_Type_of_Relationship createEnum_Type_of_RelationshipFromString(EDataType eDataType,
-			String initialValue) {
-		Enum_Type_of_Relationship result = Enum_Type_of_Relationship.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertEnum_Type_of_RelationshipToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	@Override
+	public Agent createAgent() {
+		AgentImpl agent = new AgentImpl();
+		return agent;
 	}
 
 	/**

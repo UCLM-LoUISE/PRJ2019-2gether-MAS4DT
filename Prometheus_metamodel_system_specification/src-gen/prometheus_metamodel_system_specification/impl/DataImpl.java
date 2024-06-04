@@ -2,11 +2,18 @@
  */
 package prometheus_metamodel_system_specification.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import prometheus_metamodel_system_specification.Data;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
+import prometheus_metamodel_system_specification.Scenario;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +30,7 @@ import prometheus_metamodel_system_specification.Prometheus_metamodel_system_spe
  *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getExternal_path <em>External path</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getInitialisation <em>Initialisation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getUsed_when <em>Used when</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getScenario_data <em>Scenario data</em>}</li>
  * </ul>
  *
  * @generated
@@ -167,6 +175,16 @@ public class DataImpl extends EntityImpl implements Data {
 	 * @ordered
 	 */
 	protected String used_when = USED_WHEN_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getScenario_data() <em>Scenario data</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScenario_data()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Scenario> scenario_data;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -365,6 +383,50 @@ public class DataImpl extends EntityImpl implements Data {
 	 * @generated
 	 */
 	@Override
+	public EList<Scenario> getScenario_data() {
+		if (scenario_data == null) {
+			scenario_data = new EObjectWithInverseResolvingEList.ManyInverse<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__DATA_SCENARIO);
+		}
+		return scenario_data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario_data()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
+			return ((InternalEList<?>) getScenario_data()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.DATA__DATA_TYPE:
@@ -381,6 +443,8 @@ public class DataImpl extends EntityImpl implements Data {
 			return getInitialisation();
 		case Prometheus_metamodel_system_specificationPackage.DATA__USED_WHEN:
 			return getUsed_when();
+		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
+			return getScenario_data();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -415,6 +479,10 @@ public class DataImpl extends EntityImpl implements Data {
 		case Prometheus_metamodel_system_specificationPackage.DATA__USED_WHEN:
 			setUsed_when((String) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
+			getScenario_data().clear();
+			getScenario_data().addAll((Collection<? extends Scenario>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -448,6 +516,9 @@ public class DataImpl extends EntityImpl implements Data {
 		case Prometheus_metamodel_system_specificationPackage.DATA__USED_WHEN:
 			setUsed_when(USED_WHEN_EDEFAULT);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
+			getScenario_data().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -477,6 +548,8 @@ public class DataImpl extends EntityImpl implements Data {
 					: !INITIALISATION_EDEFAULT.equals(initialisation);
 		case Prometheus_metamodel_system_specificationPackage.DATA__USED_WHEN:
 			return USED_WHEN_EDEFAULT == null ? used_when != null : !USED_WHEN_EDEFAULT.equals(used_when);
+		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
+			return scenario_data != null && !scenario_data.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

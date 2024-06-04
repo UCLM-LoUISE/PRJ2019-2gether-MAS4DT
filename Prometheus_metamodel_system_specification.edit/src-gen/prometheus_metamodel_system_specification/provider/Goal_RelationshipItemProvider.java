@@ -17,12 +17,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import prometheus_metamodel_system_specification.Enum_Type_of_Relationship;
-import prometheus_metamodel_system_specification.Goal_Relationship;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 
 /**
@@ -54,29 +50,12 @@ public class Goal_RelationshipItemProvider extends ItemProviderAdapter implement
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addType_of_relationshipPropertyDescriptor(object);
 			addGoal_from_andPropertyDescriptor(object);
 			addGoal_to_andPropertyDescriptor(object);
 			addGoal_from_orPropertyDescriptor(object);
 			addGoal_to_orPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Type of relationship feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addType_of_relationshipPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Goal_Relationship_type_of_relationship_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Goal_Relationship_type_of_relationship_feature",
-						"_UI_Goal_Relationship_type"),
-				Prometheus_metamodel_system_specificationPackage.Literals.GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -172,10 +151,7 @@ public class Goal_RelationshipItemProvider extends ItemProviderAdapter implement
 	 */
 	@Override
 	public String getText(Object object) {
-		Enum_Type_of_Relationship labelValue = ((Goal_Relationship) object).getType_of_relationship();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_Goal_Relationship_type")
-				: getString("_UI_Goal_Relationship_type") + " " + label;
+		return getString("_UI_Goal_Relationship_type");
 	}
 
 	/**
@@ -188,12 +164,6 @@ public class Goal_RelationshipItemProvider extends ItemProviderAdapter implement
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Goal_Relationship.class)) {
-		case Prometheus_metamodel_system_specificationPackage.GOAL_RELATIONSHIP__TYPE_OF_RELATIONSHIP:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

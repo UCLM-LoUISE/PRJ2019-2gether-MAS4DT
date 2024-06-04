@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getStep <em>Step</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getRol <em>Rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Percept#getScenario_percept <em>Scenario percept</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept()
@@ -40,7 +41,7 @@ public interface Percept extends Entity {
 	 * @return the value of the '<em>Functionality</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept_Functionality()
 	 * @see prometheus_metamodel_system_specification.Functionality#getPercept
-	 * @model opposite="percept" required="true"
+	 * @model opposite="percept"
 	 * @generated
 	 */
 	EList<Functionality> getFunctionality();
@@ -238,5 +239,19 @@ public interface Percept extends Entity {
 	 * @generated
 	 */
 	EList<Scenario> getScenario();
+
+	/**
+	 * Returns the value of the '<em><b>Scenario percept</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Scenario#getPercept_scenario <em>Percept scenario</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenario percept</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept_Scenario_percept()
+	 * @see prometheus_metamodel_system_specification.Scenario#getPercept_scenario
+	 * @model opposite="percept_scenario"
+	 * @generated
+	 */
+	EList<Scenario> getScenario_percept();
 
 } // Percept

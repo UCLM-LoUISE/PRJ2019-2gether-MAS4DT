@@ -32,7 +32,7 @@ public interface Logical_Object extends Entity {
 	 * @return the value of the '<em>Functionality</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getLogical_Object_Functionality()
 	 * @see prometheus_metamodel_system_specification.Functionality#getLogical_object
-	 * @model opposite="logical_object" required="true"
+	 * @model opposite="logical_object"
 	 * @generated
 	 */
 	EList<Functionality> getFunctionality();

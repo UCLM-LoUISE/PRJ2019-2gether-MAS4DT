@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Action#getActor <em>Actor</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getRol <em>Rol</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Action#getScenario_action <em>Scenario action</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction()
@@ -39,7 +40,7 @@ public interface Action extends Entity {
 	 * @return the value of the '<em>Functionality</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Functionality()
 	 * @see prometheus_metamodel_system_specification.Functionality#getAction
-	 * @model opposite="action" required="true"
+	 * @model opposite="action"
 	 * @generated
 	 */
 	EList<Functionality> getFunctionality();
@@ -205,5 +206,19 @@ public interface Action extends Entity {
 	 * @generated
 	 */
 	EList<Rol> getRol();
+
+	/**
+	 * Returns the value of the '<em><b>Scenario action</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Scenario#getAction_scenario <em>Action scenario</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenario action</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Scenario_action()
+	 * @see prometheus_metamodel_system_specification.Scenario#getAction_scenario
+	 * @model opposite="action_scenario"
+	 * @generated
+	 */
+	EList<Scenario> getScenario_action();
 
 } // Action

@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link prometheus_metamodel_system_specification.Model#getRoles <em>Roles</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getData <em>Data</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getScenarios <em>Scenarios</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getAgents <em>Agents</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel()
@@ -171,13 +172,27 @@ public interface Model extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Scenarios</b></em>' containment reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Scenario#getModel_scenario <em>Model scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scenarios</em>' containment reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Scenarios()
-	 * @model containment="true"
+	 * @see prometheus_metamodel_system_specification.Scenario#getModel_scenario
+	 * @model opposite="model_scenario" containment="true"
 	 * @generated
 	 */
 	EList<Scenario> getScenarios();
+
+	/**
+	 * Returns the value of the '<em><b>Agents</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Agent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agents</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Agents()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Agent> getAgents();
 
 } // Model

@@ -43,6 +43,7 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getStep <em>Step</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getRol <em>Rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getScenario_percept <em>Scenario percept</em>}</li>
  * </ul>
  *
  * @generated
@@ -227,6 +228,16 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	 * @ordered
 	 */
 	protected EList<Scenario> scenario;
+
+	/**
+	 * The cached value of the '{@link #getScenario_percept() <em>Scenario percept</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScenario_percept()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Scenario> scenario_percept;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -484,6 +495,21 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Scenario> getScenario_percept() {
+		if (scenario_percept == null) {
+			scenario_percept = new EObjectWithInverseResolvingEList.ManyInverse<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__PERCEPT_SCENARIO);
+		}
+		return scenario_percept;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -494,6 +520,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStep()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__ROL:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRol()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario_percept()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -512,6 +540,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return ((InternalEList<?>) getStep()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__ROL:
 			return ((InternalEList<?>) getRol()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
+			return ((InternalEList<?>) getScenario_percept()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -546,6 +576,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return getRol();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO:
 			return getScenario();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
+			return getScenario_percept();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -596,6 +628,10 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			getScenario().clear();
 			getScenario().addAll((Collection<? extends Scenario>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
+			getScenario_percept().clear();
+			getScenario_percept().addAll((Collection<? extends Scenario>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -641,6 +677,9 @@ public class PerceptImpl extends EntityImpl implements Percept {
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO:
 			getScenario().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
+			getScenario_percept().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -679,6 +718,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return rol != null && !rol.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO:
 			return scenario != null && !scenario.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
+			return scenario_percept != null && !scenario_percept.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

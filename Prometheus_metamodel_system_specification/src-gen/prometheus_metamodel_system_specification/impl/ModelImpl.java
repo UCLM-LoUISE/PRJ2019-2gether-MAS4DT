@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Action;
 import prometheus_metamodel_system_specification.Actor;
+import prometheus_metamodel_system_specification.Agent;
 import prometheus_metamodel_system_specification.Context;
 import prometheus_metamodel_system_specification.Data;
 import prometheus_metamodel_system_specification.Functionality;
@@ -52,6 +53,7 @@ import prometheus_metamodel_system_specification.Scenario;
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getData <em>Data</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getScenarios <em>Scenarios</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getAgents <em>Agents</em>}</li>
  * </ul>
  *
  * @generated
@@ -176,6 +178,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @ordered
 	 */
 	protected EList<Scenario> scenarios;
+
+	/**
+	 * The cached value of the '{@link #getAgents() <em>Agents</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Agent> agents;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -359,10 +371,25 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	@Override
 	public EList<Scenario> getScenarios() {
 		if (scenarios == null) {
-			scenarios = new EObjectContainmentEList<Scenario>(Scenario.class, this,
-					Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS);
+			scenarios = new EObjectContainmentWithInverseEList<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__MODEL_SCENARIO);
 		}
 		return scenarios;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Agent> getAgents() {
+		if (agents == null) {
+			agents = new EObjectContainmentEList<Agent>(Agent.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS);
+		}
+		return agents;
 	}
 
 	/**
@@ -376,6 +403,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getGoals()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenarios()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -412,6 +441,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
 			return ((InternalEList<?>) getScenarios()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
+			return ((InternalEList<?>) getAgents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -448,6 +479,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return getData();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
 			return getScenarios();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
+			return getAgents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -509,6 +542,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			getScenarios().clear();
 			getScenarios().addAll((Collection<? extends Scenario>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
+			getAgents().clear();
+			getAgents().addAll((Collection<? extends Agent>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -557,6 +594,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
 			getScenarios().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
+			getAgents().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -593,6 +633,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return data != null && !data.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
 			return scenarios != null && !scenarios.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
+			return agents != null && !agents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

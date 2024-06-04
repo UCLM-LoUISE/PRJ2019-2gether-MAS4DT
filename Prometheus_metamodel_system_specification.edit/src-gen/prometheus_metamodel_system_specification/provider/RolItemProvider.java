@@ -46,6 +46,7 @@ public class RolItemProvider extends EntityItemProvider {
 			addPerceptPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
 			addGoalPropertyDescriptor(object);
+			addScenario_rolPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,6 +109,21 @@ public class RolItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Rol_goal_feature", "_UI_Rol_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.ROL__GOAL, true, false, true, null,
 						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario rol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenario_rolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Rol_scenario_rol_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Rol_scenario_rol_feature", "_UI_Rol_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ROL__SCENARIO_ROL, true, false, true,
+						null, null, null));
 	}
 
 	/**

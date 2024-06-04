@@ -21,6 +21,7 @@ import prometheus_metamodel_system_specification.Goal;
 import prometheus_metamodel_system_specification.Percept;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 import prometheus_metamodel_system_specification.Rol;
+import prometheus_metamodel_system_specification.Scenario;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +35,7 @@ import prometheus_metamodel_system_specification.Rol;
  *   <li>{@link prometheus_metamodel_system_specification.impl.RolImpl#getPercept <em>Percept</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.RolImpl#getAction <em>Action</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.RolImpl#getGoal <em>Goal</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.RolImpl#getScenario_rol <em>Scenario rol</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +80,16 @@ public class RolImpl extends EntityImpl implements Rol {
 	 * @ordered
 	 */
 	protected EList<Goal> goal;
+
+	/**
+	 * The cached value of the '{@link #getScenario_rol() <em>Scenario rol</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScenario_rol()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Scenario> scenario_rol;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,6 +174,21 @@ public class RolImpl extends EntityImpl implements Rol {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Scenario> getScenario_rol() {
+		if (scenario_rol == null) {
+			scenario_rol = new EObjectWithInverseResolvingEList.ManyInverse<Scenario>(Scenario.class, this,
+					Prometheus_metamodel_system_specificationPackage.ROL__SCENARIO_ROL,
+					Prometheus_metamodel_system_specificationPackage.SCENARIO__ROL_SCENARIO);
+		}
+		return scenario_rol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -172,6 +199,8 @@ public class RolImpl extends EntityImpl implements Rol {
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAction()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ROL__GOAL:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getGoal()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ROL__SCENARIO_ROL:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario_rol()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -190,6 +219,8 @@ public class RolImpl extends EntityImpl implements Rol {
 			return ((InternalEList<?>) getAction()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ROL__GOAL:
 			return ((InternalEList<?>) getGoal()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.ROL__SCENARIO_ROL:
+			return ((InternalEList<?>) getScenario_rol()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -210,6 +241,8 @@ public class RolImpl extends EntityImpl implements Rol {
 			return getAction();
 		case Prometheus_metamodel_system_specificationPackage.ROL__GOAL:
 			return getGoal();
+		case Prometheus_metamodel_system_specificationPackage.ROL__SCENARIO_ROL:
+			return getScenario_rol();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,6 +272,10 @@ public class RolImpl extends EntityImpl implements Rol {
 			getGoal().clear();
 			getGoal().addAll((Collection<? extends Goal>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.ROL__SCENARIO_ROL:
+			getScenario_rol().clear();
+			getScenario_rol().addAll((Collection<? extends Scenario>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -263,6 +300,9 @@ public class RolImpl extends EntityImpl implements Rol {
 		case Prometheus_metamodel_system_specificationPackage.ROL__GOAL:
 			getGoal().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.ROL__SCENARIO_ROL:
+			getScenario_rol().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -283,6 +323,8 @@ public class RolImpl extends EntityImpl implements Rol {
 			return action != null && !action.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.ROL__GOAL:
 			return goal != null && !goal.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.ROL__SCENARIO_ROL:
+			return scenario_rol != null && !scenario_rol.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

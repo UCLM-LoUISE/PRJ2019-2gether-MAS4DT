@@ -51,6 +51,7 @@ public class DataItemProvider extends EntityItemProvider {
 			addExternal_pathPropertyDescriptor(object);
 			addInitialisationPropertyDescriptor(object);
 			addUsed_whenPropertyDescriptor(object);
+			addScenario_dataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -162,6 +163,22 @@ public class DataItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Data_used_when_feature", "_UI_Data_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.DATA__USED_WHEN, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario data feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenario_dataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Data_scenario_data_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Data_scenario_data_feature",
+								"_UI_Data_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.DATA__SCENARIO_DATA, true, false,
+						true, null, null, null));
 	}
 
 	/**

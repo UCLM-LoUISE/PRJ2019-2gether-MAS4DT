@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Rol#getPercept <em>Percept</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Rol#getAction <em>Action</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Rol#getGoal <em>Goal</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Rol#getScenario_rol <em>Scenario rol</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getRol()
@@ -77,5 +78,19 @@ public interface Rol extends Entity {
 	 * @generated
 	 */
 	EList<Goal> getGoal();
+
+	/**
+	 * Returns the value of the '<em><b>Scenario rol</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Scenario}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Scenario#getRol_scenario <em>Rol scenario</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenario rol</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getRol_Scenario_rol()
+	 * @see prometheus_metamodel_system_specification.Scenario#getRol_scenario
+	 * @model opposite="rol_scenario"
+	 * @generated
+	 */
+	EList<Scenario> getScenario_rol();
 
 } // Rol
