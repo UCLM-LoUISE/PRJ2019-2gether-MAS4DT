@@ -167,6 +167,24 @@ public interface Prometheus_metamodel_system_specificationFactory extends EFacto
 	Agent createAgent();
 
 	/**
+	 * Returns a new object of class '<em>Message</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message</em>'.
+	 * @generated
+	 */
+	Message createMessage();
+
+	/**
+	 * Returns a new object of class '<em>Protocol</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Protocol</em>'.
+	 * @generated
+	 */
+	Protocol createProtocol();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

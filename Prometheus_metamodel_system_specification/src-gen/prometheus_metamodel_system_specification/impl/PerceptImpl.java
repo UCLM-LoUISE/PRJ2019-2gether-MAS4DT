@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import prometheus_metamodel_system_specification.Agent;
 import prometheus_metamodel_system_specification.Functionality;
 import prometheus_metamodel_system_specification.Percept;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
@@ -44,6 +45,7 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getRol <em>Rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getScenario_percept <em>Scenario percept</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getAgent <em>Agent</em>}</li>
  * </ul>
  *
  * @generated
@@ -238,6 +240,16 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	 * @ordered
 	 */
 	protected EList<Scenario> scenario_percept;
+
+	/**
+	 * The cached value of the '{@link #getAgent() <em>Agent</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Agent> agent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -510,6 +522,20 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Agent> getAgent() {
+		if (agent == null) {
+			agent = new EObjectResolvingEList<Agent>(Agent.class, this,
+					Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT);
+		}
+		return agent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -578,6 +604,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return getScenario();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
 			return getScenario_percept();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT:
+			return getAgent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -632,6 +660,10 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			getScenario_percept().clear();
 			getScenario_percept().addAll((Collection<? extends Scenario>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT:
+			getAgent().clear();
+			getAgent().addAll((Collection<? extends Agent>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -680,6 +712,9 @@ public class PerceptImpl extends EntityImpl implements Percept {
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
 			getScenario_percept().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT:
+			getAgent().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -720,6 +755,8 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return scenario != null && !scenario.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
 			return scenario_percept != null && !scenario_percept.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT:
+			return agent != null && !agent.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,6 +2,8 @@
  */
 package prometheus_metamodel_system_specification;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Agent</b></em>'.
@@ -16,6 +18,11 @@ package prometheus_metamodel_system_specification;
  *   <li>{@link prometheus_metamodel_system_specification.Agent#getLifetime <em>Lifetime</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Agent#getInitialisation <em>Initialisation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Agent#getDemise <em>Demise</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Agent#getData_agent <em>Data agent</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Agent#getRol <em>Rol</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Agent#getProtocol <em>Protocol</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Agent#getMessage_agent <em>Message agent</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Agent#getAction <em>Action</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent()
@@ -132,5 +139,69 @@ public interface Agent extends Entity {
 	 * @generated
 	 */
 	void setDemise(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Data agent</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Data}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Data#getAgent_data <em>Agent data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data agent</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Data_agent()
+	 * @see prometheus_metamodel_system_specification.Data#getAgent_data
+	 * @model opposite="agent_data"
+	 * @generated
+	 */
+	EList<Data> getData_agent();
+
+	/**
+	 * Returns the value of the '<em><b>Rol</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Rol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rol</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Rol()
+	 * @model
+	 * @generated
+	 */
+	EList<Rol> getRol();
+
+	/**
+	 * Returns the value of the '<em><b>Protocol</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Protocol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Protocol</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Protocol()
+	 * @model
+	 * @generated
+	 */
+	EList<Protocol> getProtocol();
+
+	/**
+	 * Returns the value of the '<em><b>Message agent</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Message}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Message#getAgent_message <em>Agent message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Message agent</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Message_agent()
+	 * @see prometheus_metamodel_system_specification.Message#getAgent_message
+	 * @model opposite="agent_message"
+	 * @generated
+	 */
+	EList<Message> getMessage_agent();
+
+	/**
+	 * Returns the value of the '<em><b>Action</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Action}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Action()
+	 * @model
+	 * @generated
+	 */
+	EList<Action> getAction();
 
 } // Agent

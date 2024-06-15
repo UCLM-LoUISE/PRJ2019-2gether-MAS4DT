@@ -90,6 +90,10 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 			return createData();
 		case Prometheus_metamodel_system_specificationPackage.AGENT:
 			return createAgent();
+		case Prometheus_metamodel_system_specificationPackage.MESSAGE:
+			return createMessage();
+		case Prometheus_metamodel_system_specificationPackage.PROTOCOL:
+			return createProtocol();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -307,6 +311,28 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	public Agent createAgent() {
 		AgentImpl agent = new AgentImpl();
 		return agent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Message createMessage() {
+		MessageImpl message = new MessageImpl();
+		return message;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Protocol createProtocol() {
+		ProtocolImpl protocol = new ProtocolImpl();
+		return protocol;
 	}
 
 	/**

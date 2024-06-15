@@ -21,6 +21,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Data#getInitialisation <em>Initialisation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Data#getUsed_when <em>Used when</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Data#getScenario_data <em>Scenario data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Data#getAgent_data <em>Agent data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Data#getRol_data <em>Rol data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Data#getMessage <em>Message</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getData()
@@ -195,5 +198,55 @@ public interface Data extends Entity {
 	 * @generated
 	 */
 	EList<Scenario> getScenario_data();
+
+	/**
+	 * Returns the value of the '<em><b>Agent data</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Agent}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Agent#getData_agent <em>Data agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agent data</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getData_Agent_data()
+	 * @see prometheus_metamodel_system_specification.Agent#getData_agent
+	 * @model opposite="data_agent"
+	 * @generated
+	 */
+	EList<Agent> getAgent_data();
+
+	/**
+	 * Returns the value of the '<em><b>Rol data</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Rol#getData_rol <em>Data rol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rol data</em>' reference.
+	 * @see #setRol_data(Rol)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getData_Rol_data()
+	 * @see prometheus_metamodel_system_specification.Rol#getData_rol
+	 * @model opposite="data_rol"
+	 * @generated
+	 */
+	Rol getRol_data();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Data#getRol_data <em>Rol data</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rol data</em>' reference.
+	 * @see #getRol_data()
+	 * @generated
+	 */
+	void setRol_data(Rol value);
+
+	/**
+	 * Returns the value of the '<em><b>Message</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Message}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Message</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getData_Message()
+	 * @model
+	 * @generated
+	 */
+	EList<Message> getMessage();
 
 } // Data

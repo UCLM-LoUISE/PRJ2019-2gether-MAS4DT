@@ -9,10 +9,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import prometheus_metamodel_system_specification.Agent;
 import prometheus_metamodel_system_specification.Data;
+import prometheus_metamodel_system_specification.Message;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
+import prometheus_metamodel_system_specification.Rol;
 import prometheus_metamodel_system_specification.Scenario;
 
 /**
@@ -31,6 +35,9 @@ import prometheus_metamodel_system_specification.Scenario;
  *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getInitialisation <em>Initialisation</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getUsed_when <em>Used when</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getScenario_data <em>Scenario data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getAgent_data <em>Agent data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getRol_data <em>Rol data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getMessage <em>Message</em>}</li>
  * </ul>
  *
  * @generated
@@ -185,6 +192,36 @@ public class DataImpl extends EntityImpl implements Data {
 	 * @ordered
 	 */
 	protected EList<Scenario> scenario_data;
+
+	/**
+	 * The cached value of the '{@link #getAgent_data() <em>Agent data</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgent_data()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Agent> agent_data;
+
+	/**
+	 * The cached value of the '{@link #getRol_data() <em>Rol data</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRol_data()
+	 * @generated
+	 * @ordered
+	 */
+	protected Rol rol_data;
+
+	/**
+	 * The cached value of the '{@link #getMessage() <em>Message</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessage()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Message> message;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -397,12 +434,118 @@ public class DataImpl extends EntityImpl implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Agent> getAgent_data() {
+		if (agent_data == null) {
+			agent_data = new EObjectWithInverseResolvingEList.ManyInverse<Agent>(Agent.class, this,
+					Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA,
+					Prometheus_metamodel_system_specificationPackage.AGENT__DATA_AGENT);
+		}
+		return agent_data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Rol getRol_data() {
+		if (rol_data != null && rol_data.eIsProxy()) {
+			InternalEObject oldRol_data = (InternalEObject) rol_data;
+			rol_data = (Rol) eResolveProxy(oldRol_data);
+			if (rol_data != oldRol_data) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA, oldRol_data, rol_data));
+			}
+		}
+		return rol_data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Rol basicGetRol_data() {
+		return rol_data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRol_data(Rol newRol_data, NotificationChain msgs) {
+		Rol oldRol_data = rol_data;
+		rol_data = newRol_data;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA, oldRol_data, newRol_data);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRol_data(Rol newRol_data) {
+		if (newRol_data != rol_data) {
+			NotificationChain msgs = null;
+			if (rol_data != null)
+				msgs = ((InternalEObject) rol_data).eInverseRemove(this,
+						Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL, Rol.class, msgs);
+			if (newRol_data != null)
+				msgs = ((InternalEObject) newRol_data).eInverseAdd(this,
+						Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL, Rol.class, msgs);
+			msgs = basicSetRol_data(newRol_data, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA, newRol_data, newRol_data));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Message> getMessage() {
+		if (message == null) {
+			message = new EObjectResolvingEList<Message>(Message.class, this,
+					Prometheus_metamodel_system_specificationPackage.DATA__MESSAGE);
+		}
+		return message;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario_data()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAgent_data()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
+			if (rol_data != null)
+				msgs = ((InternalEObject) rol_data).eInverseRemove(this,
+						Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL, Rol.class, msgs);
+			return basicSetRol_data((Rol) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -417,6 +560,10 @@ public class DataImpl extends EntityImpl implements Data {
 		switch (featureID) {
 		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
 			return ((InternalEList<?>) getScenario_data()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
+			return ((InternalEList<?>) getAgent_data()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
+			return basicSetRol_data(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -445,6 +592,14 @@ public class DataImpl extends EntityImpl implements Data {
 			return getUsed_when();
 		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
 			return getScenario_data();
+		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
+			return getAgent_data();
+		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
+			if (resolve)
+				return getRol_data();
+			return basicGetRol_data();
+		case Prometheus_metamodel_system_specificationPackage.DATA__MESSAGE:
+			return getMessage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -483,6 +638,17 @@ public class DataImpl extends EntityImpl implements Data {
 			getScenario_data().clear();
 			getScenario_data().addAll((Collection<? extends Scenario>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
+			getAgent_data().clear();
+			getAgent_data().addAll((Collection<? extends Agent>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
+			setRol_data((Rol) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__MESSAGE:
+			getMessage().clear();
+			getMessage().addAll((Collection<? extends Message>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -519,6 +685,15 @@ public class DataImpl extends EntityImpl implements Data {
 		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
 			getScenario_data().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
+			getAgent_data().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
+			setRol_data((Rol) null);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__MESSAGE:
+			getMessage().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -550,6 +725,12 @@ public class DataImpl extends EntityImpl implements Data {
 			return USED_WHEN_EDEFAULT == null ? used_when != null : !USED_WHEN_EDEFAULT.equals(used_when);
 		case Prometheus_metamodel_system_specificationPackage.DATA__SCENARIO_DATA:
 			return scenario_data != null && !scenario_data.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
+			return agent_data != null && !agent_data.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
+			return rol_data != null;
+		case Prometheus_metamodel_system_specificationPackage.DATA__MESSAGE:
+			return message != null && !message.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

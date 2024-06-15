@@ -28,6 +28,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link prometheus_metamodel_system_specification.Model#getData <em>Data</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getAgents <em>Agents</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getMessages <em>Messages</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getProtocols <em>Protocols</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel()
@@ -194,5 +196,29 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<Agent> getAgents();
+
+	/**
+	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Message}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Messages</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Messages()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Message> getMessages();
+
+	/**
+	 * Returns the value of the '<em><b>Protocols</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Protocol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Protocols</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Protocols()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Protocol> getProtocols();
 
 } // Model

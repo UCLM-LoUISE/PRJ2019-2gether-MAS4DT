@@ -83,6 +83,8 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__DATA);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__SCENARIOS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__AGENTS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__MESSAGES);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PROTOCOLS);
 		}
 		return childrenFeatures;
 	}
@@ -157,6 +159,8 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		case Prometheus_metamodel_system_specificationPackage.MODEL__DATA:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__SCENARIOS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__MESSAGES:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__PROTOCOLS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -225,6 +229,14 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		newChildDescriptors
 				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__AGENTS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createAgent()));
+
+		newChildDescriptors
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__MESSAGES,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PROTOCOLS,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createProtocol()));
 	}
 
 	/**

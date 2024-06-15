@@ -26,10 +26,12 @@ import prometheus_metamodel_system_specification.Functionality;
 import prometheus_metamodel_system_specification.Goal;
 import prometheus_metamodel_system_specification.Goal_Relationship;
 import prometheus_metamodel_system_specification.Logical_Object;
+import prometheus_metamodel_system_specification.Message;
 import prometheus_metamodel_system_specification.Model;
 import prometheus_metamodel_system_specification.Percept;
 import prometheus_metamodel_system_specification.Physical_Object;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
+import prometheus_metamodel_system_specification.Protocol;
 import prometheus_metamodel_system_specification.Rol;
 import prometheus_metamodel_system_specification.Scenario;
 
@@ -54,6 +56,8 @@ import prometheus_metamodel_system_specification.Scenario;
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getData <em>Data</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getAgents <em>Agents</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getMessages <em>Messages</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.ModelImpl#getProtocols <em>Protocols</em>}</li>
  * </ul>
  *
  * @generated
@@ -188,6 +192,26 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @ordered
 	 */
 	protected EList<Agent> agents;
+
+	/**
+	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessages()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Message> messages;
+
+	/**
+	 * The cached value of the '{@link #getProtocols() <em>Protocols</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProtocols()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Protocol> protocols;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -397,6 +421,34 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Message> getMessages() {
+		if (messages == null) {
+			messages = new EObjectContainmentEList<Message>(Message.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__MESSAGES);
+		}
+		return messages;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Protocol> getProtocols() {
+		if (protocols == null) {
+			protocols = new EObjectContainmentEList<Protocol>(Protocol.class, this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__PROTOCOLS);
+		}
+		return protocols;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -443,6 +495,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return ((InternalEList<?>) getScenarios()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
 			return ((InternalEList<?>) getAgents()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__MESSAGES:
+			return ((InternalEList<?>) getMessages()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.MODEL__PROTOCOLS:
+			return ((InternalEList<?>) getProtocols()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -481,6 +537,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return getScenarios();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
 			return getAgents();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__MESSAGES:
+			return getMessages();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__PROTOCOLS:
+			return getProtocols();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -546,6 +606,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			getAgents().clear();
 			getAgents().addAll((Collection<? extends Agent>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__MESSAGES:
+			getMessages().clear();
+			getMessages().addAll((Collection<? extends Message>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__PROTOCOLS:
+			getProtocols().clear();
+			getProtocols().addAll((Collection<? extends Protocol>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -597,6 +665,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
 			getAgents().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__MESSAGES:
+			getMessages().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.MODEL__PROTOCOLS:
+			getProtocols().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -635,6 +709,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			return scenarios != null && !scenarios.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
 			return agents != null && !agents.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__MESSAGES:
+			return messages != null && !messages.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MODEL__PROTOCOLS:
+			return protocols != null && !protocols.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -42,7 +42,7 @@ public class RolItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDataPropertyDescriptor(object);
+			addData_rolPropertyDescriptor(object);
 			addPerceptPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
 			addGoalPropertyDescriptor(object);
@@ -52,18 +52,18 @@ public class RolItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Data feature.
+	 * This adds a property descriptor for the Data rol feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDataPropertyDescriptor(Object object) {
+	protected void addData_rolPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Rol_data_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Rol_data_feature", "_UI_Rol_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.ROL__DATA, true, false, true, null,
-						null, null));
+						getResourceLocator(), getString("_UI_Rol_data_rol_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Rol_data_rol_feature", "_UI_Rol_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ROL__DATA_ROL, true, false, true,
+						null, null, null));
 	}
 
 	/**

@@ -10,8 +10,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,7 +29,7 @@ import prometheus_metamodel_system_specification.Scenario;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.impl.RolImpl#getData <em>Data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.RolImpl#getData_rol <em>Data rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.RolImpl#getPercept <em>Percept</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.RolImpl#getAction <em>Action</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.RolImpl#getGoal <em>Goal</em>}</li>
@@ -42,14 +40,14 @@ import prometheus_metamodel_system_specification.Scenario;
  */
 public class RolImpl extends EntityImpl implements Rol {
 	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' reference list.
+	 * The cached value of the '{@link #getData_rol() <em>Data rol</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getData()
+	 * @see #getData_rol()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Data> data;
+	protected EList<Data> data_rol;
 
 	/**
 	 * The cached value of the '{@link #getPercept() <em>Percept</em>}' reference list.
@@ -116,12 +114,13 @@ public class RolImpl extends EntityImpl implements Rol {
 	 * @generated
 	 */
 	@Override
-	public EList<Data> getData() {
-		if (data == null) {
-			data = new EObjectResolvingEList<Data>(Data.class, this,
-					Prometheus_metamodel_system_specificationPackage.ROL__DATA);
+	public EList<Data> getData_rol() {
+		if (data_rol == null) {
+			data_rol = new EObjectWithInverseResolvingEList<Data>(Data.class, this,
+					Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL,
+					Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA);
 		}
-		return data;
+		return data_rol;
 	}
 
 	/**
@@ -193,6 +192,8 @@ public class RolImpl extends EntityImpl implements Rol {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getData_rol()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ROL__PERCEPT:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPercept()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ROL__ACTION:
@@ -213,6 +214,8 @@ public class RolImpl extends EntityImpl implements Rol {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL:
+			return ((InternalEList<?>) getData_rol()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ROL__PERCEPT:
 			return ((InternalEList<?>) getPercept()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.ROL__ACTION:
@@ -233,8 +236,8 @@ public class RolImpl extends EntityImpl implements Rol {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ROL__DATA:
-			return getData();
+		case Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL:
+			return getData_rol();
 		case Prometheus_metamodel_system_specificationPackage.ROL__PERCEPT:
 			return getPercept();
 		case Prometheus_metamodel_system_specificationPackage.ROL__ACTION:
@@ -256,9 +259,9 @@ public class RolImpl extends EntityImpl implements Rol {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ROL__DATA:
-			getData().clear();
-			getData().addAll((Collection<? extends Data>) newValue);
+		case Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL:
+			getData_rol().clear();
+			getData_rol().addAll((Collection<? extends Data>) newValue);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.ROL__PERCEPT:
 			getPercept().clear();
@@ -288,8 +291,8 @@ public class RolImpl extends EntityImpl implements Rol {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ROL__DATA:
-			getData().clear();
+		case Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL:
+			getData_rol().clear();
 			return;
 		case Prometheus_metamodel_system_specificationPackage.ROL__PERCEPT:
 			getPercept().clear();
@@ -315,8 +318,8 @@ public class RolImpl extends EntityImpl implements Rol {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.ROL__DATA:
-			return data != null && !data.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL:
+			return data_rol != null && !data_rol.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.ROL__PERCEPT:
 			return percept != null && !percept.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.ROL__ACTION:

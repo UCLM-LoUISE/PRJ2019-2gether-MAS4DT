@@ -442,6 +442,52 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Message} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageItemProvider messageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Message}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageAdapter() {
+		if (messageItemProvider == null) {
+			messageItemProvider = new MessageItemProvider(this);
+		}
+
+		return messageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Protocol} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProtocolItemProvider protocolItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Protocol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProtocolAdapter() {
+		if (protocolItemProvider == null) {
+			protocolItemProvider = new ProtocolItemProvider(this);
+		}
+
+		return protocolItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -578,6 +624,10 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 			dataItemProvider.dispose();
 		if (agentItemProvider != null)
 			agentItemProvider.dispose();
+		if (messageItemProvider != null)
+			messageItemProvider.dispose();
+		if (protocolItemProvider != null)
+			protocolItemProvider.dispose();
 	}
 
 }

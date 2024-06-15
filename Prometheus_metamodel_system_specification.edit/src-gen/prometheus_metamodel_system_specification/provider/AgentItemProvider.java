@@ -49,6 +49,11 @@ public class AgentItemProvider extends EntityItemProvider {
 			addLifetimePropertyDescriptor(object);
 			addInitialisationPropertyDescriptor(object);
 			addDemisePropertyDescriptor(object);
+			addData_agentPropertyDescriptor(object);
+			addRolPropertyDescriptor(object);
+			addProtocolPropertyDescriptor(object);
+			addMessage_agentPropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -129,6 +134,83 @@ public class AgentItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Agent_demise_feature", "_UI_Agent_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__DEMISE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Data agent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addData_agentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Agent_data_agent_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Agent_data_agent_feature",
+								"_UI_Agent_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__DATA_AGENT, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Agent_rol_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Agent_rol_feature", "_UI_Agent_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__ROL, true, false, true, null,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Protocol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProtocolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Agent_protocol_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Agent_protocol_feature", "_UI_Agent_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__PROTOCOL, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Message agent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessage_agentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Agent_message_agent_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Agent_message_agent_feature",
+								"_UI_Agent_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__MESSAGE_AGENT, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Agent_action_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Agent_action_feature", "_UI_Agent_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__ACTION, true, false, true,
+						null, null, null));
 	}
 
 	/**

@@ -29,6 +29,10 @@
         eType="#//Scenario" containment="true" eOpposite="#//Scenario/model_scenario"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agents" upperBound="-1"
         eType="#//Agent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//Message" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="protocols" upperBound="-1"
+        eType="#//Protocol" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" upperBound="-1"
@@ -89,6 +93,8 @@
         eType="#//Scenario"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario_percept" upperBound="-1"
         eType="#//Scenario" eOpposite="#//Scenario/percept_scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" upperBound="-1"
+        eType="#//Agent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Goal_Relationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="goal_from_and" eType="#//Goal"
@@ -219,7 +225,8 @@
         eType="#//Scenario"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rol" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data_rol" upperBound="-1"
+        eType="#//Data" eOpposite="#//Data/rol_data"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="percept" upperBound="-1"
         eType="#//Percept" eOpposite="#//Percept/rol"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
@@ -240,6 +247,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="used_when" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario_data" upperBound="-1"
         eType="#//Scenario" eOpposite="#//Scenario/data_scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agent_data" upperBound="-1"
+        eType="#//Agent" eOpposite="#//Agent/data_agent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rol_data" eType="#//Rol"
+        eOpposite="#//Rol/data_rol"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" upperBound="-1"
+        eType="#//Message"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum_cardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -247,5 +260,26 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lifetime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialisation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="demise" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data_agent" upperBound="-1"
+        eType="#//Data" eOpposite="#//Data/agent_data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rol" upperBound="-1" eType="#//Rol"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" upperBound="-1"
+        eType="#//Protocol"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message_agent" upperBound="-1"
+        eType="#//Message" eOpposite="#//Message/agent_message"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
+        eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="carried_information" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="external_path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="external_to_system" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agent_message" upperBound="-1"
+        eType="#//Agent" eOpposite="#//Agent/message_agent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Protocol" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" upperBound="-1"
+        eType="#//Agent"/>
   </eClassifiers>
 </ecore:EPackage>

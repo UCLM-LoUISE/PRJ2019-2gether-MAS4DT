@@ -152,6 +152,16 @@ public class Prometheus_metamodel_system_specificationAdapterFactory extends Ada
 		}
 
 		@Override
+		public Adapter caseMessage(Message object) {
+			return createMessageAdapter();
+		}
+
+		@Override
+		public Adapter caseProtocol(Protocol object) {
+			return createProtocolAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -405,6 +415,34 @@ public class Prometheus_metamodel_system_specificationAdapterFactory extends Ada
 	 * @generated
 	 */
 	public Adapter createAgentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Message <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see prometheus_metamodel_system_specification.Message
+	 * @generated
+	 */
+	public Adapter createMessageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Protocol <em>Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see prometheus_metamodel_system_specification.Protocol
+	 * @generated
+	 */
+	public Adapter createProtocolAdapter() {
 		return null;
 	}
 

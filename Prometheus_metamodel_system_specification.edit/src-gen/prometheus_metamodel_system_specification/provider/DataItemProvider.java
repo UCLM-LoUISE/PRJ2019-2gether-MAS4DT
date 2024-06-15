@@ -52,6 +52,9 @@ public class DataItemProvider extends EntityItemProvider {
 			addInitialisationPropertyDescriptor(object);
 			addUsed_whenPropertyDescriptor(object);
 			addScenario_dataPropertyDescriptor(object);
+			addAgent_dataPropertyDescriptor(object);
+			addRol_dataPropertyDescriptor(object);
+			addMessagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -179,6 +182,51 @@ public class DataItemProvider extends EntityItemProvider {
 								"_UI_Data_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.DATA__SCENARIO_DATA, true, false,
 						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Agent data feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAgent_dataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Data_agent_data_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Data_agent_data_feature", "_UI_Data_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.DATA__AGENT_DATA, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rol data feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRol_dataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Data_rol_data_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Data_rol_data_feature", "_UI_Data_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.DATA__ROL_DATA, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Data_message_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Data_message_feature", "_UI_Data_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.DATA__MESSAGE, true, false, true,
+						null, null, null));
 	}
 
 	/**

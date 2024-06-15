@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.Rol#getData <em>Data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Rol#getData_rol <em>Data rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Rol#getPercept <em>Percept</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Rol#getAction <em>Action</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Rol#getGoal <em>Goal</em>}</li>
@@ -26,16 +26,18 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Rol extends Entity {
 	/**
-	 * Returns the value of the '<em><b>Data</b></em>' reference list.
+	 * Returns the value of the '<em><b>Data rol</b></em>' reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Data}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Data#getRol_data <em>Rol data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getRol_Data()
-	 * @model
+	 * @return the value of the '<em>Data rol</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getRol_Data_rol()
+	 * @see prometheus_metamodel_system_specification.Data#getRol_data
+	 * @model opposite="rol_data"
 	 * @generated
 	 */
-	EList<Data> getData();
+	EList<Data> getData_rol();
 
 	/**
 	 * Returns the value of the '<em><b>Percept</b></em>' reference list.

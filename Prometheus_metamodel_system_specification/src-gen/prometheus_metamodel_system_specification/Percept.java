@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getRol <em>Rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Percept#getScenario_percept <em>Scenario percept</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Percept#getAgent <em>Agent</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept()
@@ -253,5 +254,17 @@ public interface Percept extends Entity {
 	 * @generated
 	 */
 	EList<Scenario> getScenario_percept();
+
+	/**
+	 * Returns the value of the '<em><b>Agent</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Agent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agent</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getPercept_Agent()
+	 * @model
+	 * @generated
+	 */
+	EList<Agent> getAgent();
 
 } // Percept
