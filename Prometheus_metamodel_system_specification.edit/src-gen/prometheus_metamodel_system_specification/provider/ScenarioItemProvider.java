@@ -49,7 +49,6 @@ public class ScenarioItemProvider extends EntityItemProvider {
 
 			addPhysical_objectPropertyDescriptor(object);
 			addContextPropertyDescriptor(object);
-			addFunctionalityPropertyDescriptor(object);
 			addTriggerPropertyDescriptor(object);
 			addVariationPropertyDescriptor(object);
 			addStepPropertyDescriptor(object);
@@ -95,22 +94,6 @@ public class ScenarioItemProvider extends EntityItemProvider {
 								"_UI_Scenario_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__CONTEXT, true, false, true,
 						null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Functionality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFunctionalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Scenario_functionality_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_functionality_feature",
-								"_UI_Scenario_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__FUNCTIONALITY, true, false,
-						true, null, null, null));
 	}
 
 	/**

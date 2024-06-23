@@ -281,26 +281,26 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Functionality} instances.
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Capability} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FunctionalityItemProvider functionalityItemProvider;
+	protected CapabilityItemProvider capabilityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Functionality}.
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Capability}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFunctionalityAdapter() {
-		if (functionalityItemProvider == null) {
-			functionalityItemProvider = new FunctionalityItemProvider(this);
+	public Adapter createCapabilityAdapter() {
+		if (capabilityItemProvider == null) {
+			capabilityItemProvider = new CapabilityItemProvider(this);
 		}
 
-		return functionalityItemProvider;
+		return capabilityItemProvider;
 	}
 
 	/**
@@ -610,8 +610,8 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 			logical_ObjectItemProvider.dispose();
 		if (scenarioItemProvider != null)
 			scenarioItemProvider.dispose();
-		if (functionalityItemProvider != null)
-			functionalityItemProvider.dispose();
+		if (capabilityItemProvider != null)
+			capabilityItemProvider.dispose();
 		if (attributeItemProvider != null)
 			attributeItemProvider.dispose();
 		if (stepItemProvider != null)

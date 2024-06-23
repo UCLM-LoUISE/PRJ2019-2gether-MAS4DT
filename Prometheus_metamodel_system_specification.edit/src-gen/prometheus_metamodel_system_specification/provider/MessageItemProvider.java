@@ -49,6 +49,7 @@ public class MessageItemProvider extends EntityItemProvider {
 			addExternal_pathPropertyDescriptor(object);
 			addExternal_to_systemPropertyDescriptor(object);
 			addAgent_messagePropertyDescriptor(object);
+			addCapabilityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,6 +131,22 @@ public class MessageItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Message_agent_message_feature",
 								"_UI_Message_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.MESSAGE__AGENT_MESSAGE, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Capability feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCapabilityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Message_capability_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Message_capability_feature",
+								"_UI_Message_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.MESSAGE__CAPABILITY, true, false,
 						true, null, null, null));
 	}
 

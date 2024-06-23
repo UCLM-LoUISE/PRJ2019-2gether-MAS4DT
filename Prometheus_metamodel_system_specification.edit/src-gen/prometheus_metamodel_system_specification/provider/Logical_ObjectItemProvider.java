@@ -42,27 +42,10 @@ public class Logical_ObjectItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFunctionalityPropertyDescriptor(object);
 			addPhysical_object_shadowPropertyDescriptor(object);
 			addPhysical_object_twinPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Functionality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFunctionalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Logical_Object_functionality_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Logical_Object_functionality_feature",
-								"_UI_Logical_Object_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__FUNCTIONALITY, true,
-						false, true, null, null, null));
 	}
 
 	/**

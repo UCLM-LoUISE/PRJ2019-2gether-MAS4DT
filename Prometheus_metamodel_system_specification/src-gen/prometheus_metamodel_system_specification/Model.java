@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link prometheus_metamodel_system_specification.Model#getContexts <em>Contexts</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getPhysical_objects <em>Physical objects</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getLogical_objects <em>Logical objects</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Model#getFunctionalities <em>Functionalities</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getGoals <em>Goals</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getGoal_relationships <em>Goal relationships</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getActors <em>Actors</em>}</li>
@@ -30,6 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link prometheus_metamodel_system_specification.Model#getAgents <em>Agents</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getMessages <em>Messages</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Model#getProtocols <em>Protocols</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Model#getCapabilities <em>Capabilities</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel()
@@ -96,18 +96,6 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<Logical_Object> getLogical_objects();
-
-	/**
-	 * Returns the value of the '<em><b>Functionalities</b></em>' containment reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Functionality}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Functionalities</em>' containment reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Functionalities()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Functionality> getFunctionalities();
 
 	/**
 	 * Returns the value of the '<em><b>Goals</b></em>' containment reference list.
@@ -188,11 +176,13 @@ public interface Model extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Agents</b></em>' containment reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Agent}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Agent#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agents</em>' containment reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Agents()
-	 * @model containment="true"
+	 * @see prometheus_metamodel_system_specification.Agent#getModel
+	 * @model opposite="model" containment="true"
 	 * @generated
 	 */
 	EList<Agent> getAgents();
@@ -220,5 +210,17 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<Protocol> getProtocols();
+
+	/**
+	 * Returns the value of the '<em><b>Capabilities</b></em>' containment reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Capability}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Capabilities</em>' containment reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getModel_Capabilities()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Capability> getCapabilities();
 
 } // Model

@@ -104,13 +104,13 @@ public interface Prometheus_metamodel_system_specificationFactory extends EFacto
 	Scenario createScenario();
 
 	/**
-	 * Returns a new object of class '<em>Functionality</em>'.
+	 * Returns a new object of class '<em>Capability</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Functionality</em>'.
+	 * @return a new object of class '<em>Capability</em>'.
 	 * @generated
 	 */
-	Functionality createFunctionality();
+	Capability createCapability();
 
 	/**
 	 * Returns a new object of class '<em>Attribute</em>'.

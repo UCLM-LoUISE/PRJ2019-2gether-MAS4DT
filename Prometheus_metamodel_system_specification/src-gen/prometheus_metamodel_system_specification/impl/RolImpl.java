@@ -116,7 +116,7 @@ public class RolImpl extends EntityImpl implements Rol {
 	@Override
 	public EList<Data> getData_rol() {
 		if (data_rol == null) {
-			data_rol = new EObjectWithInverseResolvingEList<Data>(Data.class, this,
+			data_rol = new EObjectWithInverseResolvingEList.ManyInverse<Data>(Data.class, this,
 					Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL,
 					Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA);
 		}

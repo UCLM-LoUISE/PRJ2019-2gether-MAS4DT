@@ -112,8 +112,8 @@ public class Prometheus_metamodel_system_specificationAdapterFactory extends Ada
 		}
 
 		@Override
-		public Adapter caseFunctionality(Functionality object) {
-			return createFunctionalityAdapter();
+		public Adapter caseCapability(Capability object) {
+			return createCapabilityAdapter();
 		}
 
 		@Override
@@ -307,16 +307,16 @@ public class Prometheus_metamodel_system_specificationAdapterFactory extends Ada
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Functionality <em>Functionality</em>}'.
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Capability <em>Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see prometheus_metamodel_system_specification.Functionality
+	 * @see prometheus_metamodel_system_specification.Capability
 	 * @generated
 	 */
-	public Adapter createFunctionalityAdapter() {
+	public Adapter createCapabilityAdapter() {
 		return null;
 	}
 

@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.Action#getFunctionality <em>Functionality</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getParameters <em>Parameters</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getDuration <em>Duration</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getFailure <em>Failure</em>}</li>
@@ -24,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Action#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getRol <em>Rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Action#getScenario_action <em>Scenario action</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Action#getAgent_action <em>Agent action</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction()
@@ -31,20 +31,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Action extends Entity {
-	/**
-	 * Returns the value of the '<em><b>Functionality</b></em>' reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Functionality}.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Functionality#getAction <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Functionality</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Functionality()
-	 * @see prometheus_metamodel_system_specification.Functionality#getAction
-	 * @model opposite="action"
-	 * @generated
-	 */
-	EList<Functionality> getFunctionality();
-
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -220,5 +206,19 @@ public interface Action extends Entity {
 	 * @generated
 	 */
 	EList<Scenario> getScenario_action();
+
+	/**
+	 * Returns the value of the '<em><b>Agent action</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Agent}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Agent#getAction_agent <em>Action agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agent action</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAction_Agent_action()
+	 * @see prometheus_metamodel_system_specification.Agent#getAction_agent
+	 * @model opposite="action_agent"
+	 * @generated
+	 */
+	EList<Agent> getAgent_action();
 
 } // Action

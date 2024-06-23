@@ -14,10 +14,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Agent;
+import prometheus_metamodel_system_specification.Capability;
 import prometheus_metamodel_system_specification.Message;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 
@@ -34,6 +36,7 @@ import prometheus_metamodel_system_specification.Prometheus_metamodel_system_spe
  *   <li>{@link prometheus_metamodel_system_specification.impl.MessageImpl#getExternal_path <em>External path</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.MessageImpl#isExternal_to_system <em>External to system</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.MessageImpl#getAgent_message <em>Agent message</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.MessageImpl#getCapability <em>Capability</em>}</li>
  * </ul>
  *
  * @generated
@@ -128,6 +131,16 @@ public class MessageImpl extends EntityImpl implements Message {
 	 * @ordered
 	 */
 	protected EList<Agent> agent_message;
+
+	/**
+	 * The cached value of the '{@link #getCapability() <em>Capability</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapability()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Capability> capability;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,6 +280,20 @@ public class MessageImpl extends EntityImpl implements Message {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Capability> getCapability() {
+		if (capability == null) {
+			capability = new EObjectResolvingEList<Capability>(Capability.class, this,
+					Prometheus_metamodel_system_specificationPackage.MESSAGE__CAPABILITY);
+		}
+		return capability;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -309,6 +336,8 @@ public class MessageImpl extends EntityImpl implements Message {
 			return isExternal_to_system();
 		case Prometheus_metamodel_system_specificationPackage.MESSAGE__AGENT_MESSAGE:
 			return getAgent_message();
+		case Prometheus_metamodel_system_specificationPackage.MESSAGE__CAPABILITY:
+			return getCapability();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -338,6 +367,10 @@ public class MessageImpl extends EntityImpl implements Message {
 			getAgent_message().clear();
 			getAgent_message().addAll((Collection<? extends Agent>) newValue);
 			return;
+		case Prometheus_metamodel_system_specificationPackage.MESSAGE__CAPABILITY:
+			getCapability().clear();
+			getCapability().addAll((Collection<? extends Capability>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -365,6 +398,9 @@ public class MessageImpl extends EntityImpl implements Message {
 		case Prometheus_metamodel_system_specificationPackage.MESSAGE__AGENT_MESSAGE:
 			getAgent_message().clear();
 			return;
+		case Prometheus_metamodel_system_specificationPackage.MESSAGE__CAPABILITY:
+			getCapability().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -389,6 +425,8 @@ public class MessageImpl extends EntityImpl implements Message {
 			return external_to_system != EXTERNAL_TO_SYSTEM_EDEFAULT;
 		case Prometheus_metamodel_system_specificationPackage.MESSAGE__AGENT_MESSAGE:
 			return agent_message != null && !agent_message.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.MESSAGE__CAPABILITY:
+			return capability != null && !capability.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

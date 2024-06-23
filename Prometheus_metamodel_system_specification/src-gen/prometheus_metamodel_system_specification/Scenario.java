@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getContext <em>Context</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Scenario#getFunctionality <em>Functionality</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getSteps <em>Steps</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Scenario#getVariation <em>Variation</em>}</li>
@@ -72,20 +71,6 @@ public interface Scenario extends Entity {
 	 * @generated
 	 */
 	void setContext(Context value);
-
-	/**
-	 * Returns the value of the '<em><b>Functionality</b></em>' reference list.
-	 * The list contents are of type {@link prometheus_metamodel_system_specification.Functionality}.
-	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Functionality#getScenario <em>Scenario</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Functionality</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getScenario_Functionality()
-	 * @see prometheus_metamodel_system_specification.Functionality#getScenario
-	 * @model opposite="scenario"
-	 * @generated
-	 */
-	EList<Functionality> getFunctionality();
 
 	/**
 	 * Returns the value of the '<em><b>Steps</b></em>' containment reference list.

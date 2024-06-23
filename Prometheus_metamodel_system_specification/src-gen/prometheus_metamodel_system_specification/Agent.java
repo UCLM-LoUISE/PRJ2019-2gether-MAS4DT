@@ -22,7 +22,10 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Agent#getRol <em>Rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Agent#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Agent#getMessage_agent <em>Message agent</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.Agent#getAction <em>Action</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Agent#getAction_agent <em>Action agent</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Agent#getModel <em>Model</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Agent#getPercept_agent <em>Percept agent</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Agent#getCapability_agent <em>Capability agent</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent()
@@ -193,15 +196,69 @@ public interface Agent extends Entity {
 	EList<Message> getMessage_agent();
 
 	/**
-	 * Returns the value of the '<em><b>Action</b></em>' reference list.
+	 * Returns the value of the '<em><b>Action agent</b></em>' reference list.
 	 * The list contents are of type {@link prometheus_metamodel_system_specification.Action}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Action#getAgent_action <em>Agent action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action</em>' reference list.
-	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Action()
-	 * @model
+	 * @return the value of the '<em>Action agent</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Action_agent()
+	 * @see prometheus_metamodel_system_specification.Action#getAgent_action
+	 * @model opposite="agent_action"
 	 * @generated
 	 */
-	EList<Action> getAction();
+	EList<Action> getAction_agent();
+
+	/**
+	 * Returns the value of the '<em><b>Model</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Model#getAgents <em>Agents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Model</em>' container reference.
+	 * @see #setModel(Model)
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Model()
+	 * @see prometheus_metamodel_system_specification.Model#getAgents
+	 * @model opposite="agents" required="true" transient="false"
+	 * @generated
+	 */
+	Model getModel();
+
+	/**
+	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Agent#getModel <em>Model</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Model</em>' container reference.
+	 * @see #getModel()
+	 * @generated
+	 */
+	void setModel(Model value);
+
+	/**
+	 * Returns the value of the '<em><b>Percept agent</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Percept}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Percept#getAgent_percept <em>Agent percept</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Percept agent</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Percept_agent()
+	 * @see prometheus_metamodel_system_specification.Percept#getAgent_percept
+	 * @model opposite="agent_percept"
+	 * @generated
+	 */
+	EList<Percept> getPercept_agent();
+
+	/**
+	 * Returns the value of the '<em><b>Capability agent</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Capability}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Capability#getAgent_capability <em>Agent capability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Capability agent</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getAgent_Capability_agent()
+	 * @see prometheus_metamodel_system_specification.Capability#getAgent_capability
+	 * @model opposite="agent_capability"
+	 * @generated
+	 */
+	EList<Capability> getCapability_agent();
 
 } // Agent

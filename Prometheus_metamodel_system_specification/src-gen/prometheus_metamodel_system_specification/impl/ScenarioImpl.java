@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import prometheus_metamodel_system_specification.Action;
 import prometheus_metamodel_system_specification.Context;
 import prometheus_metamodel_system_specification.Data;
-import prometheus_metamodel_system_specification.Functionality;
 import prometheus_metamodel_system_specification.Goal;
 import prometheus_metamodel_system_specification.Model;
 import prometheus_metamodel_system_specification.Percept;
@@ -41,7 +40,6 @@ import prometheus_metamodel_system_specification.Step;
  * <ul>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getPhysical_object <em>Physical object</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getContext <em>Context</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getFunctionality <em>Functionality</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getSteps <em>Steps</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.ScenarioImpl#getVariation <em>Variation</em>}</li>
@@ -78,16 +76,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 	 * @ordered
 	 */
 	protected Context context;
-
-	/**
-	 * The cached value of the '{@link #getFunctionality() <em>Functionality</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFunctionality()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Functionality> functionality;
 
 	/**
 	 * The cached value of the '{@link #getSteps() <em>Steps</em>}' containment reference list.
@@ -331,21 +319,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					Prometheus_metamodel_system_specificationPackage.SCENARIO__CONTEXT, newContext, newContext));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Functionality> getFunctionality() {
-		if (functionality == null) {
-			functionality = new EObjectWithInverseResolvingEList.ManyInverse<Functionality>(Functionality.class, this,
-					Prometheus_metamodel_system_specificationPackage.SCENARIO__FUNCTIONALITY,
-					Prometheus_metamodel_system_specificationPackage.FUNCTIONALITY__SCENARIO);
-		}
-		return functionality;
 	}
 
 	/**
@@ -604,8 +577,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 				msgs = ((InternalEObject) context).eInverseRemove(this,
 						Prometheus_metamodel_system_specificationPackage.CONTEXT__SCENARIO, Context.class, msgs);
 			return basicSetContext((Context) otherEnd, msgs);
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__FUNCTIONALITY:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFunctionality()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStep()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__GOALS_SCENARIO:
@@ -638,8 +609,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			return ((InternalEList<?>) getPhysical_object()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__CONTEXT:
 			return basicSetContext(null, msgs);
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__FUNCTIONALITY:
-			return ((InternalEList<?>) getFunctionality()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEPS:
 			return ((InternalEList<?>) getSteps()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEP:
@@ -689,8 +658,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			if (resolve)
 				return getContext();
 			return basicGetContext();
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__FUNCTIONALITY:
-			return getFunctionality();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEPS:
 			return getSteps();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__TRIGGER:
@@ -734,10 +701,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			return;
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__CONTEXT:
 			setContext((Context) newValue);
-			return;
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__FUNCTIONALITY:
-			getFunctionality().clear();
-			getFunctionality().addAll((Collection<? extends Functionality>) newValue);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEPS:
 			getSteps().clear();
@@ -801,9 +764,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__CONTEXT:
 			setContext((Context) null);
 			return;
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__FUNCTIONALITY:
-			getFunctionality().clear();
-			return;
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEPS:
 			getSteps().clear();
 			return;
@@ -856,8 +816,6 @@ public class ScenarioImpl extends EntityImpl implements Scenario {
 			return physical_object != null && !physical_object.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__CONTEXT:
 			return context != null;
-		case Prometheus_metamodel_system_specificationPackage.SCENARIO__FUNCTIONALITY:
-			return functionality != null && !functionality.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__STEPS:
 			return steps != null && !steps.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO__TRIGGER:

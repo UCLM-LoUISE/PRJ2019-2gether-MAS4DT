@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import prometheus_metamodel_system_specification.Agent;
-import prometheus_metamodel_system_specification.Functionality;
+import prometheus_metamodel_system_specification.Capability;
 import prometheus_metamodel_system_specification.Percept;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 import prometheus_metamodel_system_specification.Rol;
@@ -33,7 +33,6 @@ import prometheus_metamodel_system_specification.Step;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getFunctionality <em>Functionality</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getInformation_carried <em>Information carried</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getKnowledge_updated <em>Knowledge updated</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getSource <em>Source</em>}</li>
@@ -45,22 +44,13 @@ import prometheus_metamodel_system_specification.Step;
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getRol <em>Rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getScenario_percept <em>Scenario percept</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getAgent <em>Agent</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getAgent_percept <em>Agent percept</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.PerceptImpl#getCapability <em>Capability</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class PerceptImpl extends EntityImpl implements Percept {
-	/**
-	 * The cached value of the '{@link #getFunctionality() <em>Functionality</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFunctionality()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Functionality> functionality;
-
 	/**
 	 * The default value of the '{@link #getInformation_carried() <em>Information carried</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -242,14 +232,24 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	protected EList<Scenario> scenario_percept;
 
 	/**
-	 * The cached value of the '{@link #getAgent() <em>Agent</em>}' reference list.
+	 * The cached value of the '{@link #getAgent_percept() <em>Agent percept</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAgent()
+	 * @see #getAgent_percept()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Agent> agent;
+	protected EList<Agent> agent_percept;
+
+	/**
+	 * The cached value of the '{@link #getCapability() <em>Capability</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapability()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Capability> capability;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,21 +268,6 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	@Override
 	protected EClass eStaticClass() {
 		return Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Functionality> getFunctionality() {
-		if (functionality == null) {
-			functionality = new EObjectWithInverseResolvingEList.ManyInverse<Functionality>(Functionality.class, this,
-					Prometheus_metamodel_system_specificationPackage.PERCEPT__FUNCTIONALITY,
-					Prometheus_metamodel_system_specificationPackage.FUNCTIONALITY__PERCEPT);
-		}
-		return functionality;
 	}
 
 	/**
@@ -523,12 +508,27 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	 * @generated
 	 */
 	@Override
-	public EList<Agent> getAgent() {
-		if (agent == null) {
-			agent = new EObjectResolvingEList<Agent>(Agent.class, this,
-					Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT);
+	public EList<Agent> getAgent_percept() {
+		if (agent_percept == null) {
+			agent_percept = new EObjectWithInverseResolvingEList.ManyInverse<Agent>(Agent.class, this,
+					Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT_PERCEPT,
+					Prometheus_metamodel_system_specificationPackage.AGENT__PERCEPT_AGENT);
 		}
-		return agent;
+		return agent_percept;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Capability> getCapability() {
+		if (capability == null) {
+			capability = new EObjectResolvingEList<Capability>(Capability.class, this,
+					Prometheus_metamodel_system_specificationPackage.PERCEPT__CAPABILITY);
+		}
+		return capability;
 	}
 
 	/**
@@ -540,14 +540,14 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__FUNCTIONALITY:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFunctionality()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStep()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__ROL:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRol()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenario_percept()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT_PERCEPT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAgent_percept()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -560,14 +560,14 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__FUNCTIONALITY:
-			return ((InternalEList<?>) getFunctionality()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__STEP:
 			return ((InternalEList<?>) getStep()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__ROL:
 			return ((InternalEList<?>) getRol()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
 			return ((InternalEList<?>) getScenario_percept()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT_PERCEPT:
+			return ((InternalEList<?>) getAgent_percept()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -580,8 +580,6 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__FUNCTIONALITY:
-			return getFunctionality();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__INFORMATION_CARRIED:
 			return getInformation_carried();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__KNOWLEDGE_UPDATED:
@@ -604,8 +602,10 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return getScenario();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
 			return getScenario_percept();
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT:
-			return getAgent();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT_PERCEPT:
+			return getAgent_percept();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__CAPABILITY:
+			return getCapability();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -619,10 +619,6 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__FUNCTIONALITY:
-			getFunctionality().clear();
-			getFunctionality().addAll((Collection<? extends Functionality>) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__INFORMATION_CARRIED:
 			setInformation_carried((String) newValue);
 			return;
@@ -660,9 +656,13 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			getScenario_percept().clear();
 			getScenario_percept().addAll((Collection<? extends Scenario>) newValue);
 			return;
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT:
-			getAgent().clear();
-			getAgent().addAll((Collection<? extends Agent>) newValue);
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT_PERCEPT:
+			getAgent_percept().clear();
+			getAgent_percept().addAll((Collection<? extends Agent>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__CAPABILITY:
+			getCapability().clear();
+			getCapability().addAll((Collection<? extends Capability>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -676,9 +676,6 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__FUNCTIONALITY:
-			getFunctionality().clear();
-			return;
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__INFORMATION_CARRIED:
 			setInformation_carried(INFORMATION_CARRIED_EDEFAULT);
 			return;
@@ -712,8 +709,11 @@ public class PerceptImpl extends EntityImpl implements Percept {
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
 			getScenario_percept().clear();
 			return;
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT:
-			getAgent().clear();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT_PERCEPT:
+			getAgent_percept().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__CAPABILITY:
+			getCapability().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -727,8 +727,6 @@ public class PerceptImpl extends EntityImpl implements Percept {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__FUNCTIONALITY:
-			return functionality != null && !functionality.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__INFORMATION_CARRIED:
 			return INFORMATION_CARRIED_EDEFAULT == null ? information_carried != null
 					: !INFORMATION_CARRIED_EDEFAULT.equals(information_carried);
@@ -755,8 +753,10 @@ public class PerceptImpl extends EntityImpl implements Percept {
 			return scenario != null && !scenario.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.PERCEPT__SCENARIO_PERCEPT:
 			return scenario_percept != null && !scenario_percept.isEmpty();
-		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT:
-			return agent != null && !agent.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT_PERCEPT:
+			return agent_percept != null && !agent_percept.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.PERCEPT__CAPABILITY:
+			return capability != null && !capability.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

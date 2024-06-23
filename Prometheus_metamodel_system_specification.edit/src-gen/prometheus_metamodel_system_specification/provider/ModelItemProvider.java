@@ -75,7 +75,6 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CONTEXTS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PHYSICAL_OBJECTS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__LOGICAL_OBJECTS);
-			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__FUNCTIONALITIES);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOALS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOAL_RELATIONSHIPS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__ACTORS);
@@ -85,6 +84,7 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__AGENTS);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__MESSAGES);
 			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PROTOCOLS);
+			childrenFeatures.add(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CAPABILITIES);
 		}
 		return childrenFeatures;
 	}
@@ -151,7 +151,6 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		case Prometheus_metamodel_system_specificationPackage.MODEL__CONTEXTS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PHYSICAL_OBJECTS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__LOGICAL_OBJECTS:
-		case Prometheus_metamodel_system_specificationPackage.MODEL__FUNCTIONALITIES:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOALS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__GOAL_RELATIONSHIPS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__ACTORS:
@@ -161,6 +160,7 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		case Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__MESSAGES:
 		case Prometheus_metamodel_system_specificationPackage.MODEL__PROTOCOLS:
+		case Prometheus_metamodel_system_specificationPackage.MODEL__CAPABILITIES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -198,10 +198,6 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__LOGICAL_OBJECTS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createLogical_Object()));
 
-		newChildDescriptors.add(
-				createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__FUNCTIONALITIES,
-						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createFunctionality()));
-
 		newChildDescriptors
 				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__GOALS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createGoal()));
@@ -237,6 +233,10 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 		newChildDescriptors
 				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__PROTOCOLS,
 						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createProtocol()));
+
+		newChildDescriptors
+				.add(createChildParameter(Prometheus_metamodel_system_specificationPackage.Literals.MODEL__CAPABILITIES,
+						Prometheus_metamodel_system_specificationFactory.eINSTANCE.createCapability()));
 	}
 
 	/**

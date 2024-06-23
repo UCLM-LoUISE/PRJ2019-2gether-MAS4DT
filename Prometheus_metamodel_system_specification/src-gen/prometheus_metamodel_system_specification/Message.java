@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Message#getExternal_path <em>External path</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Message#isExternal_to_system <em>External to system</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Message#getAgent_message <em>Agent message</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Message#getCapability <em>Capability</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getMessage()
@@ -126,5 +127,17 @@ public interface Message extends Entity {
 	 * @generated
 	 */
 	EList<Agent> getAgent_message();
+
+	/**
+	 * Returns the value of the '<em><b>Capability</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Capability}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Capability</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getMessage_Capability()
+	 * @model
+	 * @generated
+	 */
+	EList<Capability> getCapability();
 
 } // Message

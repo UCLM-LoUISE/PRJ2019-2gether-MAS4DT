@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import prometheus_metamodel_system_specification.Functionality;
 import prometheus_metamodel_system_specification.Logical_Object;
 import prometheus_metamodel_system_specification.Physical_Object;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
@@ -26,7 +24,6 @@ import prometheus_metamodel_system_specification.Prometheus_metamodel_system_spe
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prometheus_metamodel_system_specification.impl.Logical_ObjectImpl#getFunctionality <em>Functionality</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.Logical_ObjectImpl#getPhysical_object_shadow <em>Physical object shadow</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.Logical_ObjectImpl#getPhysical_object_twin <em>Physical object twin</em>}</li>
  * </ul>
@@ -34,16 +31,6 @@ import prometheus_metamodel_system_specification.Prometheus_metamodel_system_spe
  * @generated
  */
 public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
-	/**
-	 * The cached value of the '{@link #getFunctionality() <em>Functionality</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFunctionality()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Functionality> functionality;
-
 	/**
 	 * The cached value of the '{@link #getPhysical_object_shadow() <em>Physical object shadow</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -89,21 +76,6 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	 * @generated
 	 */
 	@Override
-	public EList<Functionality> getFunctionality() {
-		if (functionality == null) {
-			functionality = new EObjectWithInverseResolvingEList.ManyInverse<Functionality>(Functionality.class, this,
-					Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY,
-					Prometheus_metamodel_system_specificationPackage.FUNCTIONALITY__LOGICAL_OBJECT);
-		}
-		return functionality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Physical_Object> getPhysical_object_shadow() {
 		if (physical_object_shadow == null) {
 			physical_object_shadow = new EObjectWithInverseResolvingEList.ManyInverse<Physical_Object>(
@@ -139,8 +111,6 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFunctionality()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPhysical_object_shadow()).basicAdd(otherEnd,
 					msgs);
@@ -159,8 +129,6 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
-			return ((InternalEList<?>) getFunctionality()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW:
 			return ((InternalEList<?>) getPhysical_object_shadow()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_TWIN:
@@ -177,8 +145,6 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
-			return getFunctionality();
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW:
 			return getPhysical_object_shadow();
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_TWIN:
@@ -196,10 +162,6 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
-			getFunctionality().clear();
-			getFunctionality().addAll((Collection<? extends Functionality>) newValue);
-			return;
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW:
 			getPhysical_object_shadow().clear();
 			getPhysical_object_shadow().addAll((Collection<? extends Physical_Object>) newValue);
@@ -220,9 +182,6 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
-			getFunctionality().clear();
-			return;
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW:
 			getPhysical_object_shadow().clear();
 			return;
@@ -241,8 +200,6 @@ public class Logical_ObjectImpl extends EntityImpl implements Logical_Object {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__FUNCTIONALITY:
-			return functionality != null && !functionality.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW:
 			return physical_object_shadow != null && !physical_object_shadow.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.LOGICAL_OBJECT__PHYSICAL_OBJECT_TWIN:

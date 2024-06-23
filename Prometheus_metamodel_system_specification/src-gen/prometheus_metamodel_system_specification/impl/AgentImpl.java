@@ -14,11 +14,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import prometheus_metamodel_system_specification.Action;
 import prometheus_metamodel_system_specification.Agent;
+import prometheus_metamodel_system_specification.Capability;
 import prometheus_metamodel_system_specification.Data;
 import prometheus_metamodel_system_specification.Message;
+import prometheus_metamodel_system_specification.Model;
+import prometheus_metamodel_system_specification.Percept;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 import prometheus_metamodel_system_specification.Protocol;
 import prometheus_metamodel_system_specification.Rol;
@@ -40,7 +44,10 @@ import prometheus_metamodel_system_specification.Rol;
  *   <li>{@link prometheus_metamodel_system_specification.impl.AgentImpl#getRol <em>Rol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.AgentImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.AgentImpl#getMessage_agent <em>Message agent</em>}</li>
- *   <li>{@link prometheus_metamodel_system_specification.impl.AgentImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.AgentImpl#getAction_agent <em>Action agent</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.AgentImpl#getModel <em>Model</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.AgentImpl#getPercept_agent <em>Percept agent</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.AgentImpl#getCapability_agent <em>Capability agent</em>}</li>
  * </ul>
  *
  * @generated
@@ -187,14 +194,34 @@ public class AgentImpl extends EntityImpl implements Agent {
 	protected EList<Message> message_agent;
 
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference list.
+	 * The cached value of the '{@link #getAction_agent() <em>Action agent</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAction()
+	 * @see #getAction_agent()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Action> action;
+	protected EList<Action> action_agent;
+
+	/**
+	 * The cached value of the '{@link #getPercept_agent() <em>Percept agent</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPercept_agent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Percept> percept_agent;
+
+	/**
+	 * The cached value of the '{@link #getCapability_agent() <em>Capability agent</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapability_agent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Capability> capability_agent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -402,12 +429,92 @@ public class AgentImpl extends EntityImpl implements Agent {
 	 * @generated
 	 */
 	@Override
-	public EList<Action> getAction() {
-		if (action == null) {
-			action = new EObjectResolvingEList<Action>(Action.class, this,
-					Prometheus_metamodel_system_specificationPackage.AGENT__ACTION);
+	public EList<Action> getAction_agent() {
+		if (action_agent == null) {
+			action_agent = new EObjectWithInverseResolvingEList.ManyInverse<Action>(Action.class, this,
+					Prometheus_metamodel_system_specificationPackage.AGENT__ACTION_AGENT,
+					Prometheus_metamodel_system_specificationPackage.ACTION__AGENT_ACTION);
 		}
-		return action;
+		return action_agent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Model getModel() {
+		if (eContainerFeatureID() != Prometheus_metamodel_system_specificationPackage.AGENT__MODEL)
+			return null;
+		return (Model) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetModel(Model newModel, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newModel,
+				Prometheus_metamodel_system_specificationPackage.AGENT__MODEL, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setModel(Model newModel) {
+		if (newModel != eInternalContainer()
+				|| (eContainerFeatureID() != Prometheus_metamodel_system_specificationPackage.AGENT__MODEL
+						&& newModel != null)) {
+			if (EcoreUtil.isAncestor(this, newModel))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newModel != null)
+				msgs = ((InternalEObject) newModel).eInverseAdd(this,
+						Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS, Model.class, msgs);
+			msgs = basicSetModel(newModel, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prometheus_metamodel_system_specificationPackage.AGENT__MODEL, newModel, newModel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Percept> getPercept_agent() {
+		if (percept_agent == null) {
+			percept_agent = new EObjectWithInverseResolvingEList.ManyInverse<Percept>(Percept.class, this,
+					Prometheus_metamodel_system_specificationPackage.AGENT__PERCEPT_AGENT,
+					Prometheus_metamodel_system_specificationPackage.PERCEPT__AGENT_PERCEPT);
+		}
+		return percept_agent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Capability> getCapability_agent() {
+		if (capability_agent == null) {
+			capability_agent = new EObjectWithInverseResolvingEList.ManyInverse<Capability>(Capability.class, this,
+					Prometheus_metamodel_system_specificationPackage.AGENT__CAPABILITY_AGENT,
+					Prometheus_metamodel_system_specificationPackage.CAPABILITY__AGENT_CAPABILITY);
+		}
+		return capability_agent;
 	}
 
 	/**
@@ -423,6 +530,16 @@ public class AgentImpl extends EntityImpl implements Agent {
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getData_agent()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.AGENT__MESSAGE_AGENT:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMessage_agent()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION_AGENT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAction_agent()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.AGENT__MODEL:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetModel((Model) otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.AGENT__PERCEPT_AGENT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPercept_agent()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.AGENT__CAPABILITY_AGENT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCapability_agent()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -439,8 +556,31 @@ public class AgentImpl extends EntityImpl implements Agent {
 			return ((InternalEList<?>) getData_agent()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.AGENT__MESSAGE_AGENT:
 			return ((InternalEList<?>) getMessage_agent()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION_AGENT:
+			return ((InternalEList<?>) getAction_agent()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.AGENT__MODEL:
+			return basicSetModel(null, msgs);
+		case Prometheus_metamodel_system_specificationPackage.AGENT__PERCEPT_AGENT:
+			return ((InternalEList<?>) getPercept_agent()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.AGENT__CAPABILITY_AGENT:
+			return ((InternalEList<?>) getCapability_agent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case Prometheus_metamodel_system_specificationPackage.AGENT__MODEL:
+			return eInternalContainer().eInverseRemove(this,
+					Prometheus_metamodel_system_specificationPackage.MODEL__AGENTS, Model.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -469,8 +609,14 @@ public class AgentImpl extends EntityImpl implements Agent {
 			return getProtocol();
 		case Prometheus_metamodel_system_specificationPackage.AGENT__MESSAGE_AGENT:
 			return getMessage_agent();
-		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION:
-			return getAction();
+		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION_AGENT:
+			return getAction_agent();
+		case Prometheus_metamodel_system_specificationPackage.AGENT__MODEL:
+			return getModel();
+		case Prometheus_metamodel_system_specificationPackage.AGENT__PERCEPT_AGENT:
+			return getPercept_agent();
+		case Prometheus_metamodel_system_specificationPackage.AGENT__CAPABILITY_AGENT:
+			return getCapability_agent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -515,9 +661,20 @@ public class AgentImpl extends EntityImpl implements Agent {
 			getMessage_agent().clear();
 			getMessage_agent().addAll((Collection<? extends Message>) newValue);
 			return;
-		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION:
-			getAction().clear();
-			getAction().addAll((Collection<? extends Action>) newValue);
+		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION_AGENT:
+			getAction_agent().clear();
+			getAction_agent().addAll((Collection<? extends Action>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.AGENT__MODEL:
+			setModel((Model) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.AGENT__PERCEPT_AGENT:
+			getPercept_agent().clear();
+			getPercept_agent().addAll((Collection<? extends Percept>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.AGENT__CAPABILITY_AGENT:
+			getCapability_agent().clear();
+			getCapability_agent().addAll((Collection<? extends Capability>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -558,8 +715,17 @@ public class AgentImpl extends EntityImpl implements Agent {
 		case Prometheus_metamodel_system_specificationPackage.AGENT__MESSAGE_AGENT:
 			getMessage_agent().clear();
 			return;
-		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION:
-			getAction().clear();
+		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION_AGENT:
+			getAction_agent().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.AGENT__MODEL:
+			setModel((Model) null);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.AGENT__PERCEPT_AGENT:
+			getPercept_agent().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.AGENT__CAPABILITY_AGENT:
+			getCapability_agent().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -592,8 +758,14 @@ public class AgentImpl extends EntityImpl implements Agent {
 			return protocol != null && !protocol.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.AGENT__MESSAGE_AGENT:
 			return message_agent != null && !message_agent.isEmpty();
-		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION:
-			return action != null && !action.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.AGENT__ACTION_AGENT:
+			return action_agent != null && !action_agent.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.AGENT__MODEL:
+			return getModel() != null;
+		case Prometheus_metamodel_system_specificationPackage.AGENT__PERCEPT_AGENT:
+			return percept_agent != null && !percept_agent.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.AGENT__CAPABILITY_AGENT:
+			return capability_agent != null && !capability_agent.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

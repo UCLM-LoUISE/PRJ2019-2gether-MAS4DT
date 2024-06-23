@@ -11,23 +11,23 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import prometheus_metamodel_system_specification.Functionality;
+import prometheus_metamodel_system_specification.Capability;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
 
 /**
- * This is the item provider adapter for a {@link prometheus_metamodel_system_specification.Functionality} object.
+ * This is the item provider adapter for a {@link prometheus_metamodel_system_specification.Capability} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FunctionalityItemProvider extends EntityItemProvider {
+public class CapabilityItemProvider extends EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FunctionalityItemProvider(AdapterFactory adapterFactory) {
+	public CapabilityItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,27 +42,44 @@ public class FunctionalityItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLogical_objectPropertyDescriptor(object);
+			addAgent_capabilityPropertyDescriptor(object);
+			addData_capabilityPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
-			addPerceptPropertyDescriptor(object);
-			addScenarioPropertyDescriptor(object);
+			addMessagePropertyDescriptor(object);
+			addDataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Logical object feature.
+	 * This adds a property descriptor for the Agent capability feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLogical_objectPropertyDescriptor(Object object) {
+	protected void addAgent_capabilityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Functionality_logical_object_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Functionality_logical_object_feature",
-								"_UI_Functionality_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.FUNCTIONALITY__LOGICAL_OBJECT, true,
+						getResourceLocator(), getString("_UI_Capability_agent_capability_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Capability_agent_capability_feature",
+								"_UI_Capability_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.CAPABILITY__AGENT_CAPABILITY, true,
+						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Data capability feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addData_capabilityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Capability_data_capability_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Capability_data_capability_feature",
+								"_UI_Capability_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.CAPABILITY__DATA_CAPABILITY, true,
 						false, true, null, null, null));
 	}
 
@@ -75,54 +92,54 @@ public class FunctionalityItemProvider extends EntityItemProvider {
 	protected void addActionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Functionality_action_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Functionality_action_feature",
-								"_UI_Functionality_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.FUNCTIONALITY__ACTION, true, false,
-						true, null, null, null));
+						getResourceLocator(), getString("_UI_Capability_action_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Capability_action_feature",
+								"_UI_Capability_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.CAPABILITY__ACTION, true, false, true,
+						null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Percept feature.
+	 * This adds a property descriptor for the Message feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPerceptPropertyDescriptor(Object object) {
+	protected void addMessagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Functionality_percept_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Functionality_percept_feature",
-								"_UI_Functionality_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.FUNCTIONALITY__PERCEPT, true, false,
+						getResourceLocator(), getString("_UI_Capability_message_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Capability_message_feature",
+								"_UI_Capability_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.CAPABILITY__MESSAGE, true, false,
 						true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Scenario feature.
+	 * This adds a property descriptor for the Data feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addScenarioPropertyDescriptor(Object object) {
+	protected void addDataPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Functionality_scenario_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Functionality_scenario_feature",
-								"_UI_Functionality_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.FUNCTIONALITY__SCENARIO, true, false,
-						true, null, null, null));
+						getResourceLocator(), getString("_UI_Capability_data_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Capability_data_feature",
+								"_UI_Capability_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.CAPABILITY__DATA, true, false, true,
+						null, null, null));
 	}
 
 	/**
-	 * This returns Functionality.gif.
+	 * This returns Capability.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Functionality"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Capability"));
 	}
 
 	/**
@@ -143,9 +160,9 @@ public class FunctionalityItemProvider extends EntityItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Functionality) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Functionality_type")
-				: getString("_UI_Functionality_type") + " " + label;
+		String label = ((Capability) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Capability_type")
+				: getString("_UI_Capability_type") + " " + label;
 	}
 
 	/**

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import prometheus_metamodel_system_specification.Agent;
+import prometheus_metamodel_system_specification.Capability;
 import prometheus_metamodel_system_specification.Data;
 import prometheus_metamodel_system_specification.Message;
 import prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage;
@@ -38,6 +39,8 @@ import prometheus_metamodel_system_specification.Scenario;
  *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getAgent_data <em>Agent data</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getRol_data <em>Rol data</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getCapability_data <em>Capability data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.impl.DataImpl#getCapability <em>Capability</em>}</li>
  * </ul>
  *
  * @generated
@@ -204,14 +207,14 @@ public class DataImpl extends EntityImpl implements Data {
 	protected EList<Agent> agent_data;
 
 	/**
-	 * The cached value of the '{@link #getRol_data() <em>Rol data</em>}' reference.
+	 * The cached value of the '{@link #getRol_data() <em>Rol data</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRol_data()
 	 * @generated
 	 * @ordered
 	 */
-	protected Rol rol_data;
+	protected EList<Rol> rol_data;
 
 	/**
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' reference list.
@@ -222,6 +225,26 @@ public class DataImpl extends EntityImpl implements Data {
 	 * @ordered
 	 */
 	protected EList<Message> message;
+
+	/**
+	 * The cached value of the '{@link #getCapability_data() <em>Capability data</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapability_data()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Capability> capability_data;
+
+	/**
+	 * The cached value of the '{@link #getCapability() <em>Capability</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapability()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Capability> capability;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -450,68 +473,13 @@ public class DataImpl extends EntityImpl implements Data {
 	 * @generated
 	 */
 	@Override
-	public Rol getRol_data() {
-		if (rol_data != null && rol_data.eIsProxy()) {
-			InternalEObject oldRol_data = (InternalEObject) rol_data;
-			rol_data = (Rol) eResolveProxy(oldRol_data);
-			if (rol_data != oldRol_data) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA, oldRol_data, rol_data));
-			}
+	public EList<Rol> getRol_data() {
+		if (rol_data == null) {
+			rol_data = new EObjectWithInverseResolvingEList.ManyInverse<Rol>(Rol.class, this,
+					Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA,
+					Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL);
 		}
 		return rol_data;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Rol basicGetRol_data() {
-		return rol_data;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRol_data(Rol newRol_data, NotificationChain msgs) {
-		Rol oldRol_data = rol_data;
-		rol_data = newRol_data;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA, oldRol_data, newRol_data);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRol_data(Rol newRol_data) {
-		if (newRol_data != rol_data) {
-			NotificationChain msgs = null;
-			if (rol_data != null)
-				msgs = ((InternalEObject) rol_data).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL, Rol.class, msgs);
-			if (newRol_data != null)
-				msgs = ((InternalEObject) newRol_data).eInverseAdd(this,
-						Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL, Rol.class, msgs);
-			msgs = basicSetRol_data(newRol_data, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA, newRol_data, newRol_data));
 	}
 
 	/**
@@ -533,6 +501,35 @@ public class DataImpl extends EntityImpl implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Capability> getCapability_data() {
+		if (capability_data == null) {
+			capability_data = new EObjectWithInverseResolvingEList.ManyInverse<Capability>(Capability.class, this,
+					Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY_DATA,
+					Prometheus_metamodel_system_specificationPackage.CAPABILITY__DATA_CAPABILITY);
+		}
+		return capability_data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Capability> getCapability() {
+		if (capability == null) {
+			capability = new EObjectResolvingEList<Capability>(Capability.class, this,
+					Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY);
+		}
+		return capability;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -542,10 +539,9 @@ public class DataImpl extends EntityImpl implements Data {
 		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAgent_data()).basicAdd(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
-			if (rol_data != null)
-				msgs = ((InternalEObject) rol_data).eInverseRemove(this,
-						Prometheus_metamodel_system_specificationPackage.ROL__DATA_ROL, Rol.class, msgs);
-			return basicSetRol_data((Rol) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRol_data()).basicAdd(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY_DATA:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCapability_data()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -563,7 +559,9 @@ public class DataImpl extends EntityImpl implements Data {
 		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
 			return ((InternalEList<?>) getAgent_data()).basicRemove(otherEnd, msgs);
 		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
-			return basicSetRol_data(null, msgs);
+			return ((InternalEList<?>) getRol_data()).basicRemove(otherEnd, msgs);
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY_DATA:
+			return ((InternalEList<?>) getCapability_data()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -595,11 +593,13 @@ public class DataImpl extends EntityImpl implements Data {
 		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
 			return getAgent_data();
 		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
-			if (resolve)
-				return getRol_data();
-			return basicGetRol_data();
+			return getRol_data();
 		case Prometheus_metamodel_system_specificationPackage.DATA__MESSAGE:
 			return getMessage();
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY_DATA:
+			return getCapability_data();
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY:
+			return getCapability();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -643,11 +643,20 @@ public class DataImpl extends EntityImpl implements Data {
 			getAgent_data().addAll((Collection<? extends Agent>) newValue);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
-			setRol_data((Rol) newValue);
+			getRol_data().clear();
+			getRol_data().addAll((Collection<? extends Rol>) newValue);
 			return;
 		case Prometheus_metamodel_system_specificationPackage.DATA__MESSAGE:
 			getMessage().clear();
 			getMessage().addAll((Collection<? extends Message>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY_DATA:
+			getCapability_data().clear();
+			getCapability_data().addAll((Collection<? extends Capability>) newValue);
+			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY:
+			getCapability().clear();
+			getCapability().addAll((Collection<? extends Capability>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -689,10 +698,16 @@ public class DataImpl extends EntityImpl implements Data {
 			getAgent_data().clear();
 			return;
 		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
-			setRol_data((Rol) null);
+			getRol_data().clear();
 			return;
 		case Prometheus_metamodel_system_specificationPackage.DATA__MESSAGE:
 			getMessage().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY_DATA:
+			getCapability_data().clear();
+			return;
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY:
+			getCapability().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -728,9 +743,13 @@ public class DataImpl extends EntityImpl implements Data {
 		case Prometheus_metamodel_system_specificationPackage.DATA__AGENT_DATA:
 			return agent_data != null && !agent_data.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.DATA__ROL_DATA:
-			return rol_data != null;
+			return rol_data != null && !rol_data.isEmpty();
 		case Prometheus_metamodel_system_specificationPackage.DATA__MESSAGE:
 			return message != null && !message.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY_DATA:
+			return capability_data != null && !capability_data.isEmpty();
+		case Prometheus_metamodel_system_specificationPackage.DATA__CAPABILITY:
+			return capability != null && !capability.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

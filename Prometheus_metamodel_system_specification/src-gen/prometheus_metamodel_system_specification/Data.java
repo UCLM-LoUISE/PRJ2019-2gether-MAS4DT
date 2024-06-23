@@ -24,6 +24,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link prometheus_metamodel_system_specification.Data#getAgent_data <em>Agent data</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Data#getRol_data <em>Rol data</em>}</li>
  *   <li>{@link prometheus_metamodel_system_specification.Data#getMessage <em>Message</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Data#getCapability_data <em>Capability data</em>}</li>
+ *   <li>{@link prometheus_metamodel_system_specification.Data#getCapability <em>Capability</em>}</li>
  * </ul>
  *
  * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getData()
@@ -214,28 +216,18 @@ public interface Data extends Entity {
 	EList<Agent> getAgent_data();
 
 	/**
-	 * Returns the value of the '<em><b>Rol data</b></em>' reference.
+	 * Returns the value of the '<em><b>Rol data</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Rol}.
 	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Rol#getData_rol <em>Data rol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rol data</em>' reference.
-	 * @see #setRol_data(Rol)
+	 * @return the value of the '<em>Rol data</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getData_Rol_data()
 	 * @see prometheus_metamodel_system_specification.Rol#getData_rol
 	 * @model opposite="data_rol"
 	 * @generated
 	 */
-	Rol getRol_data();
-
-	/**
-	 * Sets the value of the '{@link prometheus_metamodel_system_specification.Data#getRol_data <em>Rol data</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rol data</em>' reference.
-	 * @see #getRol_data()
-	 * @generated
-	 */
-	void setRol_data(Rol value);
+	EList<Rol> getRol_data();
 
 	/**
 	 * Returns the value of the '<em><b>Message</b></em>' reference list.
@@ -248,5 +240,31 @@ public interface Data extends Entity {
 	 * @generated
 	 */
 	EList<Message> getMessage();
+
+	/**
+	 * Returns the value of the '<em><b>Capability data</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Capability}.
+	 * It is bidirectional and its opposite is '{@link prometheus_metamodel_system_specification.Capability#getData_capability <em>Data capability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Capability data</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getData_Capability_data()
+	 * @see prometheus_metamodel_system_specification.Capability#getData_capability
+	 * @model opposite="data_capability"
+	 * @generated
+	 */
+	EList<Capability> getCapability_data();
+
+	/**
+	 * Returns the value of the '<em><b>Capability</b></em>' reference list.
+	 * The list contents are of type {@link prometheus_metamodel_system_specification.Capability}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Capability</em>' reference list.
+	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getData_Capability()
+	 * @model
+	 * @generated
+	 */
+	EList<Capability> getCapability();
 
 } // Data

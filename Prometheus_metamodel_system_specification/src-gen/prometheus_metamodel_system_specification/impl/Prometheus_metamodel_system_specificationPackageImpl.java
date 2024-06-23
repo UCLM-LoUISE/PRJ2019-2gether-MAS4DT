@@ -14,13 +14,13 @@ import prometheus_metamodel_system_specification.Action;
 import prometheus_metamodel_system_specification.Actor;
 import prometheus_metamodel_system_specification.Agent;
 import prometheus_metamodel_system_specification.Attribute;
+import prometheus_metamodel_system_specification.Capability;
 import prometheus_metamodel_system_specification.Context;
 import prometheus_metamodel_system_specification.Data;
 import prometheus_metamodel_system_specification.Entity;
 import prometheus_metamodel_system_specification.Enum_Type_Step;
 import prometheus_metamodel_system_specification.Enum_Types;
 import prometheus_metamodel_system_specification.Enum_Visibility;
-import prometheus_metamodel_system_specification.Functionality;
 import prometheus_metamodel_system_specification.Goal;
 import prometheus_metamodel_system_specification.Goal_Relationship;
 import prometheus_metamodel_system_specification.Logical_Object;
@@ -111,7 +111,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass functionalityEClass = null;
+	private EClass capabilityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -329,7 +329,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Functionalities() {
+	public EReference getModel_Goals() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -339,7 +339,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Goals() {
+	public EReference getModel_Goal_relationships() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -349,7 +349,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Goal_relationships() {
+	public EReference getModel_Actors() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -359,7 +359,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Actors() {
+	public EReference getModel_Roles() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -369,7 +369,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Roles() {
+	public EReference getModel_Data() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -379,7 +379,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Data() {
+	public EReference getModel_Scenarios() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -389,7 +389,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Scenarios() {
+	public EReference getModel_Agents() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -399,7 +399,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Agents() {
+	public EReference getModel_Messages() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -409,7 +409,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Messages() {
+	public EReference getModel_Protocols() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -419,7 +419,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Protocols() {
+	public EReference getModel_Capabilities() {
 		return (EReference) modelEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -549,18 +549,8 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getAction_Functionality() {
-		return (EReference) actionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getAction_Parameters() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -570,7 +560,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getAction_Duration() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -580,7 +570,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getAction_Failure() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -590,7 +580,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getAction_Partial_change() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -600,7 +590,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getAction_Side_effects() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -610,7 +600,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getAction_Step() {
-		return (EReference) actionEClass.getEStructuralFeatures().get(6);
+		return (EReference) actionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -620,7 +610,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getAction_Actor() {
-		return (EReference) actionEClass.getEStructuralFeatures().get(7);
+		return (EReference) actionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -630,7 +620,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getAction_Physical_object() {
-		return (EReference) actionEClass.getEStructuralFeatures().get(8);
+		return (EReference) actionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -640,7 +630,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getAction_Rol() {
-		return (EReference) actionEClass.getEStructuralFeatures().get(9);
+		return (EReference) actionEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -650,6 +640,16 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getAction_Scenario_action() {
+		return (EReference) actionEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAction_Agent_action() {
 		return (EReference) actionEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -669,18 +669,8 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getPercept_Functionality() {
-		return (EReference) perceptEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getPercept_Information_carried() {
-		return (EAttribute) perceptEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) perceptEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -690,7 +680,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getPercept_Knowledge_updated() {
-		return (EAttribute) perceptEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) perceptEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -700,7 +690,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getPercept_Source() {
-		return (EAttribute) perceptEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) perceptEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -710,7 +700,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getPercept_Processing() {
-		return (EAttribute) perceptEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) perceptEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -720,7 +710,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getPercept_Expected_frequency() {
-		return (EAttribute) perceptEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) perceptEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -730,7 +720,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getPercept_External_to_system() {
-		return (EAttribute) perceptEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) perceptEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -740,7 +730,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getPercept_External_path() {
-		return (EAttribute) perceptEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) perceptEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -750,7 +740,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getPercept_Step() {
-		return (EReference) perceptEClass.getEStructuralFeatures().get(8);
+		return (EReference) perceptEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -760,7 +750,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getPercept_Rol() {
-		return (EReference) perceptEClass.getEStructuralFeatures().get(9);
+		return (EReference) perceptEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -770,7 +760,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getPercept_Scenario() {
-		return (EReference) perceptEClass.getEStructuralFeatures().get(10);
+		return (EReference) perceptEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -780,6 +770,16 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getPercept_Scenario_percept() {
+		return (EReference) perceptEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPercept_Agent_percept() {
 		return (EReference) perceptEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -789,7 +789,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getPercept_Agent() {
+	public EReference getPercept_Capability() {
 		return (EReference) perceptEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -929,7 +929,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getLogical_Object_Functionality() {
+	public EReference getLogical_Object_Physical_object_shadow() {
 		return (EReference) logical_ObjectEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -939,18 +939,8 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getLogical_Object_Physical_object_shadow() {
-		return (EReference) logical_ObjectEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getLogical_Object_Physical_object_twin() {
-		return (EReference) logical_ObjectEClass.getEStructuralFeatures().get(2);
+		return (EReference) logical_ObjectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -989,7 +979,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getScenario_Functionality() {
+	public EReference getScenario_Steps() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -999,18 +989,8 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getScenario_Steps() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getScenario_Trigger() {
-		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1020,7 +1000,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getScenario_Variation() {
-		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1030,7 +1010,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EAttribute getScenario_Priority() {
-		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1040,7 +1020,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getScenario_Step() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(6);
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1050,7 +1030,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getScenario_Scenario() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(7);
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1060,7 +1040,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getScenario_Percept_scenario() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(10);
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1070,7 +1050,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getScenario_Model_scenario() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(11);
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1080,7 +1060,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getScenario_Action_scenario() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(12);
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1090,16 +1070,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 */
 	@Override
 	public EReference getScenario_Rol_scenario() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getScenario_Data_scenario() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1109,58 +1079,78 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
+	public EClass getCapability() {
+		return capabilityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCapability_Agent_capability() {
+		return (EReference) capabilityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCapability_Data_capability() {
+		return (EReference) capabilityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCapability_Action() {
+		return (EReference) capabilityEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCapability_Message() {
+		return (EReference) capabilityEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCapability_Data() {
+		return (EReference) capabilityEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getScenario_Data_scenario() {
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getScenario_Goals_scenario() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getFunctionality() {
-		return functionalityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFunctionality_Logical_object() {
-		return (EReference) functionalityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFunctionality_Action() {
-		return (EReference) functionalityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFunctionality_Percept() {
-		return (EReference) functionalityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFunctionality_Scenario() {
-		return (EReference) functionalityEClass.getEStructuralFeatures().get(3);
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1559,6 +1549,26 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
+	public EReference getData_Capability_data() {
+		return (EReference) dataEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getData_Capability() {
+		return (EReference) dataEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAgent() {
 		return agentEClass;
 	}
@@ -1659,8 +1669,38 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getAgent_Action() {
+	public EReference getAgent_Action_agent() {
 		return (EReference) agentEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAgent_Model() {
+		return (EReference) agentEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAgent_Percept_agent() {
+		return (EReference) agentEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAgent_Capability_agent() {
+		return (EReference) agentEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1721,6 +1761,16 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 	@Override
 	public EReference getMessage_Agent_message() {
 		return (EReference) messageEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessage_Capability() {
+		return (EReference) messageEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1815,7 +1865,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(modelEClass, MODEL__CONTEXTS);
 		createEReference(modelEClass, MODEL__PHYSICAL_OBJECTS);
 		createEReference(modelEClass, MODEL__LOGICAL_OBJECTS);
-		createEReference(modelEClass, MODEL__FUNCTIONALITIES);
 		createEReference(modelEClass, MODEL__GOALS);
 		createEReference(modelEClass, MODEL__GOAL_RELATIONSHIPS);
 		createEReference(modelEClass, MODEL__ACTORS);
@@ -1825,6 +1874,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(modelEClass, MODEL__AGENTS);
 		createEReference(modelEClass, MODEL__MESSAGES);
 		createEReference(modelEClass, MODEL__PROTOCOLS);
+		createEReference(modelEClass, MODEL__CAPABILITIES);
 
 		contextEClass = createEClass(CONTEXT);
 		createEReference(contextEClass, CONTEXT__SCENARIO);
@@ -1840,7 +1890,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(goalEClass, GOAL__SCENARIO_GOALS);
 
 		actionEClass = createEClass(ACTION);
-		createEReference(actionEClass, ACTION__FUNCTIONALITY);
 		createEAttribute(actionEClass, ACTION__PARAMETERS);
 		createEAttribute(actionEClass, ACTION__DURATION);
 		createEAttribute(actionEClass, ACTION__FAILURE);
@@ -1851,9 +1900,9 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(actionEClass, ACTION__PHYSICAL_OBJECT);
 		createEReference(actionEClass, ACTION__ROL);
 		createEReference(actionEClass, ACTION__SCENARIO_ACTION);
+		createEReference(actionEClass, ACTION__AGENT_ACTION);
 
 		perceptEClass = createEClass(PERCEPT);
-		createEReference(perceptEClass, PERCEPT__FUNCTIONALITY);
 		createEAttribute(perceptEClass, PERCEPT__INFORMATION_CARRIED);
 		createEAttribute(perceptEClass, PERCEPT__KNOWLEDGE_UPDATED);
 		createEAttribute(perceptEClass, PERCEPT__SOURCE);
@@ -1865,7 +1914,8 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(perceptEClass, PERCEPT__ROL);
 		createEReference(perceptEClass, PERCEPT__SCENARIO);
 		createEReference(perceptEClass, PERCEPT__SCENARIO_PERCEPT);
-		createEReference(perceptEClass, PERCEPT__AGENT);
+		createEReference(perceptEClass, PERCEPT__AGENT_PERCEPT);
+		createEReference(perceptEClass, PERCEPT__CAPABILITY);
 
 		goal_RelationshipEClass = createEClass(GOAL_RELATIONSHIP);
 		createEReference(goal_RelationshipEClass, GOAL_RELATIONSHIP__GOAL_FROM_AND);
@@ -1882,14 +1932,12 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(physical_ObjectEClass, PHYSICAL_OBJECT__ACTOR);
 
 		logical_ObjectEClass = createEClass(LOGICAL_OBJECT);
-		createEReference(logical_ObjectEClass, LOGICAL_OBJECT__FUNCTIONALITY);
 		createEReference(logical_ObjectEClass, LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW);
 		createEReference(logical_ObjectEClass, LOGICAL_OBJECT__PHYSICAL_OBJECT_TWIN);
 
 		scenarioEClass = createEClass(SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__PHYSICAL_OBJECT);
 		createEReference(scenarioEClass, SCENARIO__CONTEXT);
-		createEReference(scenarioEClass, SCENARIO__FUNCTIONALITY);
 		createEReference(scenarioEClass, SCENARIO__STEPS);
 		createEAttribute(scenarioEClass, SCENARIO__TRIGGER);
 		createEAttribute(scenarioEClass, SCENARIO__VARIATION);
@@ -1903,11 +1951,12 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(scenarioEClass, SCENARIO__DATA_SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__ROL_SCENARIO);
 
-		functionalityEClass = createEClass(FUNCTIONALITY);
-		createEReference(functionalityEClass, FUNCTIONALITY__LOGICAL_OBJECT);
-		createEReference(functionalityEClass, FUNCTIONALITY__ACTION);
-		createEReference(functionalityEClass, FUNCTIONALITY__PERCEPT);
-		createEReference(functionalityEClass, FUNCTIONALITY__SCENARIO);
+		capabilityEClass = createEClass(CAPABILITY);
+		createEReference(capabilityEClass, CAPABILITY__AGENT_CAPABILITY);
+		createEReference(capabilityEClass, CAPABILITY__DATA_CAPABILITY);
+		createEReference(capabilityEClass, CAPABILITY__ACTION);
+		createEReference(capabilityEClass, CAPABILITY__MESSAGE);
+		createEReference(capabilityEClass, CAPABILITY__DATA);
 
 		entityEClass = createEClass(ENTITY);
 		createEReference(entityEClass, ENTITY__ATTRIBUTE);
@@ -1953,6 +2002,8 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(dataEClass, DATA__AGENT_DATA);
 		createEReference(dataEClass, DATA__ROL_DATA);
 		createEReference(dataEClass, DATA__MESSAGE);
+		createEReference(dataEClass, DATA__CAPABILITY_DATA);
+		createEReference(dataEClass, DATA__CAPABILITY);
 
 		agentEClass = createEClass(AGENT);
 		createEAttribute(agentEClass, AGENT__MINIMUM_CARDINALITY);
@@ -1964,7 +2015,10 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEReference(agentEClass, AGENT__ROL);
 		createEReference(agentEClass, AGENT__PROTOCOL);
 		createEReference(agentEClass, AGENT__MESSAGE_AGENT);
-		createEReference(agentEClass, AGENT__ACTION);
+		createEReference(agentEClass, AGENT__ACTION_AGENT);
+		createEReference(agentEClass, AGENT__MODEL);
+		createEReference(agentEClass, AGENT__PERCEPT_AGENT);
+		createEReference(agentEClass, AGENT__CAPABILITY_AGENT);
 
 		messageEClass = createEClass(MESSAGE);
 		createEAttribute(messageEClass, MESSAGE__PURPOSE);
@@ -1972,6 +2026,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		createEAttribute(messageEClass, MESSAGE__EXTERNAL_PATH);
 		createEAttribute(messageEClass, MESSAGE__EXTERNAL_TO_SYSTEM);
 		createEReference(messageEClass, MESSAGE__AGENT_MESSAGE);
+		createEReference(messageEClass, MESSAGE__CAPABILITY);
 
 		protocolEClass = createEClass(PROTOCOL);
 		createEReference(protocolEClass, PROTOCOL__AGENT);
@@ -2018,7 +2073,7 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		physical_ObjectEClass.getESuperTypes().add(this.getEntity());
 		logical_ObjectEClass.getESuperTypes().add(this.getEntity());
 		scenarioEClass.getESuperTypes().add(this.getEntity());
-		functionalityEClass.getESuperTypes().add(this.getEntity());
+		capabilityEClass.getESuperTypes().add(this.getEntity());
 		stepEClass.getESuperTypes().add(this.getEntity());
 		actorEClass.getESuperTypes().add(this.getEntity());
 		rolEClass.getESuperTypes().add(this.getEntity());
@@ -2044,9 +2099,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getModel_Logical_objects(), this.getLogical_Object(), null, "logical_objects", null, 1, -1,
 				Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModel_Functionalities(), this.getFunctionality(), null, "functionalities", null, 1, -1,
-				Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Goals(), this.getGoal(), this.getGoal_Model(), "goals", null, 0, -1, Model.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2065,13 +2117,16 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getModel_Scenarios(), this.getScenario(), this.getScenario_Model_scenario(), "scenarios", null,
 				0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModel_Agents(), this.getAgent(), null, "agents", null, 0, -1, Model.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getModel_Agents(), this.getAgent(), this.getAgent_Model(), "agents", null, 0, -1, Model.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Messages(), this.getMessage(), null, "messages", null, 0, -1, Model.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Protocols(), this.getProtocol(), null, "protocols", null, 0, -1, Model.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Capabilities(), this.getCapability(), null, "capabilities", null, 0, -1, Model.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2111,9 +2166,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAction_Functionality(), this.getFunctionality(), this.getFunctionality_Action(),
-				"functionality", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAction_Parameters(), ecorePackage.getEString(), "parameters", null, 0, 1, Action.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAction_Duration(), ecorePackage.getEString(), "duration", null, 0, 1, Action.class,
@@ -2140,11 +2192,11 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getAction_Scenario_action(), this.getScenario(), this.getScenario_Action_scenario(),
 				"scenario_action", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAction_Agent_action(), this.getAgent(), this.getAgent_Action_agent(), "agent_action", null, 0,
+				-1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(perceptEClass, Percept.class, "Percept", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPercept_Functionality(), this.getFunctionality(), this.getFunctionality_Percept(),
-				"functionality", null, 0, -1, Percept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPercept_Information_carried(), ecorePackage.getEString(), "information_carried", null, 0, 1,
 				Percept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -2176,9 +2228,12 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getPercept_Scenario_percept(), this.getScenario(), this.getScenario_Percept_scenario(),
 				"scenario_percept", null, 0, -1, Percept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPercept_Agent(), this.getAgent(), null, "agent", null, 0, -1, Percept.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getPercept_Agent_percept(), this.getAgent(), this.getAgent_Percept_agent(), "agent_percept",
+				null, 0, -1, Percept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPercept_Capability(), this.getCapability(), null, "capability", null, 0, -1, Percept.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(goal_RelationshipEClass, Goal_Relationship.class, "Goal_Relationship", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -2220,10 +2275,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 
 		initEClass(logical_ObjectEClass, Logical_Object.class, "Logical_Object", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLogical_Object_Functionality(), this.getFunctionality(),
-				this.getFunctionality_Logical_object(), "functionality", null, 0, -1, Logical_Object.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLogical_Object_Physical_object_shadow(), this.getPhysical_Object(),
 				this.getPhysical_Object_Logical_object_shadow(), "physical_object_shadow", null, 0, -1,
 				Logical_Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -2241,9 +2292,6 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getScenario_Context(), this.getContext(), this.getContext_Scenario(), "context", null, 0, 1,
 				Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScenario_Functionality(), this.getFunctionality(), this.getFunctionality_Scenario(),
-				"functionality", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_Steps(), this.getStep(), null, "steps", null, 0, -1, Scenario.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -2278,21 +2326,23 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 				-1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(functionalityEClass, Functionality.class, "Functionality", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(capabilityEClass, Capability.class, "Capability", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFunctionality_Logical_object(), this.getLogical_Object(),
-				this.getLogical_Object_Functionality(), "logical_object", null, 0, -1, Functionality.class,
+		initEReference(getCapability_Agent_capability(), this.getAgent(), this.getAgent_Capability_agent(),
+				"agent_capability", null, 0, -1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCapability_Data_capability(), this.getData(), this.getData_Capability_data(),
+				"data_capability", null, 0, -1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCapability_Action(), this.getAction(), null, "action", null, 0, 1, Capability.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionality_Action(), this.getAction(), this.getAction_Functionality(), "action", null, 0,
-				-1, Functionality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionality_Percept(), this.getPercept(), this.getPercept_Functionality(), "percept", null,
-				0, -1, Functionality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionality_Scenario(), this.getScenario(), this.getScenario_Functionality(), "scenario",
-				null, 0, -1, Functionality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCapability_Message(), this.getMessage(), null, "message", null, 0, -1, Capability.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCapability_Data(), this.getData(), null, "data", null, 0, -1, Capability.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntity_Attribute(), this.getAttribute(), null, "attribute", null, 0, -1, Entity.class,
@@ -2387,12 +2437,18 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getData_Agent_data(), this.getAgent(), this.getAgent_Data_agent(), "agent_data", null, 0, -1,
 				Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getData_Rol_data(), this.getRol(), this.getRol_Data_rol(), "rol_data", null, 0, 1, Data.class,
+		initEReference(getData_Rol_data(), this.getRol(), this.getRol_Data_rol(), "rol_data", null, 0, -1, Data.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getData_Message(), this.getMessage(), null, "message", null, 0, -1, Data.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getData_Capability_data(), this.getCapability(), this.getCapability_Data_capability(),
+				"capability_data", null, 0, -1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getData_Capability(), this.getCapability(), null, "capability", null, 0, -1, Data.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agentEClass, Agent.class, "Agent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgent_Minimum_cardinality(), ecorePackage.getEInt(), "minimum_cardinality", null, 0, 1,
@@ -2419,9 +2475,18 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getAgent_Message_agent(), this.getMessage(), this.getMessage_Agent_message(), "message_agent",
 				null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgent_Action(), this.getAction(), null, "action", null, 0, -1, Agent.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getAgent_Action_agent(), this.getAction(), this.getAction_Agent_action(), "action_agent", null,
+				0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgent_Model(), this.getModel(), this.getModel_Agents(), "model", null, 1, 1, Agent.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgent_Percept_agent(), this.getPercept(), this.getPercept_Agent_percept(), "percept_agent",
+				null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgent_Capability_agent(), this.getCapability(), this.getCapability_Agent_capability(),
+				"capability_agent", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessage_Purpose(), ecorePackage.getEString(), "purpose", null, 0, 1, Message.class,
@@ -2438,6 +2503,9 @@ public class Prometheus_metamodel_system_specificationPackageImpl extends EPacka
 		initEReference(getMessage_Agent_message(), this.getAgent(), this.getAgent_Message_agent(), "agent_message",
 				null, 0, -1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessage_Capability(), this.getCapability(), null, "capability", null, 0, -1, Message.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(protocolEClass, Protocol.class, "Protocol", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

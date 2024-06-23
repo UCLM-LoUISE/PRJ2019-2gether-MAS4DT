@@ -55,6 +55,8 @@ public class DataItemProvider extends EntityItemProvider {
 			addAgent_dataPropertyDescriptor(object);
 			addRol_dataPropertyDescriptor(object);
 			addMessagePropertyDescriptor(object);
+			addCapability_dataPropertyDescriptor(object);
+			addCapabilityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -226,6 +228,37 @@ public class DataItemProvider extends EntityItemProvider {
 						getResourceLocator(), getString("_UI_Data_message_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Data_message_feature", "_UI_Data_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.DATA__MESSAGE, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Capability data feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCapability_dataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Data_capability_data_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Data_capability_data_feature",
+								"_UI_Data_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.DATA__CAPABILITY_DATA, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Capability feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCapabilityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Data_capability_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Data_capability_feature", "_UI_Data_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.DATA__CAPABILITY, true, false, true,
 						null, null, null));
 	}
 

@@ -53,7 +53,10 @@ public class AgentItemProvider extends EntityItemProvider {
 			addRolPropertyDescriptor(object);
 			addProtocolPropertyDescriptor(object);
 			addMessage_agentPropertyDescriptor(object);
-			addActionPropertyDescriptor(object);
+			addAction_agentPropertyDescriptor(object);
+			addModelPropertyDescriptor(object);
+			addPercept_agentPropertyDescriptor(object);
+			addCapability_agentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -199,18 +202,66 @@ public class AgentItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Action feature.
+	 * This adds a property descriptor for the Action agent feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionPropertyDescriptor(Object object) {
+	protected void addAction_agentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Agent_action_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Agent_action_feature", "_UI_Agent_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__ACTION, true, false, true,
-						null, null, null));
+						getResourceLocator(), getString("_UI_Agent_action_agent_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Agent_action_agent_feature",
+								"_UI_Agent_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__ACTION_AGENT, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Model feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Agent_model_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Agent_model_feature", "_UI_Agent_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__MODEL, true, false, true, null,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Percept agent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPercept_agentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Agent_percept_agent_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Agent_percept_agent_feature",
+								"_UI_Agent_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__PERCEPT_AGENT, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Capability agent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCapability_agentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Agent_capability_agent_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Agent_capability_agent_feature",
+								"_UI_Agent_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.AGENT__CAPABILITY_AGENT, true, false,
+						true, null, null, null));
 	}
 
 	/**

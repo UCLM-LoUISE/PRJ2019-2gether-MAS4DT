@@ -76,8 +76,8 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 			return createLogical_Object();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO:
 			return createScenario();
-		case Prometheus_metamodel_system_specificationPackage.FUNCTIONALITY:
-			return createFunctionality();
+		case Prometheus_metamodel_system_specificationPackage.CAPABILITY:
+			return createCapability();
 		case Prometheus_metamodel_system_specificationPackage.ATTRIBUTE:
 			return createAttribute();
 		case Prometheus_metamodel_system_specificationPackage.STEP:
@@ -242,9 +242,9 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	 * @generated
 	 */
 	@Override
-	public Functionality createFunctionality() {
-		FunctionalityImpl functionality = new FunctionalityImpl();
-		return functionality;
+	public Capability createCapability() {
+		CapabilityImpl capability = new CapabilityImpl();
+		return capability;
 	}
 
 	/**
