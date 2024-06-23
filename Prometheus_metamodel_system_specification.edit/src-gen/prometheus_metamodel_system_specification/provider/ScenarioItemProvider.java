@@ -47,33 +47,21 @@ public class ScenarioItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGoalPropertyDescriptor(object);
 			addPhysical_objectPropertyDescriptor(object);
 			addContextPropertyDescriptor(object);
-			addActionPropertyDescriptor(object);
-			addPerceptPropertyDescriptor(object);
-			addFunctionalityPropertyDescriptor(object);
 			addTriggerPropertyDescriptor(object);
 			addVariationPropertyDescriptor(object);
+			addStepPropertyDescriptor(object);
+			addScenarioPropertyDescriptor(object);
+			addGoals_scenarioPropertyDescriptor(object);
 			addPriorityPropertyDescriptor(object);
+			addPercept_scenarioPropertyDescriptor(object);
+			addModel_scenarioPropertyDescriptor(object);
+			addAction_scenarioPropertyDescriptor(object);
+			addData_scenarioPropertyDescriptor(object);
+			addRol_scenarioPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Goal feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGoalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Scenario_goal_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_goal_feature",
-								"_UI_Scenario_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__GOAL, true, false, true,
-						null, null, null));
 	}
 
 	/**
@@ -109,54 +97,6 @@ public class ScenarioItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Action feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Scenario_action_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_action_feature",
-								"_UI_Scenario_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__ACTION, true, false, true,
-						null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Percept feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPerceptPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Scenario_percept_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_percept_feature",
-								"_UI_Scenario_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__PERCEPT, true, false, true,
-						null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Functionality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFunctionalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Scenario_functionality_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_functionality_feature",
-								"_UI_Scenario_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__FUNCTIONALITY, true, false,
-						true, null, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Trigger feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,6 +129,54 @@ public class ScenarioItemProvider extends EntityItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Step feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStepPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_step_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_step_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__STEP, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_scenario_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__SCENARIO, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Goals scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGoals_scenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_goals_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_goals_scenario_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__GOALS_SCENARIO, true, false,
+						true, null, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Priority feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,6 +190,86 @@ public class ScenarioItemProvider extends EntityItemProvider {
 								"_UI_Scenario_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__PRIORITY, true, false,
 						false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Percept scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPercept_scenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_percept_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_percept_scenario_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__PERCEPT_SCENARIO, true,
+						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Model scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModel_scenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_model_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_model_scenario_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__MODEL_SCENARIO, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Action scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAction_scenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_action_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_action_scenario_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__ACTION_SCENARIO, true,
+						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Data scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addData_scenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_data_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_data_scenario_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__DATA_SCENARIO, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rol scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRol_scenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Scenario_rol_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_rol_scenario_feature",
+								"_UI_Scenario_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.SCENARIO__ROL_SCENARIO, true, false,
+						true, null, null, null));
 	}
 
 	/**

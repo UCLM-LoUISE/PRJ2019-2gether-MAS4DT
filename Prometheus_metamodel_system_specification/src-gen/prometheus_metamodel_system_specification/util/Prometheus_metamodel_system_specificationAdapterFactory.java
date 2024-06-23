@@ -112,8 +112,8 @@ public class Prometheus_metamodel_system_specificationAdapterFactory extends Ada
 		}
 
 		@Override
-		public Adapter caseFunctionality(Functionality object) {
-			return createFunctionalityAdapter();
+		public Adapter caseCapability(Capability object) {
+			return createCapabilityAdapter();
 		}
 
 		@Override
@@ -129,6 +129,36 @@ public class Prometheus_metamodel_system_specificationAdapterFactory extends Ada
 		@Override
 		public Adapter caseStep(Step object) {
 			return createStepAdapter();
+		}
+
+		@Override
+		public Adapter caseActor(Actor object) {
+			return createActorAdapter();
+		}
+
+		@Override
+		public Adapter caseRol(Rol object) {
+			return createRolAdapter();
+		}
+
+		@Override
+		public Adapter caseData(Data object) {
+			return createDataAdapter();
+		}
+
+		@Override
+		public Adapter caseAgent(Agent object) {
+			return createAgentAdapter();
+		}
+
+		@Override
+		public Adapter caseMessage(Message object) {
+			return createMessageAdapter();
+		}
+
+		@Override
+		public Adapter caseProtocol(Protocol object) {
+			return createProtocolAdapter();
 		}
 
 		@Override
@@ -277,16 +307,16 @@ public class Prometheus_metamodel_system_specificationAdapterFactory extends Ada
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Functionality <em>Functionality</em>}'.
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Capability <em>Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see prometheus_metamodel_system_specification.Functionality
+	 * @see prometheus_metamodel_system_specification.Capability
 	 * @generated
 	 */
-	public Adapter createFunctionalityAdapter() {
+	public Adapter createCapabilityAdapter() {
 		return null;
 	}
 
@@ -329,6 +359,90 @@ public class Prometheus_metamodel_system_specificationAdapterFactory extends Ada
 	 * @generated
 	 */
 	public Adapter createStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Actor <em>Actor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see prometheus_metamodel_system_specification.Actor
+	 * @generated
+	 */
+	public Adapter createActorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Rol <em>Rol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see prometheus_metamodel_system_specification.Rol
+	 * @generated
+	 */
+	public Adapter createRolAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Data <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see prometheus_metamodel_system_specification.Data
+	 * @generated
+	 */
+	public Adapter createDataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Agent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see prometheus_metamodel_system_specification.Agent
+	 * @generated
+	 */
+	public Adapter createAgentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Message <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see prometheus_metamodel_system_specification.Message
+	 * @generated
+	 */
+	public Adapter createMessageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link prometheus_metamodel_system_specification.Protocol <em>Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see prometheus_metamodel_system_specification.Protocol
+	 * @generated
+	 */
+	public Adapter createProtocolAdapter() {
 		return null;
 	}
 

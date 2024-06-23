@@ -281,26 +281,26 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Functionality} instances.
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Capability} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FunctionalityItemProvider functionalityItemProvider;
+	protected CapabilityItemProvider capabilityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Functionality}.
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Capability}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFunctionalityAdapter() {
-		if (functionalityItemProvider == null) {
-			functionalityItemProvider = new FunctionalityItemProvider(this);
+	public Adapter createCapabilityAdapter() {
+		if (capabilityItemProvider == null) {
+			capabilityItemProvider = new CapabilityItemProvider(this);
 		}
 
-		return functionalityItemProvider;
+		return capabilityItemProvider;
 	}
 
 	/**
@@ -347,6 +347,144 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 		}
 
 		return stepItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Actor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ActorItemProvider actorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Actor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createActorAdapter() {
+		if (actorItemProvider == null) {
+			actorItemProvider = new ActorItemProvider(this);
+		}
+
+		return actorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Rol} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RolItemProvider rolItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Rol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRolAdapter() {
+		if (rolItemProvider == null) {
+			rolItemProvider = new RolItemProvider(this);
+		}
+
+		return rolItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Data} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataItemProvider dataItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Data}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataAdapter() {
+		if (dataItemProvider == null) {
+			dataItemProvider = new DataItemProvider(this);
+		}
+
+		return dataItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Agent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AgentItemProvider agentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Agent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAgentAdapter() {
+		if (agentItemProvider == null) {
+			agentItemProvider = new AgentItemProvider(this);
+		}
+
+		return agentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Message} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageItemProvider messageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Message}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageAdapter() {
+		if (messageItemProvider == null) {
+			messageItemProvider = new MessageItemProvider(this);
+		}
+
+		return messageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link prometheus_metamodel_system_specification.Protocol} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProtocolItemProvider protocolItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link prometheus_metamodel_system_specification.Protocol}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProtocolAdapter() {
+		if (protocolItemProvider == null) {
+			protocolItemProvider = new ProtocolItemProvider(this);
+		}
+
+		return protocolItemProvider;
 	}
 
 	/**
@@ -472,12 +610,24 @@ public class Prometheus_metamodel_system_specificationItemProviderAdapterFactory
 			logical_ObjectItemProvider.dispose();
 		if (scenarioItemProvider != null)
 			scenarioItemProvider.dispose();
-		if (functionalityItemProvider != null)
-			functionalityItemProvider.dispose();
+		if (capabilityItemProvider != null)
+			capabilityItemProvider.dispose();
 		if (attributeItemProvider != null)
 			attributeItemProvider.dispose();
 		if (stepItemProvider != null)
 			stepItemProvider.dispose();
+		if (actorItemProvider != null)
+			actorItemProvider.dispose();
+		if (rolItemProvider != null)
+			rolItemProvider.dispose();
+		if (dataItemProvider != null)
+			dataItemProvider.dispose();
+		if (agentItemProvider != null)
+			agentItemProvider.dispose();
+		if (messageItemProvider != null)
+			messageItemProvider.dispose();
+		if (protocolItemProvider != null)
+			protocolItemProvider.dispose();
 	}
 
 }

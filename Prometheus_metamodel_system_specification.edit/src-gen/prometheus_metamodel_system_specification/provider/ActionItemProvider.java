@@ -44,47 +44,19 @@ public class ActionItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addScenarioPropertyDescriptor(object);
-			addFunctionalityPropertyDescriptor(object);
 			addParametersPropertyDescriptor(object);
 			addDurationPropertyDescriptor(object);
 			addFailurePropertyDescriptor(object);
 			addPartial_changePropertyDescriptor(object);
 			addSide_effectsPropertyDescriptor(object);
+			addStepPropertyDescriptor(object);
+			addActorPropertyDescriptor(object);
+			addPhysical_objectPropertyDescriptor(object);
+			addRolPropertyDescriptor(object);
+			addScenario_actionPropertyDescriptor(object);
+			addAgent_actionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Scenario feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScenarioPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Action_scenario_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Action_scenario_feature",
-								"_UI_Action_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__SCENARIO, true, false, true,
-						null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Functionality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFunctionalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Action_functionality_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Action_functionality_feature",
-								"_UI_Action_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__FUNCTIONALITY, true, false,
-						true, null, null, null));
 	}
 
 	/**
@@ -165,6 +137,99 @@ public class ActionItemProvider extends EntityItemProvider {
 								"_UI_Action_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__SIDE_EFFECTS, true, false,
 						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Step feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStepPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_step_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_step_feature", "_UI_Action_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__STEP, true, false, true, null,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Actor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_actor_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_actor_feature", "_UI_Action_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__ACTOR, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Physical object feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPhysical_objectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_physical_object_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_physical_object_feature",
+								"_UI_Action_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__PHYSICAL_OBJECT, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_rol_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_rol_feature", "_UI_Action_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__ROL, true, false, true, null,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenario_actionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_scenario_action_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_scenario_action_feature",
+								"_UI_Action_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__SCENARIO_ACTION, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Agent action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAgent_actionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_agent_action_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_agent_action_feature",
+								"_UI_Action_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.ACTION__AGENT_ACTION, true, false,
+						true, null, null, null));
 	}
 
 	/**

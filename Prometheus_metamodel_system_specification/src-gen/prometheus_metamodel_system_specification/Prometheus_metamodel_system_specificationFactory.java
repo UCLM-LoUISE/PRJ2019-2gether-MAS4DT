@@ -104,13 +104,13 @@ public interface Prometheus_metamodel_system_specificationFactory extends EFacto
 	Scenario createScenario();
 
 	/**
-	 * Returns a new object of class '<em>Functionality</em>'.
+	 * Returns a new object of class '<em>Capability</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Functionality</em>'.
+	 * @return a new object of class '<em>Capability</em>'.
 	 * @generated
 	 */
-	Functionality createFunctionality();
+	Capability createCapability();
 
 	/**
 	 * Returns a new object of class '<em>Attribute</em>'.
@@ -129,6 +129,60 @@ public interface Prometheus_metamodel_system_specificationFactory extends EFacto
 	 * @generated
 	 */
 	Step createStep();
+
+	/**
+	 * Returns a new object of class '<em>Actor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Actor</em>'.
+	 * @generated
+	 */
+	Actor createActor();
+
+	/**
+	 * Returns a new object of class '<em>Rol</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rol</em>'.
+	 * @generated
+	 */
+	Rol createRol();
+
+	/**
+	 * Returns a new object of class '<em>Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data</em>'.
+	 * @generated
+	 */
+	Data createData();
+
+	/**
+	 * Returns a new object of class '<em>Agent</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Agent</em>'.
+	 * @generated
+	 */
+	Agent createAgent();
+
+	/**
+	 * Returns a new object of class '<em>Message</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message</em>'.
+	 * @generated
+	 */
+	Message createMessage();
+
+	/**
+	 * Returns a new object of class '<em>Protocol</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Protocol</em>'.
+	 * @generated
+	 */
+	Protocol createProtocol();
 
 	/**
 	 * Returns the package supported by this factory.

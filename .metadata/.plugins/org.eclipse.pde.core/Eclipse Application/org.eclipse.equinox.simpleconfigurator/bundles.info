@@ -1,7 +1,8 @@
 #encoding=UTF-8
 #version=1
-Prometheus_metamodel,0.1.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/Prometheus_metamodel/,4,false
 Prometheus_metamodel_system_specification,0.1.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/Prometheus_metamodel_system_specification/,4,false
+Prometheus_metamodel_system_specification.edit,1.0.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/Prometheus_metamodel_system_specification.edit/,4,false
+Prometheus_metamodel_system_specification.editor,1.0.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/Prometheus_metamodel_system_specification.editor/,4,false
 bcpg,1.77.0,file:/C:/Users/Usuario/eclipse/modeling-2023-09/eclipse/configuration/org.eclipse.osgi/518/data/-922960579/plugins/bcpg_1.77.0.jar,4,false
 bcpkix,1.77.0,file:/C:/Users/Usuario/eclipse/modeling-2023-09/eclipse/configuration/org.eclipse.osgi/518/data/-922960579/plugins/bcpkix_1.77.0.jar,4,false
 bcprov,1.77.0,file:/C:/Users/Usuario/eclipse/modeling-2023-09/eclipse/configuration/org.eclipse.osgi/518/data/-922960579/plugins/bcprov_1.77.0.jar,4,false
@@ -23,6 +24,9 @@ com.sun.el.javax.el,3.0.0,file:/C:/Users/Usuario/.p2/pool/plugins/com.sun.el.jav
 com.sun.jna,5.13.0.v20230812-1000,file:/C:/Users/Usuario/.p2/pool/plugins/com.sun.jna_5.13.0.v20230812-1000/,4,false
 com.sun.jna.platform,5.13.0,file:/C:/Users/Usuario/.p2/pool/plugins/com.sun.jna.platform_5.13.0.jar,4,false
 com.sun.xml.bind.jaxb-osgi,2.3.9,file:/C:/Users/Usuario/eclipse/modeling-2023-09/eclipse/configuration/org.eclipse.osgi/518/data/-922960579/plugins/com.sun.xml.bind.jaxb-osgi_2.3.9.jar,4,false
+ejemplo_metamodelo,0.1.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/ejemplo_metamodelo/,4,false
+ejemplo_metamodelo.edit,1.0.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/ejemplo_metamodelo.edit/,4,false
+ejemplo_metamodelo.editor,1.0.0.qualifier,file:/C:/Users/Usuario/Documents/GitHub/PRJ2019-2gether-Noelia/ejemplo_metamodelo.editor/,4,false
 io.github.classgraph,4.8.149.v20220915-0556,file:/C:/Users/Usuario/.p2/pool/plugins/io.github.classgraph_4.8.149.v20220915-0556.jar,4,false
 jakarta.inject.jakarta.inject-api,2.0.1,file:/C:/Users/Usuario/.p2/pool/plugins/jakarta.inject.jakarta.inject-api_2.0.1.jar,4,false
 jakarta.servlet-api,4.0.0,file:/C:/Users/Usuario/.p2/pool/plugins/jakarta.servlet-api_4.0.0.jar,4,false

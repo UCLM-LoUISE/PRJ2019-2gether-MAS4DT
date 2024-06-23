@@ -42,42 +42,42 @@ public class Logical_ObjectItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPhysical_objectPropertyDescriptor(object);
-			addFunctionalityPropertyDescriptor(object);
+			addPhysical_object_shadowPropertyDescriptor(object);
+			addPhysical_object_twinPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Physical object feature.
+	 * This adds a property descriptor for the Physical object shadow feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPhysical_objectPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Logical_Object_physical_object_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Logical_Object_physical_object_feature",
-								"_UI_Logical_Object_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__PHYSICAL_OBJECT, true,
-						false, true, null, null, null));
+	protected void addPhysical_object_shadowPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Logical_Object_physical_object_shadow_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Logical_Object_physical_object_shadow_feature",
+						"_UI_Logical_Object_type"),
+				Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__PHYSICAL_OBJECT_SHADOW, true,
+				false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Functionality feature.
+	 * This adds a property descriptor for the Physical object twin feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFunctionalityPropertyDescriptor(Object object) {
+	protected void addPhysical_object_twinPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Logical_Object_functionality_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Logical_Object_functionality_feature",
-								"_UI_Logical_Object_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__FUNCTIONALITY, true,
-						false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Logical_Object_physical_object_twin_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Logical_Object_physical_object_twin_feature", "_UI_Logical_Object_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.LOGICAL_OBJECT__PHYSICAL_OBJECT_TWIN,
+						true, false, true, null, null, null));
 	}
 
 	/**

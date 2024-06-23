@@ -30,7 +30,7 @@ public interface Context extends Entity {
 	 * @return the value of the '<em>Scenario</em>' reference list.
 	 * @see prometheus_metamodel_system_specification.Prometheus_metamodel_system_specificationPackage#getContext_Scenario()
 	 * @see prometheus_metamodel_system_specification.Scenario#getContext
-	 * @model opposite="context" required="true"
+	 * @model opposite="context"
 	 * @generated
 	 */
 	EList<Scenario> getScenario();

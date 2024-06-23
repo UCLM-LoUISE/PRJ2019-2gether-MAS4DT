@@ -76,12 +76,24 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 			return createLogical_Object();
 		case Prometheus_metamodel_system_specificationPackage.SCENARIO:
 			return createScenario();
-		case Prometheus_metamodel_system_specificationPackage.FUNCTIONALITY:
-			return createFunctionality();
+		case Prometheus_metamodel_system_specificationPackage.CAPABILITY:
+			return createCapability();
 		case Prometheus_metamodel_system_specificationPackage.ATTRIBUTE:
 			return createAttribute();
 		case Prometheus_metamodel_system_specificationPackage.STEP:
 			return createStep();
+		case Prometheus_metamodel_system_specificationPackage.ACTOR:
+			return createActor();
+		case Prometheus_metamodel_system_specificationPackage.ROL:
+			return createRol();
+		case Prometheus_metamodel_system_specificationPackage.DATA:
+			return createData();
+		case Prometheus_metamodel_system_specificationPackage.AGENT:
+			return createAgent();
+		case Prometheus_metamodel_system_specificationPackage.MESSAGE:
+			return createMessage();
+		case Prometheus_metamodel_system_specificationPackage.PROTOCOL:
+			return createProtocol();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,8 +107,6 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case Prometheus_metamodel_system_specificationPackage.ENUM_TYPE_OF_RELATIONSHIP:
-			return createEnum_Type_of_RelationshipFromString(eDataType, initialValue);
 		case Prometheus_metamodel_system_specificationPackage.ENUM_TYPES:
 			return createEnum_TypesFromString(eDataType, initialValue);
 		case Prometheus_metamodel_system_specificationPackage.ENUM_VISIBILITY:
@@ -116,8 +126,6 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case Prometheus_metamodel_system_specificationPackage.ENUM_TYPE_OF_RELATIONSHIP:
-			return convertEnum_Type_of_RelationshipToString(eDataType, instanceValue);
 		case Prometheus_metamodel_system_specificationPackage.ENUM_TYPES:
 			return convertEnum_TypesToString(eDataType, instanceValue);
 		case Prometheus_metamodel_system_specificationPackage.ENUM_VISIBILITY:
@@ -234,9 +242,9 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	 * @generated
 	 */
 	@Override
-	public Functionality createFunctionality() {
-		FunctionalityImpl functionality = new FunctionalityImpl();
-		return functionality;
+	public Capability createCapability() {
+		CapabilityImpl capability = new CapabilityImpl();
+		return capability;
 	}
 
 	/**
@@ -266,13 +274,10 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Enum_Type_of_Relationship createEnum_Type_of_RelationshipFromString(EDataType eDataType,
-			String initialValue) {
-		Enum_Type_of_Relationship result = Enum_Type_of_Relationship.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	@Override
+	public Actor createActor() {
+		ActorImpl actor = new ActorImpl();
+		return actor;
 	}
 
 	/**
@@ -280,8 +285,54 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEnum_Type_of_RelationshipToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	@Override
+	public Rol createRol() {
+		RolImpl rol = new RolImpl();
+		return rol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Data createData() {
+		DataImpl data = new DataImpl();
+		return data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Agent createAgent() {
+		AgentImpl agent = new AgentImpl();
+		return agent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Message createMessage() {
+		MessageImpl message = new MessageImpl();
+		return message;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Protocol createProtocol() {
+		ProtocolImpl protocol = new ProtocolImpl();
+		return protocol;
 	}
 
 	/**
@@ -340,6 +391,12 @@ public class Prometheus_metamodel_system_specificationFactoryImpl extends EFacto
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 
 	/**
 	 * <!-- begin-user-doc -->

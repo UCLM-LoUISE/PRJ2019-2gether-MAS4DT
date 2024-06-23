@@ -44,8 +44,6 @@ public class PerceptItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addScenarioPropertyDescriptor(object);
-			addFunctionalityPropertyDescriptor(object);
 			addInformation_carriedPropertyDescriptor(object);
 			addKnowledge_updatedPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
@@ -53,40 +51,14 @@ public class PerceptItemProvider extends EntityItemProvider {
 			addExpected_frequencyPropertyDescriptor(object);
 			addExternal_to_systemPropertyDescriptor(object);
 			addExternal_pathPropertyDescriptor(object);
+			addStepPropertyDescriptor(object);
+			addRolPropertyDescriptor(object);
+			addScenarioPropertyDescriptor(object);
+			addScenario_perceptPropertyDescriptor(object);
+			addAgent_perceptPropertyDescriptor(object);
+			addCapabilityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Scenario feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScenarioPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Percept_scenario_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Percept_scenario_feature",
-								"_UI_Percept_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__SCENARIO, true, false, true,
-						null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Functionality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFunctionalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Percept_functionality_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Percept_functionality_feature",
-								"_UI_Percept_type"),
-						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__FUNCTIONALITY, true, false,
-						true, null, null, null));
 	}
 
 	/**
@@ -199,6 +171,100 @@ public class PerceptItemProvider extends EntityItemProvider {
 								"_UI_Percept_type"),
 						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__EXTERNAL_PATH, true, false,
 						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Step feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStepPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_step_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_step_feature", "_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__STEP, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_rol_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_rol_feature", "_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__ROL, true, false, true, null,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenarioPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_scenario_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_scenario_feature",
+								"_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__SCENARIO, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scenario percept feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScenario_perceptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_scenario_percept_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_scenario_percept_feature",
+								"_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__SCENARIO_PERCEPT, true,
+						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Agent percept feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAgent_perceptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_agent_percept_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_agent_percept_feature",
+								"_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__AGENT_PERCEPT, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Capability feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCapabilityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Percept_capability_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Percept_capability_feature",
+								"_UI_Percept_type"),
+						Prometheus_metamodel_system_specificationPackage.Literals.PERCEPT__CAPABILITY, true, false,
+						true, null, null, null));
 	}
 
 	/**
