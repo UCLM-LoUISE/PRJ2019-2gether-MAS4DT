@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prometheus_metamodel_system_specification:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prometheus_metamodel_system_specification="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification">
+  <percepts name="Viento" rol="//@roles.0" scenario_percept="//@scenarios.0" agent_percept="//@agents.0" capability="//@capabilities.0"/>
+  <actions name="Monitorizar" rol="//@roles.0" scenario_action="//@scenarios.0" agent_action="//@agents.0"/>
+  <actions name="Parar" actor="//@actors.0" rol="//@roles.0" scenario_action="//@scenarios.0" agent_action="//@agents.0"/>
+  <actions name="Notificar" actor="//@actors.0" physical_object="//@physical_objects.2" rol="//@roles.0 //@roles.1" scenario_action="//@scenarios.0" agent_action="//@agents.1 //@agents.0"/>
+  <physical_objects name="Palas" physical_object="//@physical_objects.1"/>
+  <physical_objects name="Rotor" scenario="//@scenarios.0"/>
+  <physical_objects name="Sensor de viento" scenario="//@scenarios.0" percept="//@percepts.0"/>
+  <physical_objects name="Anemómetro" physical_object="//@physical_objects.2"/>
+  <physical_objects name="Veleta" physical_object="//@physical_objects.2"/>
+  <physical_objects name="Eje 1" physical_object="//@physical_objects.6"/>
+  <physical_objects name="Caja de cambios" scenario="//@scenarios.0"/>
+  <physical_objects name="Eje 2" physical_object="//@physical_objects.6"/>
+  <physical_objects name="Generador" scenario="//@scenarios.0"/>
+  <goals name="Monitoreo continuo del aerogenerador" goal_relationship_from_and="//@goal_relationships.0 //@goal_relationships.1" rol="//@roles.0" scenario_goals="//@scenarios.0"/>
+  <goals name="Capturar datos en tiempo real" goal_relationship_to_and="//@goal_relationships.0" rol="//@roles.0" scenario_goals="//@scenarios.0"/>
+  <goals name="Analizar datos recopilados" goal_relationship_to_and="//@goal_relationships.1" goal_relationship_from_or="//@goal_relationships.2 //@goal_relationships.3" rol="//@roles.1" scenario_goals="//@scenarios.0"/>
+  <goals name="Desplegar infraestructura" goal_relationship_to_or="//@goal_relationships.2"/>
+  <goals name="Panel de control" goal_relationship_to_or="//@goal_relationships.3"/>
+  <goals name="Monitorizar generación de energía" goal_relationship_from_and="//@goal_relationships.4 //@goal_relationships.5"/>
+  <goals name="Implementar sensores" goal_relationship_to_and="//@goal_relationships.4"/>
+  <goals name="Infraestructura de recolección de datos" goal_relationship_to_and="//@goal_relationships.5"/>
+  <goal_relationships goal_from_and="//@goals.0" goal_to_and="//@goals.1"/>
+  <goal_relationships goal_from_and="//@goals.0" goal_to_and="//@goals.2"/>
+  <goal_relationships goal_from_or="//@goals.2" goal_to_or="//@goals.3"/>
+  <goal_relationships goal_from_or="//@goals.2" goal_to_or="//@goals.4"/>
+  <goal_relationships goal_from_and="//@goals.5" goal_to_and="//@goals.6"/>
+  <goal_relationships goal_from_and="//@goals.5" goal_to_and="//@goals.7"/>
+  <actors name="Sistema de control" percept="//@percepts.0" scenario="//@scenarios.0 //@scenarios.3 //@scenarios.1"/>
+  <actors name="Operador del sistema" scenario="//@scenarios.0"/>
+  <actors name="Tecnico de mantenimiento" scenario="//@scenarios.0 //@scenarios.2 //@scenarios.1"/>
+  <roles name="Sistema de control" data_rol="//@data.0" percept="//@percepts.0" action="//@actions.0 //@actions.1 //@actions.2" goal="//@goals.1 //@goals.0" scenario_rol="//@scenarios.0"/>
+  <roles name="Analizador" data_rol="//@data.0 //@data.1" action="//@actions.2" goal="//@goals.2" scenario_rol="//@scenarios.0"/>
+  <data name="Datos monitorización" scenario_data="//@scenarios.0" agent_data="//@agents.0" rol_data="//@roles.0 //@roles.1" capability_data="//@capabilities.0"/>
+  <data name="Datos Análisis" scenario_data="//@scenarios.0" agent_data="//@agents.1" rol_data="//@roles.1" message="//@messages.0"/>
+  <scenarios name="Monitorizar el aerogenerador" physical_object="//@physical_objects.1 //@physical_objects.8 //@physical_objects.2 //@physical_objects.6" goals_scenario="//@goals.1 //@goals.0 //@goals.2" percept_scenario="//@percepts.0" action_scenario="//@actions.0 //@actions.1 //@actions.2" data_scenario="//@data.0 //@data.1" rol_scenario="//@roles.0 //@roles.1"/>
+  <scenarios name="Gestionar la salud del aerogenerador"/>
+  <scenarios name="Optimizar el rendimiento"/>
+  <scenarios name="Detección y respuesta a perturbaciones"/>
+  <agents name="Control" data_agent="//@data.0" rol="//@roles.0" protocol="//@protocols.0" message_agent="//@messages.0" action_agent="//@actions.0 //@actions.1 //@actions.2" percept_agent="//@percepts.0" capability_agent="//@capabilities.0"/>
+  <agents name="Analizador" data_agent="//@data.1" rol="//@roles.1" message_agent="//@messages.0" action_agent="//@actions.2"/>
+  <messages name="Envio_de_datos" agent_message="//@agents.0 //@agents.1"/>
+  <protocols name="tomar_decision" agent="//@agents.1"/>
+  <capabilities name="Parar_generador" agent_capability="//@agents.0" data_capability="//@data.0" action="//@actions.1" message="//@messages.0"/>
+</prometheus_metamodel_system_specification:Model>

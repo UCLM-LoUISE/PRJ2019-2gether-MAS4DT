@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Diagrams" version="12.0.0.2017041100">
+  <ownedViewpoints name="System_Specification">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="GoalOverview" domainClass="prometheus_metamodel_system_specification::Model " enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Goal" semanticCandidatesExpression="feature:goals" domainClass="prometheus_metamodel_system_specification::Goal">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/goal.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="GoalRelationship_And" semanticCandidatesExpression="feature:goal_relationships" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='GoalOverview']/@defaultLayer/@nodeMappings[name='Goal']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='GoalOverview']/@defaultLayer/@nodeMappings[name='Goal']" targetFinderExpression="feature:goal_to_and" sourceFinderExpression="feature:goal_from_and" domainClass="prometheus_metamodel_system_specification::Goal_Relationship" useDomainElement="true">
+          <style targetArrow="CirclePlus" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="AND">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="GoalRelationship_Or" semanticCandidatesExpression="feature:goal_relationships" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='GoalOverview']/@defaultLayer/@nodeMappings[name='Goal']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='GoalOverview']/@defaultLayer/@nodeMappings[name='Goal']" targetFinderExpression="feature:goal_to_or" sourceFinderExpression="feature:goal_from_or" domainClass="prometheus_metamodel_system_specification::Goal_Relationship" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="OR">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Goal" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='GoalOverview']/@defaultLayer/@nodeMappings[name='Goal']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Goal" referenceName="goals">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Goal '+container.goals->filter(prometheus_metamodel_system_specification::Goal)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="CreateGoalRelationship" label="Or" edgeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='GoalOverview']/@defaultLayer/@edgeMappings[name='GoalRelationship_Or']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.model/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Goal_Relationship" referenceName="goal_relationships" variableName="goal_relationships">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="goal_from_or" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="goal_to_or" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="And_relationship" label="And" edgeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='GoalOverview']/@defaultLayer/@edgeMappings[name='GoalRelationship_And']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.model/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Goal_Relationship" referenceName="goal_relationships" variableName="goal_relationships">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="goal_from_and" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="goal_to_and" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ObjectsDiagrams" domainClass="prometheus_metamodel_system_specification::Model" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="PhysicalObject" semanticCandidatesExpression="feature:physical_objects" domainClass="prometheus_metamodel_system_specification::Physical_Object">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" arcWidth="8" arcHeight="8" workspacePath="/Prometheus.project.design/icons/physical.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="LogicalObject" semanticCandidatesExpression="feature:logical_objects" domainClass="prometheus_metamodel_system_specification::Logical_Object">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/logical.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="TwinRelationship" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@nodeMappings[name='PhysicalObject']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@nodeMappings[name='LogicalObject']" targetFinderExpression="feature:logical_object_twin">
+          <style sourceArrow="InputArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ShadowRelationship" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@nodeMappings[name='LogicalObject']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@nodeMappings[name='PhysicalObject']" targetFinderExpression="feature:physical_object_shadow">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CompositionRelationship" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@nodeMappings[name='PhysicalObject']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@nodeMappings[name='PhysicalObject']" targetFinderExpression="feature:physical_object">
+          <style targetArrow="FillDiamond" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="PhysicalObject" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@nodeMappings[name='PhysicalObject']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Physical_Object" referenceName="physical_objects">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Physical Object '+container.physical_objects->filter(prometheus_metamodel_system_specification::Physical_Object)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="LogicalObject" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@nodeMappings[name='LogicalObject']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Logical_Object" referenceName="logical_objects">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql: 'Logical Object '+container.logical_objects->filter(prometheus_metamodel_system_specification::Logical_Object)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Twin" edgeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@edgeMappings[name='TwinRelationship']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="logical_object_twin" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Shadow" edgeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@edgeMappings[name='ShadowRelationship']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="physical_object_shadow" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Composition" edgeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ObjectsDiagrams']/@defaultLayer/@edgeMappings[name='CompositionRelationship']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="physical_object" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ScenarioOverview" domainClass="prometheus_metamodel_system_specification::Model" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Scenario_SO" semanticCandidatesExpression="feature:scenarios" doubleClickDescription="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@toolSections.0/@ownedTools[name='Navegacion']" domainClass="prometheus_metamodel_system_specification::Scenario">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/scenario.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="PhysicalObject_SO" semanticCandidatesExpression="feature:physical_objects" domainClass="prometheus_metamodel_system_specification::Physical_Object">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/physical.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Actor_SO" semanticCandidatesExpression="feature:actors" domainClass="prometheus_metamodel_system_specification::Actor">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/actor.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Relationship_Actor_Scenario" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='Actor_SO']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='Scenario_SO']" targetFinderExpression="feature:scenario">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_PhysicalObject_Scenario" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='PhysicalObject_SO']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='Scenario_SO']" targetFinderExpression="feature:scenario">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Actor_PhysicalObject" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='Actor_SO']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='PhysicalObject_SO']" targetFinderExpression="feature:physical_object">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Scenario" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='Scenario_SO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Scenario" referenceName="scenarios">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Scenario '+container.scenarios->filter(prometheus_metamodel_system_specification::Scenario)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Physical_Object" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='PhysicalObject_SO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Physical_Object" referenceName="physical_objects">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Physical Object  '+container.physical_objects->filter(prometheus_metamodel_system_specification::Physical_Object)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Actor" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='Actor_SO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Actor" referenceName="actors">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Actor '+container.actors->filter(prometheus_metamodel_system_specification::Actor)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Relation" edgeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@edgeMappings[name='Relationship_Actor_PhysicalObject'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@edgeMappings[name='Relationship_PhysicalObject_Scenario'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@edgeMappings[name='Relationship_Actor_Scenario']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Actor)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Actor)">
+                    <subModelOperations xsi:type="tool_1:Switch">
+                      <cases conditionExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Scenario)">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="scenario" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Scenario)"/>
+                      </cases>
+                      <default>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="physical_object" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Physical_Object)"/>
+                      </default>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Physical_Object)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Physical_Object)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="scenario" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Scenario)"/>
+                  </subModelOperations>
+                </cases>
+                <default/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Navegacion" mappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioOverview']/@defaultLayer/@nodeMappings[name='Scenario_SO']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ScenarioDiagram" domainClass="prometheus_metamodel_system_specification::Scenario" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Percept_SD" semanticCandidatesExpression="feature:percept_scenario" domainClass="prometheus_metamodel_system_specification::Percept">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/percept.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Action_SD" semanticCandidatesExpression="feature:action_scenario" domainClass="prometheus_metamodel_system_specification::Action">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/action.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Rol" semanticCandidatesExpression="feature:rol_scenario" domainClass="prometheus_metamodel_system_specification::Rol">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/role.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Data" semanticCandidatesExpression="feature:data_scenario" domainClass="prometheus_metamodel_system_specification::Data">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/data.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Goal_SD" semanticCandidatesExpression="feature:goals_scenario" domainClass="prometheus_metamodel_system_specification::Goal">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/goal.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Input_Relationship_Goal_Role" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Goal_SD']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Rol']" targetFinderExpression="feature:rol">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Input_Relationship_Action_Role" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Action_SD']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Rol']" targetFinderExpression="feature:rol">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Input_Relationship_Percept_Role" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Percept_SD']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Rol']" targetFinderExpression="feature:rol">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Input_Relationship_Role_Data" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Rol']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Data']" targetFinderExpression="feature:data_rol">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Percept" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Percept_SD']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.model_scenario">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Percept" referenceName="percepts" variableName="percept">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="scenario_percept" valueExpression="var:container"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Percept '+container.model_scenario.percepts->filter(prometheus_metamodel_system_specification::Percept)->size()"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="percept_scenario" valueExpression="var:percept"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Action" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Action_SD']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.model_scenario">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Action" referenceName="actions" variableName="action">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Action '+container.model_scenario.actions->filter(prometheus_metamodel_system_specification::Action)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="scenario_action" valueExpression="var:container"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="action_scenario" valueExpression="var:action"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Data" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Data']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.model_scenario">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Data" referenceName="data" variableName="data">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Data '+container.model_scenario.data->filter(prometheus_metamodel_system_specification::Data)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="scenario_data" valueExpression="var:container"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="data_scenario" valueExpression="var:data"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Roles" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@nodeMappings[name='Rol']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.model_scenario">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Rol" referenceName="roles" variableName="role">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Role '+container.model_scenario.roles->filter(prometheus_metamodel_system_specification::Rol)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="scenario_rol" valueExpression="var:container"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="rol_scenario" valueExpression="var:role"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Input" edgeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@edgeMappings[name='Input_Relationship_Action_Role'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@edgeMappings[name='Input_Relationship_Percept_Role'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@edgeMappings[name='Input_Relationship_Goal_Role'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='ScenarioDiagram']/@defaultLayer/@edgeMappings[name='Input_Relationship_Role_Data']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Goal)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Goal)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="rol" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Rol)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Percept)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Percept)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="rol" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Rol)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Action)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Action)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="rol" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Rol)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Rol)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Rol)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="data_rol" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Data)"/>
+                  </subModelOperations>
+                </cases>
+                <default/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="EntanglementDiagram" domainClass="prometheus_metamodel_system_specification::Model" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="PhysicalObject_ED" semanticCandidatesExpression="feature:physical_objects" domainClass="prometheus_metamodel_system_specification::Physical_Object">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/physical.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Action_ED" semanticCandidatesExpression="feature:actions" domainClass="prometheus_metamodel_system_specification::Action">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/action.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Actor_ED" semanticCandidatesExpression="feature:actors" domainClass="prometheus_metamodel_system_specification::Actor">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/actor.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Percept_ED" semanticCandidatesExpression="feature:percepts" domainClass="prometheus_metamodel_system_specification::Percept">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/percept.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Relationship_PhysicalObject_Percept" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='PhysicalObject_ED']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='Percept_ED']" targetFinderExpression="feature:percept">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Actor_Percept" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='Actor_ED']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='Percept_ED']" targetFinderExpression="feature:percept">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Action_PhysicalObject" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='Action_ED']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='PhysicalObject_ED']" targetFinderExpression="feature:physical_object">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Action_Actor" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='Action_ED']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='Actor_ED']" targetFinderExpression="feature:actor">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Physical_Object" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='PhysicalObject_ED']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Physical_Object" referenceName="physical_objects">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Physical Object '+container.physical_objects->filter(prometheus_metamodel_system_specification::Physical_Object)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Action" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='Action_ED']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Action" referenceName="actions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Action '+container.actions->filter(prometheus_metamodel_system_specification::Action)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Actor" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='Actor_ED']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Actor" referenceName="actors">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Actor '+container.actors->filter(prometheus_metamodel_system_specification::Actor)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Percept" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@nodeMappings[name='Percept_ED']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Percept" referenceName="percepts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Percept '+container.percepts->filter(prometheus_metamodel_system_specification::Percept)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Relation" edgeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@edgeMappings[name='Relationship_Action_Actor'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@edgeMappings[name='Relationship_Action_PhysicalObject'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@edgeMappings[name='Relationship_Actor_Percept'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='EntanglementDiagram']/@defaultLayer/@edgeMappings[name='Relationship_PhysicalObject_Percept']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Physical_Object)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Physical_Object)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="percept" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Percept)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Actor)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Actor)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="percept" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Percept)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Action)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Action)">
+                    <subModelOperations xsi:type="tool_1:Switch">
+                      <cases conditionExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Physical_Object)">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="physical_object" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Physical_Object)"/>
+                      </cases>
+                      <default>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="actor" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Actor)"/>
+                      </default>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <default/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SystemRoles Diagram" domainClass="prometheus_metamodel_system_specification::Model" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="GoalNode" semanticCandidatesExpression="feature:goals" domainClass="prometheus_metamodel_system_specification::Goal">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/goal.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ActionNode" semanticCandidatesExpression="feature:actions" domainClass="prometheus_metamodel_system_specification::Action">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/action.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="PerceptNode" semanticCandidatesExpression="feature:percepts" domainClass="prometheus_metamodel_system_specification::Percept">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/percept.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Role" semanticCandidatesExpression="feature:roles" domainClass="prometheus_metamodel_system_specification::Rol">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/role.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Relationship_Role_Action" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='SystemRoles%20Diagram']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='SystemRoles%20Diagram']/@defaultLayer/@nodeMappings[name='ActionNode']" targetFinderExpression="feature:action">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Role_Percept" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='SystemRoles%20Diagram']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='SystemRoles%20Diagram']/@defaultLayer/@nodeMappings[name='PerceptNode']" targetFinderExpression="feature:percept">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Role_Goal" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='SystemRoles%20Diagram']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='SystemRoles%20Diagram']/@defaultLayer/@nodeMappings[name='GoalNode']" targetFinderExpression="feature:goal">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AnalysisOverview" domainClass="prometheus_metamodel_system_specification::Model" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Scenario" semanticCandidatesExpression="feature:scenarios" domainClass="prometheus_metamodel_system_specification::Scenario">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/scenario.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Action" semanticCandidatesExpression="feature:actions" domainClass="prometheus_metamodel_system_specification::Action">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/action.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Percept" semanticCandidatesExpression="feature:percepts" domainClass="prometheus_metamodel_system_specification::Percept">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/percept.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Actor" semanticCandidatesExpression="feature:actors" domainClass="prometheus_metamodel_system_specification::Actor">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/actor.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Physical_Object_AO" semanticCandidatesExpression="feature:physical_objects" domainClass="prometheus_metamodel_system_specification::Physical_Object">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/physical.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Input_Relationship_Actor_Percept" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Actor']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Percept']" targetFinderExpression="feature:percept">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Input_Relationship_Percept_Scenario" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Percept']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Scenario']" targetFinderExpression="feature:scenario_percept">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Input_Relationship_PhysicalObject_Percept" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Physical_Object_AO']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Percept']" targetFinderExpression="feature:percept">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Input_Relationship_Action_Scenario" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Scenario']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Action']" targetFinderExpression="feature:action_scenario">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Output_Relationship_Action_Actor" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Action']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Actor']" targetFinderExpression="feature:actor">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Output_Relationship_Action_PhysicalObject" sourceMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Action']" targetMapping="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Physical_Object_AO']" targetFinderExpression="feature:physical_object">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Action" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Action']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Action" referenceName="actions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Action '+container.actions->filter(prometheus_metamodel_system_specification::Action)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Percept" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Percept']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Percept" referenceName="percepts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Percept '+container.percepts->filter(prometheus_metamodel_system_specification::Percept)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Actor" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Actor']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Actor" referenceName="actors">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Actor '+container.actors->filter(prometheus_metamodel_system_specification::Actor)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Physical_Object" nodeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@nodeMappings[name='Physical_Object_AO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Physical_Object" referenceName="physical_objects">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Physical Object '+container.physical_objects->filter(prometheus_metamodel_system_specification::Physical_Object)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Relation" edgeMappings="//@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@edgeMappings[name='Input_Relationship_Action_Scenario'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@edgeMappings[name='Input_Relationship_Percept_Scenario'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@edgeMappings[name='Input_Relationship_Actor_Percept'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@edgeMappings[name='Input_Relationship_PhysicalObject_Percept'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@edgeMappings[name='Output_Relationship_Action_Actor'] //@ownedViewpoints[name='System_Specification']/@ownedRepresentations[name='AnalysisOverview']/@defaultLayer/@edgeMappings[name='Output_Relationship_Action_PhysicalObject']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Actor)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Actor)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="percept" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Percept)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Percept)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Percept)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="scenario_percept" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Scenario)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Physical_Object)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Physical_Object)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="percept" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Percept)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Action)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Action)">
+                    <subModelOperations xsi:type="tool_1:Switch">
+                      <cases conditionExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Physical_Object)">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="physical_object" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Physical_Object)"/>
+                      </cases>
+                      <default>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="actor" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Actor)"/>
+                      </default>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Scenario)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Scenario)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="action_scenario" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Action)"/>
+                  </subModelOperations>
+                </cases>
+                <default/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="Prometheus.project.design.Services"/>
+  </ownedViewpoints>
+  <ownedViewpoints name="Architectural Design">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="RolesDataAgents Diagram" domainClass="prometheus_metamodel_system_specification::Model" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Role_RDA" semanticCandidatesExpression="feature:roles" domainClass="prometheus_metamodel_system_specification::Rol">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/role.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Data_RDA" semanticCandidatesExpression="feature:data" domainClass="prometheus_metamodel_system_specification::Data">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/data.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Agent_RDA" semanticCandidatesExpression="feature:agents" domainClass="prometheus_metamodel_system_specification::Agent">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/agent.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Relationship_Agent_Rol" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@nodeMappings[name='Agent_RDA']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@nodeMappings[name='Role_RDA']" targetFinderExpression="feature:rol">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Data_Rol" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@nodeMappings[name='Data_RDA']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@nodeMappings[name='Role_RDA']" targetFinderExpression="feature:rol_data">
+          <style sourceArrow="InputArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Data_Agent" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@nodeMappings[name='Data_RDA']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@nodeMappings[name='Agent_RDA']" targetFinderExpression="feature:agent_data">
+          <style sourceArrow="InputArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Role" nodeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@nodeMappings[name='Role_RDA']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Rol" referenceName="roles">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Role '+container.roles->filter(prometheus_metamodel_system_specification::Rol)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Data" nodeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@nodeMappings[name='Data_RDA']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Data" referenceName="data">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Data '+container.data->filter(prometheus_metamodel_system_specification::Data)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Agent" nodeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@nodeMappings[name='Agent_RDA']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Agent" referenceName="agents">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Agent '+container.agents->filter(prometheus_metamodel_system_specification::Agent)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Relation" edgeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Agent_Rol'] //@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Data_Agent'] //@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='RolesDataAgents%20Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Data_Rol']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Agent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Agent)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="rol" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Rol)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Data)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Data)">
+                    <subModelOperations xsi:type="tool_1:Switch">
+                      <cases conditionExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Rol)">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="rol_data" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Rol)"/>
+                      </cases>
+                      <default>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="agent_data" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Agent)"/>
+                      </default>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <default/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SystemOverview" domainClass="prometheus_metamodel_system_specification::Model" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Agent_SO" semanticCandidatesExpression="feature:agents" domainClass="prometheus_metamodel_system_specification::Agent">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/agent.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Action_SO" semanticCandidatesExpression="feature:actions" domainClass="prometheus_metamodel_system_specification::Action">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/action.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Data_SO" semanticCandidatesExpression="feature:data" domainClass="prometheus_metamodel_system_specification::Data">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/data.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Message_SO" semanticCandidatesExpression="feature:messages" domainClass="prometheus_metamodel_system_specification::Message">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/message.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Percept_SO" semanticCandidatesExpression="feature:percepts" domainClass="prometheus_metamodel_system_specification::Percept">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/percept.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Protocol_SO" semanticCandidatesExpression="feature:protocols" domainClass="prometheus_metamodel_system_specification::Protocol">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/protocol.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Relation_Agent_Protocol" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Agent_SO']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Protocol_SO']" targetFinderExpression="feature:protocol">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relation_Protocol_Agent" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Protocol_SO']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Agent_SO']" targetFinderExpression="feature:agent">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relation_Agent_Data" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Agent_SO']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Data_SO']" targetFinderExpression="feature:data_agent">
+          <style sourceArrow="InputArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relation_Agent_Message" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Agent_SO']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Message_SO']" targetFinderExpression="feature:message_agent">
+          <style sourceArrow="InputArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relation_Agent_Action" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Agent_SO']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Action_SO']" targetFinderExpression="feature:action_agent">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relation_Data_Message" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Data_SO']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Message_SO']" targetFinderExpression="feature:message">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relation_Percept_Agent" sourceMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Percept_SO']" targetMapping="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Agent_SO']" targetFinderExpression="feature:agent_percept">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Agent" nodeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Agent_SO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Agent" referenceName="agents">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Agent '+container.agents->filter(prometheus_metamodel_system_specification::Agent)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Percept" nodeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Percept_SO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Percept" referenceName="percepts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Percept '+container.percepts->filter(prometheus_metamodel_system_specification::Percept)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Data" nodeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Data_SO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Data" referenceName="data">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Data '+container.data->filter(prometheus_metamodel_system_specification::Data)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Action" nodeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Action_SO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Action" referenceName="actions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Action '+container.actions->filter(prometheus_metamodel_system_specification::Action)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Message" nodeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Message_SO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Message" referenceName="messages">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Message '+container.messages->filter(prometheus_metamodel_system_specification::Message)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Protocol" nodeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@nodeMappings[name='Protocol_SO']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Protocol" referenceName="protocols">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Protocol '+container.protocols->filter(prometheus_metamodel_system_specification::Protocol)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Relation" edgeMappings="//@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@edgeMappings[name='Relation_Agent_Action'] //@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@edgeMappings[name='Relation_Agent_Protocol'] //@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@edgeMappings[name='Relation_Data_Message'] //@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@edgeMappings[name='Relation_Percept_Agent'] //@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@edgeMappings[name='Relation_Protocol_Agent'] //@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@edgeMappings[name='Relation_Agent_Data'] //@ownedViewpoints[name='Architectural%20Design']/@ownedRepresentations[name='SystemOverview']/@defaultLayer/@edgeMappings[name='Relation_Agent_Message']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Agent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Agent)">
+                    <subModelOperations xsi:type="tool_1:Switch">
+                      <cases conditionExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Protocol)">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="protocol" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Protocol)"/>
+                      </cases>
+                      <cases conditionExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Action)">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="action_agent" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Action)"/>
+                      </cases>
+                      <cases conditionExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Message)">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="message_agent" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Message)"/>
+                      </cases>
+                      <default>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="data_agent" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Data)"/>
+                      </default>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Protocol)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Protocol)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="agent" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Agent)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Data)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Data)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Message)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Percept)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Percept)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="agent_percept" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Agent)"/>
+                  </subModelOperations>
+                </cases>
+                <default/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+  <ownedViewpoints name="Detailed_Design">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Agent_Diagram" domainClass="prometheus_metamodel_system_specification::Agent" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/sirius/prometheus_metamodel_system_specification#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Data_AD" semanticCandidatesExpression="feature:data_agent" domainClass="prometheus_metamodel_system_specification::Data">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/data.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Message_AD" semanticCandidatesExpression="feature:message_agent" domainClass="prometheus_metamodel_system_specification::Message">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/message.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Percept_AD" semanticCandidatesExpression="feature:percept_agent" domainClass="prometheus_metamodel_system_specification::Percept">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/percept.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Capability_AD" semanticCandidatesExpression="feature:capability_agent" domainClass="prometheus_metamodel_system_specification::Capability">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/capability.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Action_AD" semanticCandidatesExpression="feature:action_agent" domainClass="prometheus_metamodel_system_specification::Action">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/Prometheus.project.design/icons/action.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Relationship_Percept_Capability" sourceMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Percept_AD']" targetMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Capability_AD']" targetFinderExpression="feature:capability">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Capability_Data" sourceMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Capability_AD']" targetMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Data_AD']" targetFinderExpression="feature:data">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Capability_Message" sourceMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Capability_AD']" targetMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Message_AD']" targetFinderExpression="feature:message">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Capability_Action" sourceMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Capability_AD']" targetMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Action_AD']" targetFinderExpression="feature:action">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Message_Capability" sourceMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Message_AD']" targetMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Capability_AD']" targetFinderExpression="feature:capability">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Data_Capability" sourceMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Data_AD']" targetMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Capability_AD']" targetFinderExpression="feature:capability">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Relationship_Capability_Data_BI" sourceMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Capability_AD']" targetMapping="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Data_AD']" targetFinderExpression="feature:data_capability">
+          <style sourceArrow="InputArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Data" nodeMappings="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Data_AD']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.model">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Data" referenceName="data">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="agent_data" valueExpression="var:container"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Data '+container.model.data->filter(prometheus_metamodel_system_specification::Data)->size()"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="data_agent" valueExpression="var:instance"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Message" nodeMappings="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Message_AD']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.model">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Message" referenceName="messages">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="agent_message" valueExpression="var:container"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Message '+container.model.messages->filter(prometheus_metamodel_system_specification::Message)->size()"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="message_agent" valueExpression="var:instance"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Percept" nodeMappings="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Percept_AD']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.model">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Percept" referenceName="percepts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="agent_percept" valueExpression="var:container"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Percept '+container.model.percepts->filter(prometheus_metamodel_system_specification::Percept)->size()"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="percept_agent" valueExpression="var:instance"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Capability" nodeMappings="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Capability_AD']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.model">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Capability" referenceName="capabilities">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="agent_capability" valueExpression="var:container"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Capability '+container.model.capabilities->filter(prometheus_metamodel_system_specification::Capability)->size()"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="capability_agent" valueExpression="var:instance"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Action" nodeMappings="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@nodeMappings[name='Action_AD']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.model">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="prometheus_metamodel_system_specification::Action" referenceName="actions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="agent_action" valueExpression="var:container"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Action '+container.model.actions->filter(prometheus_metamodel_system_specification::Action)->size()"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="action_agent" valueExpression="var:instance"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Unidirectional relationship" edgeMappings="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Capability_Action'] //@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Capability_Data'] //@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Capability_Message'] //@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Data_Capability'] //@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Message_Capability'] //@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Percept_Capability']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Percept)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Percept)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="capability" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Capability)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Capability)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Capability)">
+                    <subModelOperations xsi:type="tool_1:Switch">
+                      <cases conditionExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Data)">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Data)"/>
+                      </cases>
+                      <cases conditionExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Action)">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="action" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Action)"/>
+                      </cases>
+                      <default>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Message)"/>
+                      </default>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Message)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Message)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="capability" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Capability)"/>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:source.oclIsKindOf(prometheus_metamodel_system_specification::Data)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.oclAsType(prometheus_metamodel_system_specification::Data)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="capability" valueExpression="aql:target.oclAsType(prometheus_metamodel_system_specification::Capability)"/>
+                  </subModelOperations>
+                </cases>
+                <default/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Bidirectional relationship" edgeMappings="//@ownedViewpoints[name='Detailed_Design']/@ownedRepresentations[name='Agent_Diagram']/@defaultLayer/@edgeMappings[name='Relationship_Capability_Data_BI']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="data_capability" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

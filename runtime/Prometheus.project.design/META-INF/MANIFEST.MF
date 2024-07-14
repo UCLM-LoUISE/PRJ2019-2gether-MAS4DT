@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: Prometheus.project.design;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: Prometheus.project.design.Activator
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.sirius,
+ org.eclipse.sirius.common.acceleo.aql,
+ Prometheus_metamodel_system_specification;bundle-version="0.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-Vendor: %providerName
+Automatic-Module-Name: Prometheus.project.design
