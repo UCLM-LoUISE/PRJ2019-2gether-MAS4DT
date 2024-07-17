@@ -42,7 +42,7 @@ Para poder probar la herramienta realizada para la metodología MAS4DT es necesa
 1. Abrir **Eclipse Modeling Tools** con permisos de administrador.
 2. Crear un workspace y acceder a **Window > Preferences > Java > Installed JREs**.
 
-![Figura 1: Gestor de Eclipse para JDK](ruta/poner)
+![Figura 1: Gestor de Eclipse para JDK](https://github.com/UCLM-LoUISE/PRJ2019-2gether-Noelia/blob/main/Images%20Plugin_Readme/1_Gestor%20de%20Eclipse%20para%20JDK.png)
 
 3. Seleccionar **Add > Standard VM**. Introducir la dirección del JDK y asignar un nombre.
 
