@@ -1,4 +1,4 @@
-# PRJ2019-2gether-Noelia
+# PRJ2019-2gether-MAS4DT
 # Guía de Instalación del Plug-in para MAS4DT en Eclipse Modeling Tools
 
 ## Universidad de Castilla-La Mancha
