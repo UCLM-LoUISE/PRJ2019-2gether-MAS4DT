@@ -1,4 +1,5 @@
 # PRJ2019-2gether-MAS4DT
+![2gether](https://github.com/UCLM-LoUISE/PRJ2019-2gether-Noelia/blob/main/Images%20Plugin_Readme/2gether.png)
 # Installation guide for the MAS4DT plug-in in Eclipse modelling tools
 
 ## University of Castilla-La Mancha
